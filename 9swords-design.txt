@@ -1,0 +1,38 @@
+### 九大剑术
+
+1. 藏剑术 —— 出鞘剑
+   Hidden Sword Art —— Unsheathed Blade
+2. 幻剑术 —— 时空跃迁 —— 第二世界
+   Illusory Sword Art —— Spacetime Leap —— Second Realm
+3. 无剑术 —— 无有剑流 —— 天弃之
+   Non Sword Art —— Void Blade Style —— Heaven's Abandonment
+4. 万剑术 —— 绝对帝制 —— 大红神之怒
+   Myriad Sword Art —— Absolute Imperial Rule —— Wrath of the Crimson God
+5. 情剑术 —— 红尘剑 众生相 —— 忘情剑 山海凭 —— 不世剑 玄妙门
+   Emotional Sword Art —— Mortal Blade: All Living Faces —— Unfeeling Blade: By Mountains and Seas —— Peerless Blade: Profound Gate
+6. 莫剑术 —— 青河剑界 —— 无欲妄为剑
+   True Sword Art —— Azure River Sword Domain —— Desireless Reckless Blade
+7. 鬼剑术 —— 御魂诡术 —— 酆都之主
+   Ghostly Sword Art —— Soul Control Trickery —— Ruler of the Nether Capital
+8. 心剑术 —— 目下神佛 —— 般若无
+   Mind Sword Art —— Under One's Gaze: Gods and Buddhas —— Formlessness
+9. 九剑术 —— 无限穷数 —— 归一极剑
+   Nine-Fold Sword Art —— Infinite Numeration —— Unity of Extremes Blade
+
+### Design
+
+|         Name          |  Rarity  |  Type  | Energy |                         Description                          |                       Note                       |
+| :-------------------: | :------: | :----: | :----: | :----------------------------------------------------------: | :----------------------------------------------: |
+|  HiddenSword 藏剑术   | Uncommon | Skill  |   2    | 本回合无法打出攻击牌和技能牌，下回合开始时对随机敌人造成36（45）点伤害 |                                                  |
+| IllusorySword 幻剑术  | Uncommon | Skill  |   1    | 移除所有敌人的护甲，对所有敌人施加1（2）层虚弱、1（2）层易伤 |                                                  |
+|    NonSword 无剑术    | Uncommon | Power  |   1    |  获得1（2）层力量、1（2）层敏捷、1（2）层集中、1（2）层真言  |                                                  |
+|  MyriadSword 万剑术   | Uncommon | Attack |   1    |                   随机造成1点伤害5（6）次                    |                                                  |
+| EmotionalSword 情剑术 | Uncommon | Attack | 1（0） | 造成4点伤害，如果该敌人的意图为攻击，则施加1层虚弱，否则再造成6点伤害 |                                                  |
+|   TrueSword 莫剑术    | Uncommon | Attack | 3（2） |                       造成36点真实伤害                       | 真实伤害：视为生命流失（不受虚弱、易伤效果影响） |
+|  GhostlySword 鬼剑术  | Uncommon | Attack |   1    |                   返回，造成8（10）点伤害                    |               返回：结算后返回手牌               |
+|   MindSword 心剑术    | Uncommon | Skill  |   1    | 消耗，移除自身所有减益效果，获得1（2）层人工制品，获得4（6）点护甲 |                                                  |
+| NinefoldSword 九剑术  | Uncommon | Attack |   1    |          消耗，造成8（10）点伤害，获得8（10）点护甲          |                                                  |
+
+注：圆括号内为卡牌升级效果
+
+数值设计参考：[数值模型【杀戮尖塔吧】_百度贴吧](https://tieba.baidu.com/p/9300828689)
