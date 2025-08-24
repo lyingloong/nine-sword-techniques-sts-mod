@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -49,10 +50,11 @@ class HiddenSwordForbidPower extends AbstractPower {
         return !(card.type == AbstractCard.CardType.ATTACK || card.type == AbstractCard.CardType.SKILL);
     }
 
-    // 回合结束强制移除
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        this.onRemove();
+        if (isPlayer) {
+            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+        }
     }
 }
 
@@ -101,8 +103,7 @@ class HiddenSwordDelayPower extends AbstractPower {
                 );
             }
         }
-        // 触发后立即移除标记
-        this.onRemove();
+        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
     }
 }
 
