@@ -41,7 +41,7 @@
   },
   "NineSwordTechniques:TrueSword": {
     "NAME": "True Sword",
-    "DESCRIPTION": "Deal !D! True Damage. NL (Counts as HP loss; unaffected by Weak, Vulnerable, etc.)",
-    "UPGRADE_DESCRIPTION": "Deal !D! True Damage. NL (Counts as HP loss; unaffected by Weak, Vulnerable, etc.)"
+    "DESCRIPTION": "Deal !D! True Damage. NL (Counts as HP loss; unaffected by Strength, Weak, Vulnerable, etc.)",
+    "UPGRADE_DESCRIPTION": "Deal !D! True Damage. NL (Counts as HP loss; unaffected by Strength, Weak, Vulnerable, etc.)"
   }
 }

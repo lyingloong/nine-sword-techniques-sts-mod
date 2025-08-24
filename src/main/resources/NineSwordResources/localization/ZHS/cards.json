@@ -41,7 +41,7 @@
   },
   "NineSwordTechniques:TrueSword": {
     "NAME": "莫剑术",
-    "DESCRIPTION": "造成 !D! 点真实伤害。 NL （视为生命流失，不受虚弱、易伤等效果影响）",
+    "DESCRIPTION": "造成 !D! 点真实伤害。 NL （视为生命流失，不受力量、虚弱、易伤等效果影响）",
     "UPGRADE_DESCRIPTION": "造成 !D! 点真实伤害。 NL （视为生命流失，不受虚弱、易伤等效果影响）"
   }
 }

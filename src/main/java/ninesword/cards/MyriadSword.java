@@ -45,7 +45,7 @@ public class MyriadSword extends CustomCard {
         Random random = new Random();
         for (int i = 0; i < this.attackTimes; i++) {
             AbstractMonster targetMonster = AbstractDungeon.getMonsters().monsters.get(random.nextInt(AbstractDungeon.getMonsters().monsters.size()));
-            this.addToBot(new com.megacrit.cardcrawl.actions.common.DamageAction(targetMonster, new com.megacrit.cardcrawl.cards.DamageInfo(p, baseDamage, this.damageTypeForTurn), com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+            this.addToBot(new com.megacrit.cardcrawl.actions.common.DamageAction(targetMonster, new com.megacrit.cardcrawl.cards.DamageInfo(p, this.damage, this.damageTypeForTurn), com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         }
     }
 
