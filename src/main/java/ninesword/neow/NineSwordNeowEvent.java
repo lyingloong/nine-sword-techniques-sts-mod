@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.events.RoomEventDialog;
 import com.megacrit.cardcrawl.neow.NeowEvent;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.vfx.InfiniteSpeechBubble;
 import ninesword.modspire.ModEnums;
 import ninesword.powers.SwordIntent;
 
@@ -147,6 +148,18 @@ class ActivatePatch {
                     targetRelic
             );
             System.out.println("[ActivatePatch] 遗物已生成并发放给玩家");
+        }
+    }
+}
+
+@SpirePatch(clz = NeowEvent.class, method = "buttonEffect")
+class ButtonEffectPatch {
+    private static final float DIALOG_X = 1100.0F * Settings.xScale, DIALOG_Y = AbstractDungeon.floorY + 60.0F * Settings.yScale;
+    @SpireInsertPatch(rloc = 254-194)
+    protected static void buttonEffect(NeowEvent __instance, int buttonPressed, ArrayList<NeowReward> ___rewards) {
+        if (buttonPressed == 4) {
+            ((NeowReward)___rewards.get(4)).activate();
+            AbstractDungeon.effectList.add(new InfiniteSpeechBubble(DIALOG_X, DIALOG_Y, NeowEvent.TEXT[9]));
         }
     }
 }

@@ -5,13 +5,16 @@
 The Nine Great Swordsmanship, the Eighteen Sword Styles, and the Three Thousand Swordsmanship Paths—all originated from the Sword Ancestor recorded in the Sword Tower. — I Have a Body of Passive Skills
 
 Mod 内容
-
-\- 添加了九大剑术的无色牌。
-\- 开局可以选择并获得一张剑术无色牌。
+- 添加了九大剑术的无色牌和遗物。
+- 开局可以选择并获得一张剑术无色牌。
+- 增加开局选项：获得指定模组遗物。
+- 全新Power：剑念。
 
 Content
-\- Added colorless cards for the Nine Great Swordsmanship.
-\- You can choose and obtain one colorless swordsmanship card at the start.
+- Added colorless cards and relics for the Nine Great Swordsmanship.
+- You can choose and obtain one colorless swordsmanship card at the start.
+- Added a starting option: obtain a specified mod relic.
+- New Power: Sword Intent.
 
 剑经
 非葬剑冢亲传，自行避视，如遭反噬，一切自负。—— 温庭

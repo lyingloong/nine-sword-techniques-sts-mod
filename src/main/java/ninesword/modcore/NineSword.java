@@ -112,7 +112,7 @@ public class NineSword implements EditCardsSubscriber, EditStringsSubscriber, Ed
                         startingSwords,
                         1,
                         "选择初始剑术",
-                        false, false, false, false
+                        false, false, true, false
                 );
 
                 Gdx.app.postRunnable(new Runnable() {
