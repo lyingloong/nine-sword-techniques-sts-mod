@@ -1,0 +1,8 @@
+{
+  "NineSwordTechniques:SwordIntent": {
+    "NAME": "剑念",
+    "DESCRIPTIONS": [
+      "当你使用 #y剑术牌时，消耗所有剑念，重复打出该剑术牌 #b%d 次。"
+    ]
+  }
+}

@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class IllusorySword extends CustomCard {
+public class IllusorySword extends SwordTechniqueCard {
     public static final String ID = "NineSwordTechniques:IllusorySword";
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
@@ -37,7 +37,7 @@ public class IllusorySword extends CustomCard {
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
+    public void repeatEffect(AbstractPlayer p, AbstractMonster m) {
         for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
             monster.currentBlock = 0;
             // 施加虚弱和易伤

@@ -72,6 +72,7 @@ class HiddenSwordDelayPower extends AbstractPower {
         this.type = PowerType.BUFF;
         this.isTurnBased = true;
         this.delayDamage = delayDamage;
+        this.amount = 1;
 
         String path128 = "NineSwordResources/img/powers/HiddenSwordDelay128.png";
         String path48 = "NineSwordResources/img/powers/HiddenSwordDelay48.png";
@@ -88,26 +89,29 @@ class HiddenSwordDelayPower extends AbstractPower {
     @Override
     public void atStartOfTurn() {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            // 随机选择1个存活敌人
-            AbstractMonster target = AbstractDungeon.getMonsters().getRandomMonster(
-                    null, true, AbstractDungeon.cardRandomRng
-            );
-            if (target != null) {
-                // 执行伤害动作
-                AbstractDungeon.actionManager.addToTop(
-                        new DamageAction(
-                                target,
-                                new DamageInfo(this.owner, this.delayDamage, DamageInfo.DamageType.NORMAL),
-                                AbstractGameAction.AttackEffect.SLASH_HEAVY
-                        )
+            // 根据amount次数，循环释放伤害
+            for (int i = 0; i < this.amount; i++) {
+                // 每次伤害随机选择一个存活敌人
+                AbstractMonster target = AbstractDungeon.getMonsters().getRandomMonster(
+                        null, true, AbstractDungeon.cardRandomRng
                 );
+                if (target != null) {
+                    AbstractDungeon.actionManager.addToTop(
+                            new DamageAction(
+                                    target,
+                                    new DamageInfo(this.owner, this.delayDamage, DamageInfo.DamageType.NORMAL),
+                                    AbstractGameAction.AttackEffect.SLASH_HEAVY
+                            )
+                    );
+                }
             }
         }
+        // 伤害结算后，移除所有层数
         this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
     }
 }
 
-public class HiddenSword extends CustomCard {
+public class HiddenSword extends SwordTechniqueCard {
     public static final String ID = "NineSwordTechniques:HiddenSword";
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
@@ -145,7 +149,7 @@ public class HiddenSword extends CustomCard {
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
+    public void repeatEffect(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(
                         p,

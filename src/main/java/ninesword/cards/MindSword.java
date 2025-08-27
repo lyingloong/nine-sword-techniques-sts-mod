@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 
-public class MindSword extends CustomCard {
+public class MindSword extends SwordTechniqueCard {
     public static final String ID = "NineSwordTechniques:MindSword";
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
@@ -44,7 +44,7 @@ public class MindSword extends CustomCard {
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
+    public void repeatEffect(AbstractPlayer p, AbstractMonster m) {
         // 1. 移除自身所有减益效果
         // 遍历玩家身上的所有状态
         for (AbstractPower power : p.powers) {

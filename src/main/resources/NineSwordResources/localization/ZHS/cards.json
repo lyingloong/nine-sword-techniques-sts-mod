@@ -1,47 +1,47 @@
 {
   "NineSwordTechniques:EmotionalSword": {
     "NAME": "情剑术",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果该敌人的意图为攻击，则施加 !M! 层虚弱，否则再造成 !D! 点伤害。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 如果该敌人的意图为攻击，则施加 !M! 层虚弱，否则再造成 !D! 点伤害。"
+    "DESCRIPTION": "*剑术牌 。 NL 造成 !D! 点伤害。 NL 如果该敌人的意图为攻击，则施加 !M! 层虚弱，否则再造成 !D! 点伤害。",
+    "UPGRADE_DESCRIPTION": "*剑术牌 。 NL 造成 !D! 点伤害。 NL 如果该敌人的意图为攻击，则施加 !M! 层虚弱，否则再造成 !D! 点伤害。"
   },
   "NineSwordTechniques:GhostlySword": {
     "NAME": "鬼剑术",
-    "DESCRIPTION": "返回。 NL 造成 !D! 点伤害。 NL 返回：结算后返回手牌。",
-    "UPGRADE_DESCRIPTION": "返回。 NL 造成 !D! 点伤害。 NL 返回：结算后返回手牌。"
+    "DESCRIPTION": "*剑术牌 。 NL *返回。 NL 造成 !D! 点伤害。 NL 返回：结算后返回手牌。",
+    "UPGRADE_DESCRIPTION": "*剑术牌 。 NL *返回。 NL 造成 !D! 点伤害。 NL 返回：结算后返回手牌。"
   },
   "NineSwordTechniques:HiddenSword": {
     "NAME": "藏剑术",
-    "DESCRIPTION": "本回合无法打出攻击牌和技能牌。 NL 下回合开始时，对随机敌人造成 !D! 点伤害。",
-    "UPGRADE_DESCRIPTION": "本回合无法打出攻击牌和技能牌。 NL 下回合开始时，对随机敌人造成 !D! 点伤害。"
+    "DESCRIPTION": "*剑术牌 。 NL 本回合无法打出攻击牌和技能牌。 NL 下回合开始时，对随机敌人造成 !D! 点伤害。",
+    "UPGRADE_DESCRIPTION": "*剑术牌 。 NL 本回合无法打出攻击牌和技能牌。 NL 下回合开始时，对随机敌人造成 !D! 点伤害。"
   },
   "NineSwordTechniques:IllusorySword": {
     "NAME": "幻剑术",
-    "DESCRIPTION": "移除所有敌人的护甲。 NL 对所有敌人施加 !M! 层虚弱、 !M! 层易伤。",
-    "UPGRADE_DESCRIPTION": "移除所有敌人的护甲。 NL 对所有敌人施加 !M! 层虚弱、 !M! 层易伤。"
+    "DESCRIPTION": "*剑术牌 。 NL 移除所有敌人的护甲。 NL 对所有敌人施加 !M! 层虚弱、 !M! 层易伤。",
+    "UPGRADE_DESCRIPTION": "*剑术牌 。 NL 移除所有敌人的护甲。 NL 对所有敌人施加 !M! 层虚弱、 !M! 层易伤。"
   },
   "NineSwordTechniques:MindSword": {
     "NAME": "心剑术",
-    "DESCRIPTION": "*消耗 。 NL 移除自身所有减益效果。 NL 获得 !M! 层人工制品。 NL 获得 !B! 点护甲。",
-    "UPGRADE_DESCRIPTION": "*消耗 。 NL 移除自身所有减益效果。 NL 获得 !M! 层人工制品。 NL 获得 !B! 点护甲。"
+    "DESCRIPTION": "*剑术牌 。 NL *消耗 。 NL 移除自身所有减益效果。 NL 获得 !M! 层人工制品。 NL 获得 !B! 点护甲。",
+    "UPGRADE_DESCRIPTION": "*剑术牌 。 NL *消耗 。 NL 移除自身所有减益效果。 NL 获得 !M! 层人工制品。 NL 获得 !B! 点护甲。"
   },
   "NineSwordTechniques:MyriadSword": {
     "NAME": "万剑术",
-    "DESCRIPTION": "随机造成 !D! 点伤害5次。",
-    "UPGRADE_DESCRIPTION": "随机造成 !D! 点伤害6次。"
+    "DESCRIPTION": "*剑术牌 。 NL 随机造成 !D! 点伤害5次。",
+    "UPGRADE_DESCRIPTION": "*剑术牌 。 NL 随机造成 !D! 点伤害6次。"
   },
   "NineSwordTechniques:NinefoldSword": {
     "NAME": "九剑术",
-    "DESCRIPTION": "*消耗 。 NL 造成 !D! 点伤害，获得 !B! 点护甲。",
-    "UPGRADE_DESCRIPTION": "*消耗 。 NL 造成 !D! 点伤害，获得 !B! 点护甲。"
+    "DESCRIPTION": "*剑术牌 。 NL *消耗 。 NL 造成 !D! 点伤害，获得 !B! 点护甲。",
+    "UPGRADE_DESCRIPTION": "*剑术牌 。 NL *消耗 。 NL 造成 !D! 点伤害，获得 !B! 点护甲。"
   },
   "NineSwordTechniques:NonSword": {
     "NAME": "无剑术",
-    "DESCRIPTION": "获得 !M! 层力量、 !M! 层敏捷、 !M! 层集中。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 层力量、 !M! 层敏捷、 !M! 层集中。"
+    "DESCRIPTION": "*剑术牌 。 NL 获得 !M! 层力量、 !M! 层敏捷、 !M! 层集中。",
+    "UPGRADE_DESCRIPTION": "*剑术牌 。 NL 获得 !M! 层力量、 !M! 层敏捷、 !M! 层集中。"
   },
   "NineSwordTechniques:TrueSword": {
     "NAME": "莫剑术",
-    "DESCRIPTION": "造成 !D! 点真实伤害。 NL （视为生命流失，不受力量、虚弱、易伤等效果影响）",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点真实伤害。 NL （视为生命流失，不受虚弱、易伤等效果影响）"
+    "DESCRIPTION": "*剑术牌 。 NL 造成 !D! 点真实伤害。 NL （视为生命流失，不受力量、虚弱、易伤等效果影响）",
+    "UPGRADE_DESCRIPTION": "*剑术牌 。 NL 造成 !D! 点真实伤害。 NL （视为生命流失，不受虚弱、易伤等效果影响）"
   }
 }

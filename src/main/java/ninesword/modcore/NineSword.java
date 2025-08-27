@@ -1,5 +1,6 @@
 package ninesword.modcore;
 
+import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -8,6 +9,9 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.select.GridCardSelectScreen;
 
 import basemod.BaseMod;
@@ -17,9 +21,12 @@ import ninesword.cards.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import com.badlogic.gdx.Gdx;
+import ninesword.relics.TheCanonOfSwordObservation;
+
+import static basemod.helpers.RelicType.SHARED;
 
 @SpireInitializer
-public class NineSword implements EditCardsSubscriber, EditStringsSubscriber, PostDungeonInitializeSubscriber {
+public class NineSword implements EditCardsSubscriber, EditStringsSubscriber, EditRelicsSubscriber, PostDungeonInitializeSubscriber {
     public NineSword() {
         BaseMod.subscribe(this);
     }
@@ -40,6 +47,13 @@ public class NineSword implements EditCardsSubscriber, EditStringsSubscriber, Po
     }
 
     @Override
+    public void receiveEditRelics() {
+        BaseMod.addRelic(new TheCanonOfSwordObservation(), SHARED);
+
+        BaseMod.logger.info("【九剑模组】遗物注册完成");
+    }
+
+    @Override
     public void receiveEditStrings() {
         String lang;
         if (Settings.language == Settings.GameLanguage.ZHS) {
@@ -48,6 +62,9 @@ public class NineSword implements EditCardsSubscriber, EditStringsSubscriber, Po
             lang = "ENG"; // 如果没有相应语言的版本，默认加载英语
         }
         BaseMod.loadCustomStringsFile(CardStrings.class, "NineSwordResources/localization/" + lang + "/cards.json");
+        BaseMod.loadCustomStringsFile(RelicStrings.class, "NineSwordResources/localization/" + lang + "/relics.json");
+        BaseMod.loadCustomStringsFile(PowerStrings.class, "NineSwordResources/localization/" + lang + "/powers.json");
+//        BaseMod.loadCustomStringsFile(CharacterStrings.class, "NineSwordResources/localization/" + lang + "/characters.json");
     }
 
     @Override

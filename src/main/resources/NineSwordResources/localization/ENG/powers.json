@@ -1,0 +1,8 @@
+{
+  "NineSwordTechniques:SwordIntent": {
+    "NAME": "SwordIntent",
+    "DESCRIPTIONS": [
+      "When you play a #ySword Technique Card, consume all stacks of Sword Intent, and play that Sword Technique Card repeatedly #b%d times."
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "NineSwordTechniques:TheCanonOfSwordObservation": {
+    "NAME": "TheCanonOfSwordObservation",
+    "FLAVOR": "Crafted by Bazun'an, the Eighth Sword Immortal, It Masters All Creations of the Sword Ancestor.",
+    "DESCRIPTIONS": [
+      "At the start of each battle, gain #b1 stacks of Sword Intent. NL Sword Intent: When playing a Sword Technique Card, if the number of Sword Intent stacks is greater than 0, consume all Sword Intent stacks. For each stack consumed, play that Sword Technique Card repeatedly once."
+    ]
+  }
+}

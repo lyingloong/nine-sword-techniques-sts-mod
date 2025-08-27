@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
-public class EmotionalSword extends CustomCard {
+public class EmotionalSword extends SwordTechniqueCard {
     public static final String ID = "NineSwordTechniques:EmotionalSword";
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
@@ -40,7 +40,7 @@ public class EmotionalSword extends CustomCard {
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
+    public void repeatEffect(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new com.megacrit.cardcrawl.actions.common.DamageAction(m, new com.megacrit.cardcrawl.cards.DamageInfo(p, this.damage, this.damageTypeForTurn), com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         if (m.getIntentBaseDmg() > 0) { // 判断意图是否为攻击
             this.addToBot(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));

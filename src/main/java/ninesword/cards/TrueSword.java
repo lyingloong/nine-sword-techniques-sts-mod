@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-public class TrueSword extends CustomCard {
+public class TrueSword extends SwordTechniqueCard {
     public static final String ID = "NineSwordTechniques:TrueSword";
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
@@ -43,7 +43,7 @@ public class TrueSword extends CustomCard {
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
+    public void repeatEffect(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new com.megacrit.cardcrawl.actions.common.DamageAction(m, new com.megacrit.cardcrawl.cards.DamageInfo(p, this.baseDamage, DamageInfo.DamageType.HP_LOSS), com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.BLUNT_HEAVY));
     }
 

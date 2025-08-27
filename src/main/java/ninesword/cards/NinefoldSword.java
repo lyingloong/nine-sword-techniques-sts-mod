@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 
-public class NinefoldSword extends CustomCard {
+public class NinefoldSword extends SwordTechniqueCard {
     public static final String ID = "NineSwordTechniques:NinefoldSword";
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
@@ -41,7 +41,7 @@ public class NinefoldSword extends CustomCard {
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
+    public void repeatEffect(AbstractPlayer p, AbstractMonster m) {
         // 造成伤害
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));

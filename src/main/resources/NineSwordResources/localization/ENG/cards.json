@@ -1,47 +1,47 @@
 {
   "NineSwordTechniques:EmotionalSword": {
     "NAME": "Emotional Sword",
-    "DESCRIPTION": "Deal !D! damage. NL If this enemy's intent is Attack, apply !M! Weak. Otherwise, deal !D! damage again.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If this enemy's intent is Attack, apply !M! Weak. Otherwise, deal !D! damage again."
+    "DESCRIPTION": "*Sword *Technique *Card . NL Deal !D! damage. NL If this enemy's intent is Attack, apply !M! Weak. Otherwise, deal !D! damage again.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card . NL Deal !D! damage. NL If this enemy's intent is Attack, apply !M! Weak. Otherwise, deal !D! damage again."
   },
   "NineSwordTechniques:GhostlySword": {
     "NAME": "Ghostly Sword",
-    "DESCRIPTION": "*Return . NL Deal !D! damage. NL Return: Return to hand after resolution.",
-    "UPGRADE_DESCRIPTION": "*Return . NL Deal !D! damage. NL Return: Return to hand after resolution."
+    "DESCRIPTION": "*Sword *Technique *Card . NL *Return . NL Deal !D! damage. NL Return: Return to hand after resolution.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card . NL *Return . NL Deal !D! damage. NL Return: Return to hand after resolution."
   },
   "NineSwordTechniques:HiddenSword": {
     "NAME": "Hidden Sword",
-    "DESCRIPTION": "Cannot play Attack or Skill cards this turn. NL At the start of your next turn, deal !D! damage to a random enemy.",
-    "UPGRADE_DESCRIPTION": "Cannot play Attack or Skill cards this turn. NL At the start of your next turn, deal !D! damage to a random enemy."
+    "DESCRIPTION": "*Sword *Technique *Card . NL Cannot play Attack or Skill cards this turn. NL At the start of your next turn, deal !D! damage to a random enemy.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card . NL Cannot play Attack or Skill cards this turn. NL At the start of your next turn, deal !D! damage to a random enemy."
   },
   "NineSwordTechniques:IllusorySword": {
     "NAME": "Illusory Sword",
-    "DESCRIPTION": "Remove all enemies' Block. NL Apply !M! Weak and !M! Vulnerable to all enemies.",
-    "UPGRADE_DESCRIPTION": "Remove all enemies' Block. NL Apply !M! Weak and !M! Vulnerable to all enemies."
+    "DESCRIPTION": "*Sword *Technique *Card . NL Remove all enemies' Block. NL Apply !M! Weak and !M! Vulnerable to all enemies.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card . NL Remove all enemies' Block. NL Apply !M! Weak and !M! Vulnerable to all enemies."
   },
   "NineSwordTechniques:MindSword": {
     "NAME": "Mind Sword",
-    "DESCRIPTION": "*Exhaust . NL Remove all your Debuffs. NL Gain !M! Artifact. NL Gain !B! Block.",
-    "UPGRADE_DESCRIPTION": "*Exhaust . NL Remove all your Debuffs. NL Gain !M! Artifact. NL Gain !B! Block."
+    "DESCRIPTION": "*Sword *Technique *Card . NL *Exhaust . NL Remove all your Debuffs. NL Gain !M! Artifact. NL Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card . NL *Exhaust . NL Remove all your Debuffs. NL Gain !M! Artifact. NL Gain !B! Block."
   },
   "NineSwordTechniques:MyriadSword": {
     "NAME": "Myriad Sword",
-    "DESCRIPTION": "Deal !D! damage randomly 5 times.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage randomly 6 times."
+    "DESCRIPTION": "*Sword *Technique *Card . NL Deal !D! damage randomly 5 times.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card . NL Deal !D! damage randomly 6 times."
   },
   "NineSwordTechniques:NinefoldSword": {
     "NAME": "Ninefold Sword",
-    "DESCRIPTION": "*Exhaust . NL Deal !D! damage. Gain !B! Block.",
-    "UPGRADE_DESCRIPTION": "*Exhaust . NL Deal !D! damage. Gain !B! Block."
+    "DESCRIPTION": "*Sword *Technique *Card . NL *Exhaust . NL Deal !D! damage. Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card . NL *Exhaust . NL Deal !D! damage. Gain !B! Block."
   },
   "NineSwordTechniques:NonSword": {
     "NAME": "Non Sword",
-    "DESCRIPTION": "Gain !M! Strength, !M! Dexterity, and !M! Focus.",
-    "UPGRADE_DESCRIPTION": "Gain !M! Strength, !M! Dexterity, and !M! Focus."
+    "DESCRIPTION": "*Sword *Technique *Card . NL Gain !M! Strength, !M! Dexterity, and !M! Focus.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card . NL Gain !M! Strength, !M! Dexterity, and !M! Focus."
   },
   "NineSwordTechniques:TrueSword": {
     "NAME": "True Sword",
-    "DESCRIPTION": "Deal !D! True Damage. NL (Counts as HP loss; unaffected by Strength, Weak, Vulnerable, etc.)",
-    "UPGRADE_DESCRIPTION": "Deal !D! True Damage. NL (Counts as HP loss; unaffected by Strength, Weak, Vulnerable, etc.)"
+    "DESCRIPTION": "*Sword *Technique *Card . NL Deal !D! True Damage. NL (Counts as HP loss; unaffected by Strength, Weak, Vulnerable, etc.)",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card . NL Deal !D! True Damage. NL (Counts as HP loss; unaffected by Strength, Weak, Vulnerable, etc.)"
   }
 }

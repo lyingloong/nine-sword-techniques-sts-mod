@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.Random;
 
-public class MyriadSword extends CustomCard {
+public class MyriadSword extends SwordTechniqueCard {
     public static final String ID = "NineSwordTechniques:MyriadSword";
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
@@ -41,7 +41,7 @@ public class MyriadSword extends CustomCard {
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
+    public void repeatEffect(AbstractPlayer p, AbstractMonster m) {
         Random random = new Random();
         for (int i = 0; i < this.attackTimes; i++) {
             AbstractMonster targetMonster = AbstractDungeon.getMonsters().monsters.get(random.nextInt(AbstractDungeon.getMonsters().monsters.size()));

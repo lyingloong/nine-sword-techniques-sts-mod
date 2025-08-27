@@ -1,0 +1,9 @@
+{
+  "NineSwordTechniques:TheCanonOfSwordObservation": {
+    "NAME": "观剑典",
+    "FLAVOR": "第八剑仙八尊谙所作，凡剑祖所创无所不精。",
+    "DESCRIPTIONS": [
+      "每场战斗开始时，获得 #b1 层剑念。 NL 剑念：使用剑术牌时，若剑念层数大于0，则消耗所有剑念，每消耗一层，重复打出该剑术牌一次。"
+    ]
+  }
+}
