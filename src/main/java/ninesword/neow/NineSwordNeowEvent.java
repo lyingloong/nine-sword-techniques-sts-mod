@@ -1,13 +1,20 @@
 package ninesword.neow;
 
 import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.RoomEventDialog;
+import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.neow.NeowEvent;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.vfx.InfiniteSpeechBubble;
+import ninesword.cards.*;
 import ninesword.modspire.ModEnums;
 import ninesword.powers.SwordIntent;
 
@@ -16,6 +23,7 @@ import com.megacrit.cardcrawl.neow.NeowReward;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import ninesword.relics.TheCanonOfSwordObservation;
@@ -107,6 +115,8 @@ class NeowMiniBlessingPatch02 {
 
 @SpirePatch(clz = NeowReward.class, method = "getRewardOptions")
 class GetRewardPatch {
+    public static final String ID = "NineSwordTechniques:NeowReward";
+    private static final CharacterStrings CHARACTER_STRINGS = CardCrawlGame.languagePack.getCharacterString(ID);
     @SpirePostfixPatch
     private static ArrayList<NeowReward.NeowRewardDef> getRewardOptions(ArrayList<NeowReward.NeowRewardDef> __result, NeowReward __instance, int category) {
         // 调试1：打印当前category和原奖励列表长度
@@ -115,7 +125,7 @@ class GetRewardPatch {
 
         // category=4时添加自定义奖励
         if (category == 4) {
-            NeowReward.NeowRewardDef customDef = new NeowReward.NeowRewardDef(ModEnums.TheCanonOfSwordObservation_BONUS, "[ #g获得观剑典 ]");
+            NeowReward.NeowRewardDef customDef = new NeowReward.NeowRewardDef(ModEnums.TheCanonOfSwordObservation_BONUS, CHARACTER_STRINGS.TEXT[0]);
             __result.add(customDef);
             System.out.println("[GetRewardPatch] category=4，已添加自定义奖励，新列表长度：" + __result.size());
             System.out.println("[GetRewardPatch] 自定义奖励desc：" + customDef.desc + "，type：" + customDef.type);
@@ -138,16 +148,33 @@ class ActivatePatch {
         if (__instance.type == ModEnums.TheCanonOfSwordObservation_BONUS) {
             System.out.println("[ActivatePatch] 触发自定义奖励：获得观剑典");
             AbstractRelic targetRelic = new TheCanonOfSwordObservation();
-            // 调试2：确认遗物实例是否创建成功
-            System.out.println("[ActivatePatch] 观剑典遗物是否为null：" + (targetRelic == null));
             System.out.println("[ActivatePatch] 遗物ID：" + targetRelic.relicId);
-
             AbstractDungeon.getCurrRoom().spawnRelicAndObtain(
                     (float)(Settings.WIDTH / 2),
                     (float)(Settings.HEIGHT / 2),
                     targetRelic
             );
             System.out.println("[ActivatePatch] 遗物已生成并发放给玩家");
+
+            ArrayList<AbstractCard> allSwords = new ArrayList<>();
+            allSwords.add(new HiddenSword());
+            allSwords.add(new IllusorySword());
+            allSwords.add(new NonSword());
+            allSwords.add(new MyriadSword());
+            allSwords.add(new EmotionalSword());
+            allSwords.add(new TrueSword());
+            allSwords.add(new GhostlySword());
+            allSwords.add(new MindSword());
+            allSwords.add(new NinefoldSword());
+            Collections.shuffle(allSwords);
+            List<AbstractCard> selectedSwords = new ArrayList<>();
+            for (int i = 0; i < 3; i++) {
+                selectedSwords.add(allSwords.get(i));
+            }
+
+            allSwords.clear();
+            allSwords.addAll(selectedSwords);
+            AbstractDungeon.cardRewardScreen.open(allSwords, (RewardItem)null, NeowReward.TEXT[22]);
         }
     }
 }
