@@ -5,5 +5,13 @@
     "DESCRIPTIONS": [
       "At the start of each battle, gain #b1 stacks of Sword Intent. NL Sword Intent: When playing a Sword Technique Card, if the number of Sword Intent stacks is greater than 0, consume all Sword Intent stacks. For each stack consumed, play that Sword Technique Card repeatedly once."
     ]
+  },
+  "NineSwordTechniques:TheYousiSword": {
+    "NAME": "The Yousi Sword",
+    "FLAVOR": "The World's Most Fearsome Sword",
+    "DESCRIPTIONS": [
+      "Whenever you play your 4th Attack card, gain #b1 stacks Sword Intent. NL Sword Intent: When playing a Sword Technique Card, if the number of Sword Intent stacks is greater than 0, consume all Sword Intent stacks. For each stack consumed, play that Sword Technique Card repeatedly once."
+    ]
   }
 }
+

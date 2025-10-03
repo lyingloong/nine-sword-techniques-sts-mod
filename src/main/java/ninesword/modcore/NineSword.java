@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import com.badlogic.gdx.Gdx;
 import ninesword.relics.TheCanonOfSwordObservation;
+import ninesword.relics.TheYousiSword;
 
 import static basemod.helpers.RelicType.SHARED;
 
@@ -49,6 +50,7 @@ public class NineSword implements EditCardsSubscriber, EditStringsSubscriber, Ed
     @Override
     public void receiveEditRelics() {
         BaseMod.addRelic(new TheCanonOfSwordObservation(), SHARED);
+        BaseMod.addRelic(new TheYousiSword(), SHARED);
 
         BaseMod.logger.info("【九剑模组】遗物注册完成");
     }
