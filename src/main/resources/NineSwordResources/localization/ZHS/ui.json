@@ -3,5 +3,10 @@
     "TEXT": [
       "选择一张基础剑术牌进行顿悟。"
     ]
+  },
+  "NineSwordTechniques:SwordAncestorsLegacy": {
+    "TEXT": [
+      "选择一张剑术牌。"
+    ]
   }
 }

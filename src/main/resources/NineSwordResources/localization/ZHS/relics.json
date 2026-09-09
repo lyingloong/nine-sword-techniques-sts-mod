@@ -1,4 +1,11 @@
 {
+  "NineSwordTechniques:SwordAncestorsLegacy": {
+    "NAME": "剑祖的传承",
+    "FLAVOR": "剑祖之道，留与后来人。",
+    "DESCRIPTIONS": [
+      "右键点击：选择献祭或放弃。献祭会失去 #b10 点生命，然后选择一张剑术牌获得。只能在战斗外使用，且只能使用一次。"
+    ]
+  },
   "NineSwordTechniques:TheCanonOfSwordObservation": {
     "NAME": "观剑典",
     "FLAVOR": "第八剑仙八尊谙所作，凡剑祖所创无所不精。",

@@ -3,5 +3,10 @@
     "TEXT": [
       "Choose a base Sword Technique card to Enlighten."
     ]
+  },
+  "NineSwordTechniques:SwordAncestorsLegacy": {
+    "TEXT": [
+      "Choose a Sword Technique card."
+    ]
   }
 }

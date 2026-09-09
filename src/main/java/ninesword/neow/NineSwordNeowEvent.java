@@ -5,11 +5,9 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.neow.NeowReward;
-import ninesword.cards.SwordCardPool;
+import ninesword.cards.SwordCardChoiceManager;
 import ninesword.modspire.ModEnums;
 
 import java.util.ArrayList;
@@ -55,10 +53,7 @@ public final class NineSwordNeowEvent {
             }
 
             ReflectionHacks.setPrivate(__instance, NeowReward.class, "activated", true);
-            ArrayList<AbstractCard> cards = SwordCardPool.create();
-            String header = CardCrawlGame.languagePack
-                    .getUIString("CardRewardScreen").TEXT[1];
-            AbstractDungeon.cardRewardScreen.open(cards, null, header);
+            SwordCardChoiceManager.request();
             CardCrawlGame.metricData.addNeowData(
                     __instance.type.name(), __instance.drawback.name());
             return SpireReturn.Return(null);

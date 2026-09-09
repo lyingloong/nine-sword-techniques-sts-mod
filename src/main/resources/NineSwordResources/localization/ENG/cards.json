@@ -88,5 +88,13 @@
     "NAME": "Infinite Numeration",
     "DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. Gain !B! Block. NL Each card played this combat adds #b1 to both values; cards played this turn add #b1 more.",
     "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. Gain !B! Block. NL Each card played this combat adds #b1 to both values; cards played this turn add #b1 more."
+  },
+  "NineSwordTechniques:SacrificeLegacyOption": {
+    "NAME": "Sacrifice",
+    "DESCRIPTION": "Lose #b10 HP. NL Choose a Sword Technique card to obtain."
+  },
+  "NineSwordTechniques:AbandonLegacyOption": {
+    "NAME": "Abandon",
+    "DESCRIPTION": "Gain no effect and relinquish this legacy."
   }
 }

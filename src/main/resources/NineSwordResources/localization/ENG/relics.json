@@ -1,4 +1,11 @@
 {
+  "NineSwordTechniques:SwordAncestorsLegacy": {
+    "NAME": "Sword Ancestor's Legacy",
+    "FLAVOR": "The Sword Ancestor's way, left to those who follow.",
+    "DESCRIPTIONS": [
+      "Right-click: choose to Sacrifice or Abandon. Sacrifice makes you lose #b10 HP, then choose a Sword Technique card to obtain. Can only be used outside combat, and only once."
+    ]
+  },
   "NineSwordTechniques:TheCanonOfSwordObservation": {
     "NAME": "The Canon of Sword Observation",
     "FLAVOR": "Crafted by Bazun'an, the Eighth Sword Immortal, who mastered every art created by the Sword Ancestor.",

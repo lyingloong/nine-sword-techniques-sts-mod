@@ -5,8 +5,10 @@ import basemod.helpers.RelicType;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
+import basemod.interfaces.PostCreateStartingRelicsSubscriber;
 import basemod.interfaces.PostUpdateSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
@@ -21,6 +23,7 @@ import ninesword.cards.MindSword;
 import ninesword.cards.MyriadSword;
 import ninesword.cards.NinefoldSword;
 import ninesword.cards.NonSword;
+import ninesword.cards.SwordCardChoiceManager;
 import ninesword.cards.TrueSword;
 import ninesword.cards.UnsheathedBlade;
 import ninesword.cards.evolved.AbsoluteImperialRule;
@@ -35,13 +38,16 @@ import ninesword.enlightenment.EnlightenmentManager;
 import ninesword.relics.EmberSeed;
 import ninesword.relics.EmberWhiteFlame;
 import ninesword.relics.FlameSwordYanmang;
+import ninesword.relics.SwordAncestorsLegacy;
 import ninesword.relics.TheCanonOfSwordObservation;
 import ninesword.relics.TheYousiSword;
 import ninesword.relics.evolution.RelicEvolutionManager;
 
+import java.util.ArrayList;
+
 @SpireInitializer
 public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
-        EditStringsSubscriber, PostUpdateSubscriber {
+        EditStringsSubscriber, PostCreateStartingRelicsSubscriber, PostUpdateSubscriber {
     public NineSword() {
         BaseMod.subscribe(this);
     }
@@ -71,12 +77,21 @@ public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
 
     @Override
     public void receiveEditRelics() {
+        BaseMod.addRelic(new SwordAncestorsLegacy(), RelicType.SHARED);
         BaseMod.addRelic(new TheCanonOfSwordObservation(), RelicType.SHARED);
         BaseMod.addRelic(new TheYousiSword(), RelicType.SHARED);
         BaseMod.addRelic(new FlameSwordYanmang(), RelicType.SHARED);
         BaseMod.addRelic(new EmberSeed(), RelicType.SHARED);
         BaseMod.addRelic(new EmberWhiteFlame(), RelicType.SHARED);
         BaseMod.logger.info("Nine Sword Techniques relics registered");
+    }
+
+    @Override
+    public void receivePostCreateStartingRelics(
+            AbstractPlayer.PlayerClass playerClass, ArrayList<String> relics) {
+        if (!relics.contains(SwordAncestorsLegacy.ID)) {
+            relics.add(SwordAncestorsLegacy.ID);
+        }
     }
 
     @Override
@@ -94,6 +109,7 @@ public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
     public void receivePostUpdate() {
         EnlightenmentManager.update();
         RelicEvolutionManager.update();
+        SwordCardChoiceManager.update();
     }
 
     public static void initialize() {

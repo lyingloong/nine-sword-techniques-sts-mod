@@ -88,5 +88,13 @@
     "NAME": "无限穷数",
     "DESCRIPTION": "*剑术牌。 NL 造成 !D! 点伤害，获得 !B! 点格挡。 NL 本场战斗每打出一张牌，两项数值各增加 #b1 点；本回合打出的牌额外再增加 #b1 点。",
     "UPGRADE_DESCRIPTION": "*剑术牌。 NL 造成 !D! 点伤害，获得 !B! 点格挡。 NL 本场战斗每打出一张牌，两项数值各增加 #b1 点；本回合打出的牌额外再增加 #b1 点。"
+  },
+  "NineSwordTechniques:SacrificeLegacyOption": {
+    "NAME": "献祭",
+    "DESCRIPTION": "失去 #b10 点生命。 NL 选择一张剑术牌获得。"
+  },
+  "NineSwordTechniques:AbandonLegacyOption": {
+    "NAME": "放弃",
+    "DESCRIPTION": "不获得任何效果，并放弃本次传承。"
   }
 }
