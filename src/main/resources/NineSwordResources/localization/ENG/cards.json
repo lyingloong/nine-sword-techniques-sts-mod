@@ -1,47 +1,92 @@
 {
   "NineSwordTechniques:EmotionalSword": {
     "NAME": "Emotional Sword",
-    "DESCRIPTION": "*Sword *Technique *Card . NL Deal !D! damage. NL If this enemy's intent is Attack, apply !M! Weak. Otherwise, deal !D! damage again.",
-    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card . NL Deal !D! damage. NL If this enemy's intent is Attack, apply !M! Weak. Otherwise, deal !D! damage again."
+    "DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. NL If the enemy intends to Attack, apply !M! Weak. Otherwise, deal 10 True Damage.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. NL If the enemy intends to Attack, apply !M! Weak. Otherwise, deal 10 True Damage."
   },
   "NineSwordTechniques:GhostlySword": {
     "NAME": "Ghostly Sword",
-    "DESCRIPTION": "*Sword *Technique *Card . NL *Return . NL Deal !D! damage. NL Return: Return to hand after resolution.",
-    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card . NL *Return . NL Deal !D! damage. NL Return: Return to hand after resolution."
+    "DESCRIPTION": "*Sword *Technique *Card. NL *Return. NL Deal !D! damage. NL Ghostly Sword damage increases by 2 this combat.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL *Return. NL Deal !D! damage. NL Ghostly Sword damage increases by 2 this combat."
   },
   "NineSwordTechniques:HiddenSword": {
     "NAME": "Hidden Sword",
-    "DESCRIPTION": "*Sword *Technique *Card . NL Cannot play Attack or Skill cards this turn. NL At the start of your next turn, deal !D! damage to a random enemy.",
-    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card . NL Cannot play Attack or Skill cards this turn. NL At the start of your next turn, deal !D! damage to a random enemy."
+    "DESCRIPTION": "*Sword *Technique *Card. NL *Exhaust. NL Put an Unsheathed Blade on the bottom of your draw pile. NL End your turn.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL *Exhaust. NL Put an Unsheathed Blade on the bottom of your draw pile. NL End your turn."
   },
   "NineSwordTechniques:IllusorySword": {
     "NAME": "Illusory Sword",
-    "DESCRIPTION": "*Sword *Technique *Card . NL Remove all enemies' Block. NL Apply !M! Weak and !M! Vulnerable to all enemies.",
-    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card . NL Remove all enemies' Block. NL Apply !M! Weak and !M! Vulnerable to all enemies."
+    "DESCRIPTION": "*Sword *Technique *Card. NL Remove all enemies' Block and Buffs. NL Apply !M! Weak and !M! Vulnerable to all enemies.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Remove all enemies' Block and Buffs. NL Apply !M! Weak and !M! Vulnerable to all enemies."
   },
   "NineSwordTechniques:MindSword": {
     "NAME": "Mind Sword",
-    "DESCRIPTION": "*Sword *Technique *Card . NL *Exhaust . NL Remove all your Debuffs. NL Gain !M! Artifact. NL Gain !B! Block.",
-    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card . NL *Exhaust . NL Remove all your Debuffs. NL Gain !M! Artifact. NL Gain !B! Block."
+    "DESCRIPTION": "*Sword *Technique *Card. NL Remove all your Debuffs. NL Gain !M! Artifact. NL Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Remove all your Debuffs. NL Gain !M! Artifact. NL Gain !B! Block."
   },
   "NineSwordTechniques:MyriadSword": {
     "NAME": "Myriad Sword",
-    "DESCRIPTION": "*Sword *Technique *Card . NL Deal !D! damage randomly 5 times.",
-    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card . NL Deal !D! damage randomly 6 times."
+    "DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage randomly 5 times.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage randomly 6 times."
   },
   "NineSwordTechniques:NinefoldSword": {
     "NAME": "Ninefold Sword",
-    "DESCRIPTION": "*Sword *Technique *Card . NL *Exhaust . NL Deal !D! damage. Gain !B! Block.",
-    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card . NL *Exhaust . NL Deal !D! damage. Gain !B! Block."
+    "DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. Gain !B! Block. NL Each card played this turn adds 2 to both values.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. Gain !B! Block. NL Each card played this turn adds 2 to both values."
   },
   "NineSwordTechniques:NonSword": {
     "NAME": "Non Sword",
-    "DESCRIPTION": "*Sword *Technique *Card . NL Gain !M! Strength, !M! Dexterity, and !M! Focus.",
-    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card . NL Gain !M! Strength, !M! Dexterity, and !M! Focus."
+    "DESCRIPTION": "*Sword *Technique *Card. NL Gain !M! Strength, Dexterity, Focus, and Metallicize.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Gain !M! Strength, Dexterity, Focus, and Metallicize."
   },
   "NineSwordTechniques:TrueSword": {
     "NAME": "True Sword",
-    "DESCRIPTION": "*Sword *Technique *Card . NL Deal !D! True Damage. NL (Counts as HP loss; unaffected by Strength, Weak, Vulnerable, etc.)",
-    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card . NL Deal !D! True Damage. NL (Counts as HP loss; unaffected by Strength, Weak, Vulnerable, etc.)"
+    "DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! True Damage. NL (Counts as HP loss; unaffected by Strength, Weak, Vulnerable, etc.)",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! True Damage. NL (Counts as HP loss; unaffected by Strength, Weak, Vulnerable, etc.)"
+  },
+  "NineSwordTechniques:UnsheathedBlade": {
+    "NAME": "Unsheathed Blade",
+    "DESCRIPTION": "*Sword *Technique *Card. NL Double the damage dealt by your Attack cards.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Double the damage dealt by your Attack cards."
+  },
+  "NineSwordTechniques:SpacetimeLeap": {
+    "NAME": "Spacetime Leap",
+    "DESCRIPTION": "*Sword *Technique *Card. NL Remove all enemies' Block and Buffs. NL Apply !M! Weak and !M! Vulnerable to all enemies. NL Retain your hand and unspent Energy this turn.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Remove all enemies' Block and Buffs. NL Apply !M! Weak and !M! Vulnerable to all enemies. NL Retain your hand and unspent Energy this turn."
+  },
+  "NineSwordTechniques:VoidBladeStyle": {
+    "NAME": "Void Blade Style",
+    "DESCRIPTION": "*Sword *Technique *Card. NL Gain !M! Strength, Dexterity, Focus, and Metallicize. NL At the start of each turn, gain #b1 of each again.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Gain !M! Strength, Dexterity, Focus, and Metallicize. NL At the start of each turn, gain #b1 of each again."
+  },
+  "NineSwordTechniques:AbsoluteImperialRule": {
+    "NAME": "Absolute Imperial Rule",
+    "DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage to random enemies !M! times. NL After each hit, subsequent hits from this card deal #b1 more damage to that enemy.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage to random enemies !M! times. NL After each hit, subsequent hits from this card deal #b1 more damage to that enemy."
+  },
+  "NineSwordTechniques:MortalBladeAllLivingFaces": {
+    "NAME": "Mortal Blade: All Living Faces",
+    "DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. NL If the enemy intends to Attack, apply !M! Weak and gain !B! Block. Otherwise, deal #b12 additional True Damage and apply #b2 Vulnerable.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. NL If the enemy intends to Attack, apply !M! Weak and gain !B! Block. Otherwise, deal #b12 additional True Damage and apply #b2 Vulnerable."
+  },
+  "NineSwordTechniques:AzureRiverSwordDomain": {
+    "NAME": "Azure River Sword Domain",
+    "DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! True Damage to all enemies. NL (Counts as HP loss; unaffected by Strength, Weak, Vulnerable, etc.)",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! True Damage to all enemies. NL (Counts as HP loss; unaffected by Strength, Weak, Vulnerable, etc.)"
+  },
+  "NineSwordTechniques:SoulControlTrickery": {
+    "NAME": "Soul Control Trickery",
+    "DESCRIPTION": "*Sword *Technique *Card. NL *Return. NL Deal !D! damage. NL All Ghostly Sword cards deal #b3 additional damage this combat. NL If this kills the enemy, gain [E] .",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL *Return. NL Deal !D! damage. NL All Ghostly Sword cards deal #b3 additional damage this combat. NL If this kills the enemy, gain [E] ."
+  },
+  "NineSwordTechniques:UnderOnesGaze": {
+    "NAME": "Under One's Gaze",
+    "DESCRIPTION": "*Sword *Technique *Card. NL Remove all your Debuffs. NL Gain !M! Artifact and !B! Block. NL Draw #b1 card for each Debuff removed, up to #b3.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Remove all your Debuffs. NL Gain !M! Artifact and !B! Block. NL Draw #b1 card for each Debuff removed, up to #b3."
+  },
+  "NineSwordTechniques:InfiniteNumeration": {
+    "NAME": "Infinite Numeration",
+    "DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. Gain !B! Block. NL Each card played this combat adds #b1 to both values; cards played this turn add #b1 more.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. Gain !B! Block. NL Each card played this combat adds #b1 to both values; cards played this turn add #b1 more."
   }
 }

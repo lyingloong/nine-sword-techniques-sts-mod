@@ -1,17 +1,37 @@
 {
   "NineSwordTechniques:TheCanonOfSwordObservation": {
-    "NAME": "The Canon Of Sword Observation",
-    "FLAVOR": "Crafted by Bazun'an, the Eighth Sword Immortal, It Masters All Creations of the Sword Ancestor.",
+    "NAME": "The Canon of Sword Observation",
+    "FLAVOR": "Crafted by Bazun'an, the Eighth Sword Immortal, who mastered every art created by the Sword Ancestor.",
     "DESCRIPTIONS": [
-      "At the start of each battle, gain #b1 stacks of Sword Intent. NL Sword Intent: When playing a Sword Technique Card, if the number of Sword Intent stacks is greater than 0, consume all Sword Intent stacks. For each stack consumed, play that Sword Technique Card repeatedly once."
+      "On pickup, Enlighten #b1 time. NL Enlighten: Choose an unevolved base Sword Technique card and replace it with its evolved form. If none can evolve, upgrade a random card and gain #b5 Max HP."
     ]
   },
   "NineSwordTechniques:TheYousiSword": {
-    "NAME": "The Yousi Sword",
-    "FLAVOR": "The World's Most Fearsome Sword",
+    "NAME": "Fierce Sword: Yousi",
+    "FLAVOR": "The most fearsome sword under heaven.",
     "DESCRIPTIONS": [
-      "Whenever you play your 4th Attack card, gain #b1 stacks Sword Intent. NL Sword Intent: When playing a Sword Technique Card, if the number of Sword Intent stacks is greater than 0, consume all Sword Intent stacks. For each stack consumed, play that Sword Technique Card repeatedly once."
+      "Attack cards deal #b50% more damage. Whenever you play an Attack, lose #b1 HP."
+    ]
+  },
+  "NineSwordTechniques:FlameSwordYanmang": {
+    "NAME": "Flame Sword: Yanmang",
+    "FLAVOR": "The blade strikes like a serpent, leaving wildfire in its wake.",
+    "DESCRIPTIONS": [
+      "The first time you play an Attack each turn, deal #b4 damage to ALL enemies."
+    ]
+  },
+  "NineSwordTechniques:EmberSeed": {
+    "NAME": "Emberlight Seed",
+    "FLAVOR": "Before the flame awakens, it scorches its bearer.",
+    "DESCRIPTIONS": [
+      "Whenever you win a combat, lose #b6 Max HP. After #b4 victories, evolve into Emberlight White Flame."
+    ]
+  },
+  "NineSwordTechniques:EmberWhiteFlame": {
+    "NAME": "Emberlight White Flame",
+    "FLAVOR": "At the end of the ashes, a white flame is born.",
+    "DESCRIPTIONS": [
+      "On pickup, gain #b30 Max HP. At the start of each turn, non-Boss enemies lose #b10% of their Max HP; Boss enemies lose #b5% instead."
     ]
   }
 }
-

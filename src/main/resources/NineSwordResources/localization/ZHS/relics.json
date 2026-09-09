@@ -3,14 +3,35 @@
     "NAME": "观剑典",
     "FLAVOR": "第八剑仙八尊谙所作，凡剑祖所创无所不精。",
     "DESCRIPTIONS": [
-      "每场战斗开始时，获得 #b1 层剑念。 NL 剑念：使用剑术牌时，若剑念层数大于0，则消耗所有剑念，每消耗一层，重复打出该剑术牌一次。"
+      "拾取时，顿悟 #b1 次。 NL 顿悟：选择一张未进化的基础剑术牌，将其替换为对应的进化剑术牌。若没有可进化的剑术牌，随机升级一张牌并获得 #b5 点最大生命。"
     ]
   },
   "NineSwordTechniques:TheYousiSword": {
-    "NAME": "有四剑",
+    "NAME": "凶剑·有四剑",
     "FLAVOR": "天下第一凶剑。",
     "DESCRIPTIONS": [
-      "每当你打出第四张攻击牌时，获得一层剑念。 NL 剑念：使用剑术牌时，若剑念层数大于0，则消耗所有剑念，每消耗一层，重复打出该剑术牌一次。"
+      "攻击牌造成的伤害提高 #b50% 。每当你打出一张攻击牌，失去 #b1 点生命。"
+    ]
+  },
+  "NineSwordTechniques:FlameSwordYanmang": {
+    "NAME": "炎剑·焱蟒",
+    "FLAVOR": "剑出如蟒，炎流噬野。",
+    "DESCRIPTIONS": [
+      "每回合第一次打出攻击牌时，对所有敌人造成 #b4 点伤害。"
+    ]
+  },
+  "NineSwordTechniques:EmberSeed": {
+    "NAME": "烬照之种",
+    "FLAVOR": "火种未醒，先灼其主。",
+    "DESCRIPTIONS": [
+      "每场战斗胜利时，失去 #b6 点最大生命。累计赢得 #b4 场战斗后，进化为烬照白炎。"
+    ]
+  },
+  "NineSwordTechniques:EmberWhiteFlame": {
+    "NAME": "烬照白炎",
+    "FLAVOR": "灰烬尽头，白炎新生。",
+    "DESCRIPTIONS": [
+      "拾取时，获得 #b30 点最大生命。每回合开始时，所有非首领敌人失去其最大生命的 #b10% ，首领敌人改为 #b5% 。"
     ]
   }
 }

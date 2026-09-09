@@ -1,8 +1,20 @@
 {
-  "NineSwordTechniques:SwordIntent": {
-    "NAME": "Sword Intent",
+  "NineSwordTechniques:UnsheathedBladePower": {
+    "NAME": "Unsheathed Blade",
     "DESCRIPTIONS": [
-      "When you play a #ySword Technique Card, consume all stacks of Sword Intent, and play that Sword Technique Card repeatedly #b%d times."
+      "Each stack doubles the damage dealt by Attack cards."
+    ]
+  },
+  "NineSwordTechniques:GhostlySwordPower": {
+    "NAME": "Ghostly Sword",
+    "DESCRIPTIONS": [
+      "Ghostly Sword deals #b%d additional damage this combat."
+    ]
+  },
+  "NineSwordTechniques:VoidBladeStylePower": {
+    "NAME": "Void Blade Style",
+    "DESCRIPTIONS": [
+      "At the start of each turn, gain #b%d Strength, Dexterity, Focus, and Metallicize."
     ]
   }
 }

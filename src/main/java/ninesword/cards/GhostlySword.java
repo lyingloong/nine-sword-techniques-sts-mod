@@ -1,63 +1,74 @@
 package ninesword.cards;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import ninesword.powers.GhostlySwordPower;
 
 public class GhostlySword extends SwordTechniqueCard {
     public static final String ID = "NineSwordTechniques:GhostlySword";
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
-    private static final String NAME = CARD_STRINGS.NAME;
-    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final String IMG_PATH = "NineSwordResources/img/cards/GhostlySword.png";
-    private static final int COST = 1;
-    private static final CardType TYPE = CardType.ATTACK;
-    private static final CardColor COLOR = CardColor.COLORLESS;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
 
     public GhostlySword() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.baseDamage = 8;
+        super(ID, CARD_STRINGS.NAME, IMG_PATH, 1, CARD_STRINGS.DESCRIPTION,
+                CardType.ATTACK, CardColor.COLORLESS, CardRarity.RARE, CardTarget.ENEMY);
+        baseDamage = damage = 8;
+        returnToHand = true;
     }
 
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(2);
-            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(2);
+            rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 
     @Override
-    public void repeatEffect(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new com.megacrit.cardcrawl.actions.common.DamageAction(m, new com.megacrit.cardcrawl.cards.DamageInfo(p, this.damage, this.damageTypeForTurn), com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        this.addToBot(new AbstractGameAction() {
-            @Override
-            public void update() {
-                isDone = true;
-                // 向动作队列末尾添加最终的移回手牌操作
-                AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
-                    @Override
-                    public void update() {
-                        // 从弃牌堆中移除并添加到手牌
-                        if (p.discardPile.contains(GhostlySword.this)) {
-                            p.discardPile.removeCard(GhostlySword.this);
-                            p.hand.addToHand(GhostlySword.this);
-                            p.hand.refreshHandLayout();
-                        }
-                        isDone = true;
-                    }
-                });
-            }
-        });
+    protected void repeatEffect(AbstractPlayer p, AbstractMonster m) {
+        if (m == null || m.isDeadOrEscaped()) {
+            return;
+        }
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
+                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        addToBot(new ApplyPowerAction(p, p, new GhostlySwordPower(p, 2), 2));
+    }
+
+    @Override
+    public void applyPowers() {
+        int originalBaseDamage = baseDamage;
+        baseDamage += combatDamageBonus();
+        super.applyPowers();
+        baseDamage = originalBaseDamage;
+        isDamageModified = damage != baseDamage;
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster monster) {
+        int originalBaseDamage = baseDamage;
+        baseDamage += combatDamageBonus();
+        super.calculateCardDamage(monster);
+        baseDamage = originalBaseDamage;
+        isDamageModified = damage != baseDamage;
+    }
+
+    private int combatDamageBonus() {
+        if (AbstractDungeon.player == null) {
+            return 0;
+        }
+        GhostlySwordPower power = (GhostlySwordPower) AbstractDungeon.player
+                .getPower(GhostlySwordPower.POWER_ID);
+        return power == null ? 0 : power.amount;
     }
 
     @Override

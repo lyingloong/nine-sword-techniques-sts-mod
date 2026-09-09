@@ -1,47 +1,92 @@
 {
   "NineSwordTechniques:EmotionalSword": {
     "NAME": "情剑术",
-    "DESCRIPTION": "*剑术牌 。 NL 造成 !D! 点伤害。 NL 如果该敌人的意图为攻击，则施加 !M! 层虚弱，否则再造成 !D! 点伤害。",
-    "UPGRADE_DESCRIPTION": "*剑术牌 。 NL 造成 !D! 点伤害。 NL 如果该敌人的意图为攻击，则施加 !M! 层虚弱，否则再造成 !D! 点伤害。"
+    "DESCRIPTION": "*剑术牌。 NL 造成 !D! 点伤害。 NL 如果敌人的意图为攻击，则施加 !M! 层虚弱，否则再造成10点真实伤害。",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL 造成 !D! 点伤害。 NL 如果敌人的意图为攻击，则施加 !M! 层虚弱，否则再造成10点真实伤害。"
   },
   "NineSwordTechniques:GhostlySword": {
     "NAME": "鬼剑术",
-    "DESCRIPTION": "*剑术牌 。 NL *返回。 NL 造成 !D! 点伤害。 NL 返回：结算后返回手牌。",
-    "UPGRADE_DESCRIPTION": "*剑术牌 。 NL *返回。 NL 造成 !D! 点伤害。 NL 返回：结算后返回手牌。"
+    "DESCRIPTION": "*剑术牌。 NL *返回。 NL 造成 !D! 点伤害。 NL 本场战斗中鬼剑术伤害提高2点。",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL *返回。 NL 造成 !D! 点伤害。 NL 本场战斗中鬼剑术伤害提高2点。"
   },
   "NineSwordTechniques:HiddenSword": {
     "NAME": "藏剑术",
-    "DESCRIPTION": "*剑术牌 。 NL 本回合无法打出攻击牌和技能牌。 NL 下回合开始时，对随机敌人造成 !D! 点伤害。",
-    "UPGRADE_DESCRIPTION": "*剑术牌 。 NL 本回合无法打出攻击牌和技能牌。 NL 下回合开始时，对随机敌人造成 !D! 点伤害。"
+    "DESCRIPTION": "*剑术牌。 NL *消耗。 NL 将一张出鞘剑置于抽牌堆底。 NL 结束回合。",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL *消耗。 NL 将一张出鞘剑置于抽牌堆底。 NL 结束回合。"
   },
   "NineSwordTechniques:IllusorySword": {
     "NAME": "幻剑术",
-    "DESCRIPTION": "*剑术牌 。 NL 移除所有敌人的护甲。 NL 对所有敌人施加 !M! 层虚弱、 !M! 层易伤。",
-    "UPGRADE_DESCRIPTION": "*剑术牌 。 NL 移除所有敌人的护甲。 NL 对所有敌人施加 !M! 层虚弱、 !M! 层易伤。"
+    "DESCRIPTION": "*剑术牌。 NL 移除所有敌人的护甲和增益效果。 NL 对所有敌人施加 !M! 层虚弱和易伤。",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL 移除所有敌人的护甲和增益效果。 NL 对所有敌人施加 !M! 层虚弱和易伤。"
   },
   "NineSwordTechniques:MindSword": {
     "NAME": "心剑术",
-    "DESCRIPTION": "*剑术牌 。 NL *消耗 。 NL 移除自身所有减益效果。 NL 获得 !M! 层人工制品。 NL 获得 !B! 点护甲。",
-    "UPGRADE_DESCRIPTION": "*剑术牌 。 NL *消耗 。 NL 移除自身所有减益效果。 NL 获得 !M! 层人工制品。 NL 获得 !B! 点护甲。"
+    "DESCRIPTION": "*剑术牌。 NL 移除自身所有减益效果。 NL 获得 !M! 层人工制品。 NL 获得 !B! 点格挡。",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL 移除自身所有减益效果。 NL 获得 !M! 层人工制品。 NL 获得 !B! 点格挡。"
   },
   "NineSwordTechniques:MyriadSword": {
     "NAME": "万剑术",
-    "DESCRIPTION": "*剑术牌 。 NL 随机造成 !D! 点伤害5次。",
-    "UPGRADE_DESCRIPTION": "*剑术牌 。 NL 随机造成 !D! 点伤害6次。"
+    "DESCRIPTION": "*剑术牌。 NL 随机造成 !D! 点伤害5次。",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL 随机造成 !D! 点伤害6次。"
   },
   "NineSwordTechniques:NinefoldSword": {
     "NAME": "九剑术",
-    "DESCRIPTION": "*剑术牌 。 NL *消耗 。 NL 造成 !D! 点伤害，获得 !B! 点护甲。",
-    "UPGRADE_DESCRIPTION": "*剑术牌 。 NL *消耗 。 NL 造成 !D! 点伤害，获得 !B! 点护甲。"
+    "DESCRIPTION": "*剑术牌。 NL 造成 !D! 点伤害，获得 !B! 点格挡。 NL 本回合每打出一张牌，伤害和格挡各增加2点。",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL 造成 !D! 点伤害，获得 !B! 点格挡。 NL 本回合每打出一张牌，伤害和格挡各增加2点。"
   },
   "NineSwordTechniques:NonSword": {
     "NAME": "无剑术",
-    "DESCRIPTION": "*剑术牌 。 NL 获得 !M! 层力量、 !M! 层敏捷、 !M! 层集中。",
-    "UPGRADE_DESCRIPTION": "*剑术牌 。 NL 获得 !M! 层力量、 !M! 层敏捷、 !M! 层集中。"
+    "DESCRIPTION": "*剑术牌。 NL 获得 !M! 层力量、敏捷、集中和金属化。",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL 获得 !M! 层力量、敏捷、集中和金属化。"
   },
   "NineSwordTechniques:TrueSword": {
     "NAME": "莫剑术",
-    "DESCRIPTION": "*剑术牌 。 NL 造成 !D! 点真实伤害。 NL （视为生命流失，不受力量、虚弱、易伤等效果影响）",
-    "UPGRADE_DESCRIPTION": "*剑术牌 。 NL 造成 !D! 点真实伤害。 NL （视为生命流失，不受虚弱、易伤等效果影响）"
+    "DESCRIPTION": "*剑术牌。 NL 造成 !D! 点真实伤害。 NL （视为生命流失，不受力量、虚弱、易伤等效果影响）",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL 造成 !D! 点真实伤害。 NL （视为生命流失，不受力量、虚弱、易伤等效果影响）"
+  },
+  "NineSwordTechniques:UnsheathedBlade": {
+    "NAME": "出鞘剑",
+    "DESCRIPTION": "*剑术牌。 NL 使你的攻击牌造成的伤害翻倍。",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL 使你的攻击牌造成的伤害翻倍。"
+  },
+  "NineSwordTechniques:SpacetimeLeap": {
+    "NAME": "时空跃迁",
+    "DESCRIPTION": "*剑术牌。 NL 移除所有敌人的护甲和增益效果。 NL 对所有敌人施加 !M! 层虚弱和易伤。 NL 保留本回合的手牌与剩余能量。",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL 移除所有敌人的护甲和增益效果。 NL 对所有敌人施加 !M! 层虚弱和易伤。 NL 保留本回合的手牌与剩余能量。"
+  },
+  "NineSwordTechniques:VoidBladeStyle": {
+    "NAME": "无有剑流",
+    "DESCRIPTION": "*剑术牌。 NL 获得 !M! 层力量、敏捷、集中和金属化。 NL 每回合开始时，再各获得 #b1 层。",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL 获得 !M! 层力量、敏捷、集中和金属化。 NL 每回合开始时，再各获得 #b1 层。"
+  },
+  "NineSwordTechniques:AbsoluteImperialRule": {
+    "NAME": "绝对帝制",
+    "DESCRIPTION": "*剑术牌。 NL 随机造成 !D! 点伤害 !M! 次。 NL 每次命中后，本牌对该敌人的后续伤害增加 #b1 点。",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL 随机造成 !D! 点伤害 !M! 次。 NL 每次命中后，本牌对该敌人的后续伤害增加 #b1 点。"
+  },
+  "NineSwordTechniques:MortalBladeAllLivingFaces": {
+    "NAME": "红尘剑·众生相",
+    "DESCRIPTION": "*剑术牌。 NL 造成 !D! 点伤害。 NL 若敌人的意图为攻击，施加 !M! 层虚弱并获得 !B! 点格挡；否则再造成 #b12 点真实伤害并施加 #b2 层易伤。",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL 造成 !D! 点伤害。 NL 若敌人的意图为攻击，施加 !M! 层虚弱并获得 !B! 点格挡；否则再造成 #b12 点真实伤害并施加 #b2 层易伤。"
+  },
+  "NineSwordTechniques:AzureRiverSwordDomain": {
+    "NAME": "青河剑界",
+    "DESCRIPTION": "*剑术牌。 NL 对所有敌人造成 !D! 点真实伤害。 NL （视为生命流失，不受力量、虚弱、易伤等效果影响）",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL 对所有敌人造成 !D! 点真实伤害。 NL （视为生命流失，不受力量、虚弱、易伤等效果影响）"
+  },
+  "NineSwordTechniques:SoulControlTrickery": {
+    "NAME": "御魂诡术",
+    "DESCRIPTION": "*剑术牌。 NL *返回。 NL 造成 !D! 点伤害。 NL 本场战斗中所有鬼剑系牌的伤害提高 #b3 点。 NL 若击杀敌人，获得 [E] 。",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL *返回。 NL 造成 !D! 点伤害。 NL 本场战斗中所有鬼剑系牌的伤害提高 #b3 点。 NL 若击杀敌人，获得 [E] 。"
+  },
+  "NineSwordTechniques:UnderOnesGaze": {
+    "NAME": "目下神佛",
+    "DESCRIPTION": "*剑术牌。 NL 移除自身所有减益效果。 NL 获得 !M! 层人工制品和 !B! 点格挡。 NL 每移除一种减益，抽 #b1 张牌，最多 #b3 张。",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL 移除自身所有减益效果。 NL 获得 !M! 层人工制品和 !B! 点格挡。 NL 每移除一种减益，抽 #b1 张牌，最多 #b3 张。"
+  },
+  "NineSwordTechniques:InfiniteNumeration": {
+    "NAME": "无限穷数",
+    "DESCRIPTION": "*剑术牌。 NL 造成 !D! 点伤害，获得 !B! 点格挡。 NL 本场战斗每打出一张牌，两项数值各增加 #b1 点；本回合打出的牌额外再增加 #b1 点。",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL 造成 !D! 点伤害，获得 !B! 点格挡。 NL 本场战斗每打出一张牌，两项数值各增加 #b1 点；本回合打出的牌额外再增加 #b1 点。"
   }
 }

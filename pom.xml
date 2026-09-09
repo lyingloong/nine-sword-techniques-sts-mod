@@ -13,12 +13,12 @@
         —I Have a Body of Passive Skills
 
         - Added colorless cards for the Nine Great Swordsmanship.
-        - You can choose and obtain one colorless swordsmanship card at the start.
+        - Neow's reward pool can offer a choice of one colorless sword technique card.
 
         九大剑术，十八剑流，三千剑道，皆自剑楼收录剑祖出。——《我有一身被动技》
 
         - 添加了九大剑术的无色牌。
-        - 开局可以选择并获得一张剑术无色牌。
+        - 涅奥的奖励池可能提供一次剑术无色牌选择。
 
 
         《剑经》
@@ -27,6 +27,7 @@
     </description>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <SlayTheSpire.version>12-22-2020</SlayTheSpire.version>

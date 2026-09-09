@@ -1,8 +1,20 @@
 {
-  "NineSwordTechniques:SwordIntent": {
-    "NAME": "剑念",
+  "NineSwordTechniques:UnsheathedBladePower": {
+    "NAME": "出鞘剑",
     "DESCRIPTIONS": [
-      "当你使用 #y剑术牌时，消耗所有剑念，重复打出该剑术牌 #b%d 次。"
+      "每层使攻击牌造成的伤害翻倍。"
+    ]
+  },
+  "NineSwordTechniques:GhostlySwordPower": {
+    "NAME": "鬼剑术",
+    "DESCRIPTIONS": [
+      "本场战斗中，鬼剑术伤害提高 #b%d 点。"
+    ]
+  },
+  "NineSwordTechniques:VoidBladeStylePower": {
+    "NAME": "无有剑流",
+    "DESCRIPTIONS": [
+      "每回合开始时，获得 #b%d 层力量、敏捷、集中和金属化。"
     ]
   }
 }
