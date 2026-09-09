@@ -1,21 +1,86 @@
 # 九大剑术 (Nine Sword Techniques)
+
 > 九大剑术，十八剑流，三千剑道，皆自剑楼收录剑祖出。——《我有一身被动技》  
 > The Nine Great Swordsmanship, the Eighteen Sword Styles, and the Three Thousand Swordsmanship Paths—all originated from the Sword Ancestor recorded in the Sword Tower. — I Have a Body of Passive Skills
 
-## 模组简介 (Mod Introduction)
-本模组为《杀戮尖塔 (Slay the Spire)》新增「九大剑术」主题内容，新增特色卡牌、遗物、专属机制，为游戏带来全新的战斗体验。
-##### 在 **Steam** 上订阅：**https://steamcommunity.com/sharedfiles/filedetails/?id=3554467601**
+《杀戮尖塔》九大剑术主题模组，加入一套可通过“顿悟”进化的稀有无色牌，以及围绕剑术构筑设计的遗物与涅奥奖励。
 
-## 核心内容 (Core Content)
-### 新增内容
-- 九大剑术专属**无色卡牌**
-- 九大剑术主题**专属遗物**
-- 开局自定义选项：
-  - 开局可选择并获得1张指定的剑术无色牌
-  - 新增开局选项：直接获取模组专属遗物
-- 全新常驻能力 (Power)：「剑念」
+[Steam 创意工坊页面](https://steamcommunity.com/sharedfiles/filedetails/?id=3554467601)
 
-### 背景设定 (Lore)
+## 模组内容
+
+- 9 张基础剑术牌，以及一一对应的 9 张顿悟形态。
+- 5 件主题遗物，其中包括会在战斗中完成进化的烬照之种。
+- 涅奥的普通奖励池中可能出现“选择并获得一张剑术无色牌”。
+- 简体中文与英文文本。
+
+基础剑术牌均为稀有无色牌，顿悟形态为特殊无色牌。部分剑术使用以下专属规则：
+
+- **真实伤害**：以生命流失结算，不受力量、虚弱和易伤等常规伤害修正影响。
+- **返回**：卡牌结算后返回手牌。
+- **鬼剑系牌**：鬼剑术与御魂诡术共享本场战斗的伤害增益。
+
+## 顿悟
+
+顿悟时，从牌组中选择一张尚未进化的基础剑术牌，将其替换为对应的顿悟形态。新牌会继承原牌的升级状态、UUID、瓶装标记及 `misc` 数据。
+
+若牌组中没有可进化的剑术牌，则随机升级一张可升级的牌，并获得 5 点最大生命。当前可通过拾取“观剑典”触发一次顿悟。
+
+| 基础剑术 | 顿悟形态 |
+| --- | --- |
+| 藏剑术 / Hidden Sword | 出鞘剑 / Unsheathed Blade |
+| 幻剑术 / Illusory Sword | 时空跃迁 / Spacetime Leap |
+| 无剑术 / Non Sword | 无有剑流 / Void Blade Style |
+| 万剑术 / Myriad Sword | 绝对帝制 / Absolute Imperial Rule |
+| 情剑术 / Emotional Sword | 红尘剑·众生相 / Mortal Blade: All Living Faces |
+| 莫剑术 / True Sword | 青河剑界 / Azure River Sword Domain |
+| 鬼剑术 / Ghostly Sword | 御魂诡术 / Soul Control Trickery |
+| 心剑术 / Mind Sword | 目下神佛 / Under One's Gaze |
+| 九剑术 / Ninefold Sword | 无限穷数 / Infinite Numeration |
+
+完整卡牌数值及后续概念见 [设计文档](doc/9swords-design.txt)。
+
+## 遗物
+
+| 遗物 | 稀有度 | 效果 |
+| --- | :--: | --- |
+| 观剑典 | 罕见 | 拾取时顿悟一次。 |
+| 凶剑·有四剑 | Boss | 攻击牌伤害提高 50%；每打出一张攻击牌，失去 1 点生命。 |
+| 炎剑·焱蟒 | 普通 | 每回合第一次打出攻击牌时，对所有敌人造成 4 点伤害。 |
+| 烬照之种 | 普通 | 每场战斗胜利时失去 6 点最大生命；累计赢得 4 场战斗后进化。 |
+| 烬照白炎 | 特殊 | 拾取时获得 30 点最大生命；每回合开始时，非首领敌人失去其最大生命的 10%，首领敌人改为 5%。 |
+
+## 安装
+
+运行本模组需要：
+
+- 《杀戮尖塔》
+- ModTheSpire
+- BaseMod
+
+可直接通过上方 Steam 创意工坊页面订阅。手动安装时，将构建生成的 `nine-sword-techniques.jar` 放入游戏的 `mods` 目录，并通过 ModTheSpire 启动。
+
+## 本地开发
+
+项目使用 Java 8 与 Maven 构建。首次在本机开发时，需要根据实际安装位置调整：
+
+- `pom.xml` 中的 `Steam.path`
+- `.vscode/launch.json` 中的 `cwd`、`javaExec` 和 `classPaths`
+- 确保终端可以直接执行 `mvn`
+
+执行构建：
+
+```powershell
+mvn clean package
+```
+
+`package` 阶段会生成 `target/nine-sword-techniques.jar`，并按照 `pom.xml` 的配置复制到游戏的 `mods` 目录。在 VS Code 中选择 `Run Mod` 调试配置后按 `F5`，会先运行 `maven-package` 任务，再通过 ModTheSpire 启动游戏。
+
+## 背景设定 · 《剑经》
+
+<details>
+<summary>展开阅读完整背景设定</summary>
+
 > 非葬剑冢亲传，自行避视，如遭反噬，一切自负。—— 温庭  
 > 寒塑之纪，穷武之元，生种短寿，万籁喑哑。祈黎夜而疏星斗，告长虹而霁灵霄。晦月当空，狈鼠匍首得道，玉灵脱石，人主不得善终。是以烟波万里，不见龙蛟，雪山千尺，白骨累筑。濛濛乎蛮野氤雾，草枯石萎，栾栾乎凇霭凝相，阴祟睥目。尝粟无味，渴血生欢，体不能张，痴神妄想。  
 > 道种生障，禽兽反妖，植绿褪灰，翳云伸爪。凡近道者趋步不前，凡远道者一步百丈。阴阳颠倒，纲常紊乱，昼夜失时，大世逆反。凡无生相尽显乖戾，凡有生相皆丢貌品。浮萍微末，吞沧海分于子腹，蓬蒿不语，笑天柱折于秋风。  
@@ -27,3 +92,5 @@
 > 于是造幻、阵九、势万、真莫、空无、本心、御鬼、封藏，终悟不世至情，方得开门玄妙，敕列名剑廿一，归并造化本真。  
 > 异世衍停今下，黑岚遮眼，灾祸止步跟前，心惹尘埃。铸剑楼，还本剑，锁魔灵，归原命。东山剑麻，植刻千秋功绩，天境唤请，且看风云又新。  
 > 自在飞升，逍遥世外，高寻道义，再续前明。后来者所以读剑读木，得悟玄机，可见真我。
+
+</details>
