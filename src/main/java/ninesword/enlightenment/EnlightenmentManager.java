@@ -6,6 +6,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.BottledFlame;
+import com.megacrit.cardcrawl.relics.BottledLightning;
+import com.megacrit.cardcrawl.relics.BottledTornado;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -21,6 +24,20 @@ public final class EnlightenmentManager {
 
     public static void request() {
         pendingCount++;
+    }
+
+    public static int getPendingCountForSave() {
+        return pendingCount;
+    }
+
+    public static void restorePendingCount(int count) {
+        pendingCount = Math.max(0, count);
+        choosingCard = false;
+    }
+
+    public static void clearPendingCount() {
+        pendingCount = 0;
+        choosingCard = false;
     }
 
     public static void update() {
@@ -76,12 +93,15 @@ public final class EnlightenmentManager {
         AbstractDungeon.gridSelectScreen.selectedCards.clear();
         int deckIndex = findDeckIndex(selected);
         if (deckIndex >= 0) {
-            AbstractCard evolved = SwordEvolution.evolve(
-                    AbstractDungeon.player.masterDeck.group.get(deckIndex));
+            AbstractCard source = AbstractDungeon.player.masterDeck.group.get(deckIndex);
+            AbstractCard evolved = SwordEvolution.evolve(source);
             if (evolved != null) {
                 AbstractDungeon.player.masterDeck.group.set(deckIndex, evolved);
+                source.onRemoveFromMasterDeck();
+                rebindBottledRelics(evolved);
                 notifyMasterDeckChanged();
-                AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(evolved));
+                AbstractDungeon.effectList.add(
+                        new ShowCardBrieflyEffect(evolved.makeStatEquivalentCopy()));
                 AbstractDungeon.topLevelEffects.add(
                         new UpgradeShineEffect(Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
             }
@@ -107,7 +127,8 @@ public final class EnlightenmentManager {
             card.upgrade();
             AbstractDungeon.player.bottledCardUpgradeCheck(card);
             notifyMasterDeckChanged();
-            AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(card));
+            AbstractDungeon.effectList.add(
+                    new ShowCardBrieflyEffect(card.makeStatEquivalentCopy()));
             AbstractDungeon.topLevelEffects.add(
                     new UpgradeShineEffect(Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
         }
@@ -118,5 +139,27 @@ public final class EnlightenmentManager {
         for (AbstractRelic relic : AbstractDungeon.player.relics) {
             relic.onMasterDeckChange();
         }
+    }
+
+    private static void rebindBottledRelics(AbstractCard card) {
+        if (card.inBottleFlame) {
+            AbstractRelic relic = AbstractDungeon.player.getRelic(BottledFlame.ID);
+            if (relic instanceof BottledFlame) {
+                ((BottledFlame) relic).card = card;
+            }
+        }
+        if (card.inBottleLightning) {
+            AbstractRelic relic = AbstractDungeon.player.getRelic(BottledLightning.ID);
+            if (relic instanceof BottledLightning) {
+                ((BottledLightning) relic).card = card;
+            }
+        }
+        if (card.inBottleTornado) {
+            AbstractRelic relic = AbstractDungeon.player.getRelic(BottledTornado.ID);
+            if (relic instanceof BottledTornado) {
+                ((BottledTornado) relic).card = card;
+            }
+        }
+        AbstractDungeon.player.bottledCardUpgradeCheck(card);
     }
 }

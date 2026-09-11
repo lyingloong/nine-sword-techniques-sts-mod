@@ -56,8 +56,11 @@ import java.util.ArrayList;
 @SpireInitializer
 public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
         EditStringsSubscriber, PostCreateStartingRelicsSubscriber, PostUpdateSubscriber {
+    private static final NineSwordRunState RUN_STATE = new NineSwordRunState();
+
     public NineSword() {
         BaseMod.subscribe(this);
+        BaseMod.addSaveField(NineSwordRunState.SAVE_KEY, RUN_STATE);
     }
 
     @Override
@@ -102,6 +105,7 @@ public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
     @Override
     public void receivePostCreateStartingRelics(
             AbstractPlayer.PlayerClass playerClass, ArrayList<String> relics) {
+        RUN_STATE.clear();
         if (!relics.contains(SwordAncestorsLegacy.ID)) {
             relics.add(SwordAncestorsLegacy.ID);
         }

@@ -18,27 +18,29 @@ public class FlameSwordYanmang extends CustomRelic {
     private static final String OUTLINE_PATH =
             "NineSwordResources/img/relics/MyRelic_Outline.png";
     private static final int DAMAGE = 4;
-    private boolean triggeredThisTurn;
+    private static final int READY_COUNTER = -1;
+    private static final int TRIGGERED_COUNTER = -2;
 
     public FlameSwordYanmang() {
         super(ID, ImageMaster.loadImage(IMG_PATH), ImageMaster.loadImage(OUTLINE_PATH),
                 RelicTier.COMMON, LandingSound.SOLID);
+        counter = READY_COUNTER;
     }
 
     @Override
     public void atBattleStart() {
-        triggeredThisTurn = false;
+        setCounter(READY_COUNTER);
     }
 
     @Override
     public void atTurnStart() {
-        triggeredThisTurn = false;
+        setCounter(READY_COUNTER);
     }
 
     @Override
     public void onPlayCard(AbstractCard card, AbstractMonster monster) {
-        if (!triggeredThisTurn && card.type == AbstractCard.CardType.ATTACK) {
-            triggeredThisTurn = true;
+        if (card != null && counter == READY_COUNTER && card.type == AbstractCard.CardType.ATTACK) {
+            setCounter(TRIGGERED_COUNTER);
             flash();
             addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, DAMAGE,

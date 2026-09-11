@@ -8,7 +8,7 @@
   "NineSwordTechniques:GhostlySwordPower": {
     "NAME": "鬼剑术",
     "DESCRIPTIONS": [
-      "本场战斗中，鬼剑术伤害提高 #b%d 点。"
+      "本场战斗中，所有鬼剑系牌伤害提高 #b%d 点。"
     ]
   },
   "NineSwordTechniques:VoidBladeStylePower": {

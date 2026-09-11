@@ -30,7 +30,7 @@ public class TheYousiSword extends CustomRelic {
 
     @Override
     public void onPlayCard(AbstractCard card, AbstractMonster monster) {
-        if (card.type == AbstractCard.CardType.ATTACK) {
+        if (card != null && card.type == AbstractCard.CardType.ATTACK) {
             flash();
             addToBot(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, 1));
         }

@@ -5,30 +5,24 @@ import ninesword.relics.EmberSeed;
 import ninesword.relics.EmberWhiteFlame;
 
 public final class RelicEvolutionManager {
-    private static boolean emberWhiteFlamePending;
-
     private RelicEvolutionManager() {
-    }
-
-    public static void requestEmberWhiteFlameEvolution() {
-        emberWhiteFlamePending = true;
     }
 
     public static void update() {
         if (AbstractDungeon.player == null) {
-            emberWhiteFlamePending = false;
             return;
         }
-        if (!emberWhiteFlamePending) {
+        int relicIndex = findRelicIndex();
+        if (relicIndex < 0) {
+            return;
+        }
+        if (AbstractDungeon.player.relics.get(relicIndex).counter
+                < EmberSeed.VICTORIES_TO_EVOLVE) {
             return;
         }
 
-        int relicIndex = findRelicIndex();
-        if (relicIndex >= 0) {
-            AbstractDungeon.player.relics.get(relicIndex).onUnequip();
-            new EmberWhiteFlame().instantObtain(AbstractDungeon.player, relicIndex, true);
-        }
-        emberWhiteFlamePending = false;
+        AbstractDungeon.player.relics.get(relicIndex).onUnequip();
+        new EmberWhiteFlame().instantObtain(AbstractDungeon.player, relicIndex, true);
     }
 
     private static int findRelicIndex() {

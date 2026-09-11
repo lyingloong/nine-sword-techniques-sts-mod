@@ -22,7 +22,7 @@ public class SoulControlTrickery extends SwordTechniqueCard {
     public SoulControlTrickery() {
         super(ID, CARD_STRINGS.NAME, IMG_PATH, 1, CARD_STRINGS.DESCRIPTION,
                 CardType.ATTACK, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.ENEMY);
-        baseDamage = damage = 8;
+        baseDamage = damage = 4;
         returnToHand = true;
     }
 

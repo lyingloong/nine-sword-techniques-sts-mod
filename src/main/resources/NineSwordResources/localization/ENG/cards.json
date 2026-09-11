@@ -6,8 +6,8 @@
   },
   "NineSwordTechniques:GhostlySword": {
     "NAME": "Ghostly Sword",
-    "DESCRIPTION": "*Sword *Technique *Card. NL *Return. NL Deal !D! damage. NL Ghostly Sword damage increases by 2 this combat.",
-    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL *Return. NL Deal !D! damage. NL Ghostly Sword damage increases by 2 this combat."
+    "DESCRIPTION": "*Sword *Technique *Card. NL *Return. NL Deal !D! damage. NL All Ghostly Sword technique cards deal 2 additional damage this combat.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL *Return. NL Deal !D! damage. NL All Ghostly Sword technique cards deal 2 additional damage this combat."
   },
   "NineSwordTechniques:HiddenSword": {
     "NAME": "Hidden Sword",

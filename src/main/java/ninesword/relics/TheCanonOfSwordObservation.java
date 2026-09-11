@@ -14,7 +14,7 @@ public class TheCanonOfSwordObservation extends CustomRelic {
 
     public TheCanonOfSwordObservation() {
         super(ID, ImageMaster.loadImage(IMG_PATH), ImageMaster.loadImage(OUTLINE_PATH),
-                RelicTier.UNCOMMON, LandingSound.FLAT);
+                RelicTier.RARE, LandingSound.FLAT);
     }
 
     @Override

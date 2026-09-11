@@ -20,7 +20,7 @@ public class GhostlySword extends SwordTechniqueCard {
     public GhostlySword() {
         super(ID, CARD_STRINGS.NAME, IMG_PATH, 1, CARD_STRINGS.DESCRIPTION,
                 CardType.ATTACK, CardColor.COLORLESS, CardRarity.RARE, CardTarget.ENEMY);
-        baseDamage = damage = 8;
+        baseDamage = damage = 4;
         returnToHand = true;
     }
 

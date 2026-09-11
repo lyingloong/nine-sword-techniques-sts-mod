@@ -6,8 +6,8 @@
   },
   "NineSwordTechniques:GhostlySword": {
     "NAME": "鬼剑术",
-    "DESCRIPTION": "*剑术牌。 NL *返回。 NL 造成 !D! 点伤害。 NL 本场战斗中鬼剑术伤害提高2点。",
-    "UPGRADE_DESCRIPTION": "*剑术牌。 NL *返回。 NL 造成 !D! 点伤害。 NL 本场战斗中鬼剑术伤害提高2点。"
+    "DESCRIPTION": "*剑术牌。 NL *返回。 NL 造成 !D! 点伤害。 NL 本场战斗中所有鬼剑系牌伤害提高2点。",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL *返回。 NL 造成 !D! 点伤害。 NL 本场战斗中所有鬼剑系牌伤害提高2点。"
   },
   "NineSwordTechniques:HiddenSword": {
     "NAME": "藏剑术",

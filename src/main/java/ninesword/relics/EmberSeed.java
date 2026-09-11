@@ -4,7 +4,6 @@ import basemod.abstracts.CustomRelic;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import ninesword.relics.evolution.RelicEvolutionManager;
 
 public class EmberSeed extends CustomRelic {
     public static final String ID = "NineSwordTechniques:EmberSeed";
@@ -25,9 +24,6 @@ public class EmberSeed extends CustomRelic {
         flash();
         AbstractDungeon.player.decreaseMaxHealth(6);
         setCounter(counter + 1);
-        if (counter >= VICTORIES_TO_EVOLVE) {
-            RelicEvolutionManager.requestEmberWhiteFlameEvolution();
-        }
     }
 
     @Override

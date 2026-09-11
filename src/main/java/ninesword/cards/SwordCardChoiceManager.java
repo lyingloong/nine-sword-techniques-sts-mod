@@ -11,6 +11,7 @@ public final class SwordCardChoiceManager {
     private static final String UI_ID = "NineSwordTechniques:SwordAncestorsLegacy";
     private static int pendingCount;
     private static boolean choosingCard;
+    private static AbstractDungeon.CurrentScreen mapReturnScreen;
 
     private SwordCardChoiceManager() {
     }
@@ -19,12 +20,30 @@ public final class SwordCardChoiceManager {
         pendingCount++;
     }
 
+    public static int getPendingCountForSave() {
+        return pendingCount;
+    }
+
+    public static void restorePendingCount(int count) {
+        pendingCount = Math.max(0, count);
+        choosingCard = false;
+        mapReturnScreen = null;
+    }
+
+    public static void clearPendingCount() {
+        pendingCount = 0;
+        choosingCard = false;
+        mapReturnScreen = null;
+    }
+
     public static void update() {
         if (AbstractDungeon.player == null) {
             pendingCount = 0;
             choosingCard = false;
+            mapReturnScreen = null;
             return;
         }
+        restoreMapReturnScreen();
         if (choosingCard) {
             handleSelection();
             return;
@@ -51,11 +70,14 @@ public final class SwordCardChoiceManager {
         if (!AbstractDungeon.isScreenUp) {
             return true;
         }
+        // The map can be opened from another screen and retain its previous screen.
+        if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.MAP) {
+            return true;
+        }
         if (AbstractDungeon.previousScreen != null) {
             return false;
         }
-        return AbstractDungeon.screen == AbstractDungeon.CurrentScreen.MAP
-                || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.SHOP
+        return AbstractDungeon.screen == AbstractDungeon.CurrentScreen.SHOP
                 || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.COMBAT_REWARD
                 || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.BOSS_REWARD
                 || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.MASTER_DECK_VIEW;
@@ -63,8 +85,22 @@ public final class SwordCardChoiceManager {
 
     public static void preserveCurrentScreen() {
         if (AbstractDungeon.isScreenUp) {
+            if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.MAP
+                    && AbstractDungeon.previousScreen != null) {
+                mapReturnScreen = AbstractDungeon.previousScreen;
+            }
             AbstractDungeon.previousScreen = AbstractDungeon.screen;
         }
+    }
+
+    private static void restoreMapReturnScreen() {
+        if (mapReturnScreen == null || AbstractDungeon.screen != AbstractDungeon.CurrentScreen.MAP) {
+            return;
+        }
+        if (AbstractDungeon.previousScreen == null) {
+            AbstractDungeon.previousScreen = mapReturnScreen;
+        }
+        mapReturnScreen = null;
     }
 
     private static void handleSelection() {
