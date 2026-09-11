@@ -24,9 +24,10 @@ public class VoidIslandEvent extends AbstractImageEvent {
 
     public VoidIslandEvent() {
         super(NAME, DESCRIPTIONS[0], IMG_PATH);
-        imageEventText.setDialogOption(OPTIONS[0], new VoidCrystal());
-        imageEventText.setDialogOption(OPTIONS[1], new Pain());
-        imageEventText.setDialogOption(OPTIONS[2]);
+        int huntDamage = SwordEventUtils.percentMaxHealth(25);
+        imageEventText.setDialogOption(OPTIONS[0] + huntDamage + OPTIONS[1], new VoidCrystal());
+        imageEventText.setDialogOption(OPTIONS[2], new Pain());
+        imageEventText.setDialogOption(OPTIONS[3] + GOLD_REWARD + OPTIONS[4]);
     }
 
     @Override
@@ -48,7 +49,7 @@ public class VoidIslandEvent extends AbstractImageEvent {
                     logMetric(ID, "Hunted Ghost Beasts", null, null, null, null, null, null,
                             null, damage, 0, 0, 0, 0, 0);
                 }
-                complete(DESCRIPTIONS[1]);
+                complete(DESCRIPTIONS[1] + damage + DESCRIPTIONS[2]);
                 break;
             case 1:
                 Pain pain = new Pain();
@@ -56,13 +57,13 @@ public class VoidIslandEvent extends AbstractImageEvent {
                         pain, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
                 EnlightenmentManager.request();
                 logMetricObtainCard(ID, "Rebelled", pain);
-                complete(DESCRIPTIONS[2]);
+                complete(DESCRIPTIONS[3]);
                 break;
             default:
                 AbstractDungeon.player.gainGold(GOLD_REWARD);
                 AbstractDungeon.effectList.add(new RainingGoldEffect(GOLD_REWARD));
                 logMetricGainGold(ID, "Fled", GOLD_REWARD);
-                complete(DESCRIPTIONS[3]);
+                complete(DESCRIPTIONS[4] + GOLD_REWARD + DESCRIPTIONS[5]);
                 break;
         }
     }

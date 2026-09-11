@@ -21,9 +21,11 @@ public class WhiteCaveEvent extends AbstractImageEvent {
 
     public WhiteCaveEvent() {
         super(NAME, DESCRIPTIONS[0], IMG_PATH);
-        imageEventText.setDialogOption(OPTIONS[0]);
-        imageEventText.setDialogOption(OPTIONS[1]);
-        imageEventText.setDialogOption(OPTIONS[2]);
+        int slaughterDamage = SwordEventUtils.percentMaxHealth(25);
+        int swordDamage = SwordEventUtils.percentMaxHealth(10);
+        imageEventText.setDialogOption(OPTIONS[0] + slaughterDamage + OPTIONS[1]);
+        imageEventText.setDialogOption(OPTIONS[2] + swordDamage + OPTIONS[3]);
+        imageEventText.setDialogOption(OPTIONS[4]);
     }
 
     @Override
@@ -41,7 +43,7 @@ public class WhiteCaveEvent extends AbstractImageEvent {
                 }
                 logMetric(ID, "Joined the Slaughter", null, null, null, null, null, null,
                         null, enlightenmentDamage, 0, 0, 0, 0, 0);
-                complete(DESCRIPTIONS[1]);
+                complete(DESCRIPTIONS[1] + enlightenmentDamage + DESCRIPTIONS[2]);
                 break;
             case 1:
                 int swordDamage = SwordEventUtils.losePercentMaxHealth(10);
@@ -54,11 +56,11 @@ public class WhiteCaveEvent extends AbstractImageEvent {
                     logMetric(ID, "Grabbed a Sword", null, null, null, null, null, null,
                             null, swordDamage, 0, 0, 0, 0, 0);
                 }
-                complete(DESCRIPTIONS[2]);
+                complete(DESCRIPTIONS[3] + swordDamage + DESCRIPTIONS[4]);
                 break;
             default:
                 logMetric(ID, "Left");
-                complete(DESCRIPTIONS[3]);
+                complete(DESCRIPTIONS[5]);
                 break;
         }
     }

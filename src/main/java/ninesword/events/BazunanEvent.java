@@ -32,7 +32,7 @@ public class BazunanEvent extends AbstractImageEvent {
 
         boolean canSalute = hasEvolvedSword() && !purgeableCards().isEmpty();
         imageEventText.setDialogOption(canSalute ? OPTIONS[2] : OPTIONS[3], !canSalute);
-        imageEventText.setDialogOption(OPTIONS[4]);
+        imageEventText.setDialogOption(OPTIONS[4] + GOLD_REWARD + OPTIONS[5]);
     }
 
     @Override
@@ -75,18 +75,18 @@ public class BazunanEvent extends AbstractImageEvent {
                 AbstractDungeon.player.gainGold(GOLD_REWARD);
                 AbstractDungeon.effectList.add(new RainingGoldEffect(GOLD_REWARD));
                 logMetricGainGold(ID, "Beat Bazun'an", GOLD_REWARD);
-                complete(DESCRIPTIONS[3]);
+                complete(DESCRIPTIONS[3] + GOLD_REWARD + DESCRIPTIONS[4]);
                 break;
         }
     }
 
     private void beginCardRemoval() {
         screen = Screen.REMOVE;
-        imageEventText.updateBodyText(DESCRIPTIONS[4]);
-        imageEventText.updateDialogOption(0, OPTIONS[6]);
+        imageEventText.updateBodyText(DESCRIPTIONS[5]);
+        imageEventText.updateDialogOption(0, OPTIONS[7]);
         imageEventText.clearRemainingOptions();
         AbstractDungeon.gridSelectScreen.open(
-                purgeableCards(), 1, OPTIONS[5], false, false, false, true);
+                purgeableCards(), 1, OPTIONS[6], false, false, false, true);
     }
 
     private boolean hasEvolvedSword() {

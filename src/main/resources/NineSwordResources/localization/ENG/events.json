@@ -3,28 +3,36 @@
     "NAME": "White Cave",
     "DESCRIPTIONS": [
       "The gray-white land stretches to the horizon, layered with countless bones and filled with a dead, chilling air. NL A dull tremor rises from deep below. NL “Boom... boom... boom...” NL A giant skeleton slowly pushes itself from the soil. A hundred-meter-tall bone giant rises, pale soul-fire burning in its empty eye sockets. NL Its giant hand sweeps across the land, shattering rock and crushing several cultivators who fail to flee. NL Within the White Cave, cultivators are not the only ones slaughtering each other. These ancient monsters also see every intruder as prey.",
-      "You join the slaughter, lose #b25% HP, and Enlighten once.",
-      "You snatch a sword and escape the White Cave, losing #b10% HP and obtaining a random Sword Technique card.",
+      "You join the slaughter and lose #r",
+      " #r HP. NL Your swordsmanship advances, and you Enlighten once.",
+      "You snatch a sword and escape the White Cave, losing #r",
+      " #r HP and obtaining a random Sword Technique card.",
       "You turn and leave the White Cave."
     ],
     "OPTIONS": [
-      "Join the slaughter (lose #b25% HP and Enlighten once).",
-      "Snatch a sword and run (lose #b10% HP and obtain a random Sword Technique card).",
-      "Leave."
+      "[Join the Slaughter] #rLose #r",
+      " #r HP. #gEnlighten once.",
+      "[Snatch a Sword and Run] #rLose #r",
+      " #r HP. #gObtain a random Sword Technique card.",
+      "[Leave]"
     ]
   },
   "NineSwordTechniques:VoidIsland": {
     "NAME": "Void Island",
     "DESCRIPTIONS": [
       "The Void Attendant, a stone giant reaching the heavens, looks down upon the cultivators on the island, faint golden light flowing from its eye sockets. NL “All who land here are sinners of Void Island.” NL Its heavy voice sounds directly inside every mind. NL “Complete the Void's tasks to receive Void Crystals. Void Crystals can be exchanged for opportunities, or for absolution.”",
-      "Hunt ghost beasts. Lose #b25% HP and obtain a Void Crystal.",
-      "Resist the Void Attendant. Gain Pain and Enlighten once.",
-      "Flee, taking #b50 Gold from the dead."
+      "You hunt ghost beasts, lose #r",
+      " #r HP, and obtain a Void Crystal.",
+      "You resist the Void Attendant and gain Pain. NL Your swordsmanship advances, and you Enlighten once.",
+      "You flee Void Island, taking #y",
+      " #y Gold from the dead."
     ],
     "OPTIONS": [
-      "Hunt ghost beasts (lose #b25% HP and obtain a Void Crystal).",
-      "Resist the Void Attendant (gain Pain and Enlighten once).",
-      "Flee (gain #b50 Gold)."
+      "[Hunt Ghost Beasts] #rLose #r",
+      " #r HP. #gObtain a Void Crystal.",
+      "[Resist] #gGain Pain and Enlighten once.",
+      "[Flee] #gGain #y",
+      " #yGold."
     ]
   },
   "NineSwordTechniques:Bazunan": {
@@ -33,17 +41,19 @@
       "A man in black stands before you. He looks so frail that even the weakest Slime could defeat him. NL He beckons you closer. NL “Boy, both black and white lineages bow to me. Will you take me as your master?”",
       "You become Bazun'an's disciple and obtain The Canon of Sword Observation.",
       "“I pay my respects to the Eighth Sword Immortal!” NL The man in black casually guides your swordsmanship. You feel the impurities within your body lessen.",
-      "You beat Bazun'an up and leave with #b50 Gold.",
+      "You beat Bazun'an up and leave with #y",
+      " #y Gold.",
       "You bow to the man in black and await his guidance."
     ],
     "OPTIONS": [
-      "Become his disciple (obtain The Canon of Sword Observation).",
-      "(Already have The Canon)",
-      "Salute (remove a card).",
-      "(Requires an evolved Sword Technique and a removable card)",
-      "Beat him up (gain #b50 Gold).",
+      "[Become His Disciple] #gObtain The Canon of Sword Observation.",
+      "[Locked] Requires: The Canon of Sword Observation not owned.",
+      "[Pay Respects] #gRemove a card.",
+      "[Locked] Requires: an evolved Sword Technique and a removable card.",
+      "[Beat Him Up] #gGain #y",
+      " #yGold.",
       "Choose a card to remove.",
-      "Leave."
+      "[Continue]"
     ]
   }
 }

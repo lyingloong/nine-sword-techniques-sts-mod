@@ -12,9 +12,13 @@ final class SwordEventUtils {
     }
 
     static int losePercentMaxHealth(int percent) {
-        int damage = Math.max(1, AbstractDungeon.player.maxHealth * percent / 100);
+        int damage = percentMaxHealth(percent);
         AbstractDungeon.player.damage(new DamageInfo(null, damage, DamageInfo.DamageType.HP_LOSS));
         return damage;
+    }
+
+    static int percentMaxHealth(int percent) {
+        return Math.max(1, AbstractDungeon.player.maxHealth * percent / 100);
     }
 
     static AbstractCard randomBaseSword() {
