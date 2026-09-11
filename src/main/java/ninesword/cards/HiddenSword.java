@@ -31,7 +31,7 @@ public class HiddenSword extends SwordTechniqueCard {
     @Override
     protected void repeatEffect(AbstractPlayer p, AbstractMonster m) {
         addToBot(new MakeTempCardInDrawPileAction(
-                new UnsheathedBlade(), 1, false, true, true));
+                new UnsheathedBlade(), 1, false, true, !upgraded));
         addToBot(new PressEndTurnButtonAction());
     }
 

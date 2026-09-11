@@ -12,7 +12,7 @@
   "NineSwordTechniques:HiddenSword": {
     "NAME": "藏剑术",
     "DESCRIPTION": "*剑术牌。 NL *消耗。 NL 将一张出鞘剑置于抽牌堆底。 NL 结束回合。",
-    "UPGRADE_DESCRIPTION": "*剑术牌。 NL *消耗。 NL 将一张出鞘剑置于抽牌堆底。 NL 结束回合。"
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL *消耗。 NL 将一张出鞘剑置于抽牌堆顶。 NL 结束回合。"
   },
   "NineSwordTechniques:IllusorySword": {
     "NAME": "幻剑术",

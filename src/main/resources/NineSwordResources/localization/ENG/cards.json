@@ -12,7 +12,7 @@
   "NineSwordTechniques:HiddenSword": {
     "NAME": "Hidden Sword",
     "DESCRIPTION": "*Sword *Technique *Card. NL *Exhaust. NL Put an Unsheathed Blade on the bottom of your draw pile. NL End your turn.",
-    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL *Exhaust. NL Put an Unsheathed Blade on the bottom of your draw pile. NL End your turn."
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL *Exhaust. NL Put an Unsheathed Blade on top of your draw pile. NL End your turn."
   },
   "NineSwordTechniques:IllusorySword": {
     "NAME": "Illusory Sword",
