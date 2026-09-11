@@ -32,14 +32,15 @@
     "DESCRIPTIONS": [
       "A man in black stands before you. He looks so frail that even the weakest Slime could defeat him. NL He beckons you closer. NL “Boy, both black and white lineages bow to me. Will you take me as your master?”",
       "You become Bazun'an's disciple and obtain The Canon of Sword Observation.",
-      "You bow to Bazun'an and offer him a card.",
-      "You beat Bazun'an up and leave with #b50 Gold."
+      "“I pay my respects to the Eighth Sword Immortal!” NL The man in black casually guides your swordsmanship. You feel the impurities within your body lessen.",
+      "You beat Bazun'an up and leave with #b50 Gold.",
+      "You bow to the man in black and await his guidance."
     ],
     "OPTIONS": [
       "Become his disciple (obtain The Canon of Sword Observation).",
       "(Already have The Canon)",
-      "Salute (offer a card).",
-      "(No evolved Sword Technique to offer)",
+      "Salute (remove a card).",
+      "(Requires an evolved Sword Technique and a removable card)",
       "Beat him up (gain #b50 Gold).",
       "Choose a card to remove.",
       "Leave."

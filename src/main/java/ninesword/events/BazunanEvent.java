@@ -82,7 +82,7 @@ public class BazunanEvent extends AbstractImageEvent {
 
     private void beginCardRemoval() {
         screen = Screen.REMOVE;
-        imageEventText.updateBodyText(DESCRIPTIONS[2]);
+        imageEventText.updateBodyText(DESCRIPTIONS[4]);
         imageEventText.updateDialogOption(0, OPTIONS[6]);
         imageEventText.clearRemainingOptions();
         AbstractDungeon.gridSelectScreen.open(
