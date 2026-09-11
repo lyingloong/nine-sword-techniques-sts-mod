@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import ninesword.cards.SwordCardChoiceManager;
 
 public final class EnlightenmentManager {
     private static final String UI_ID = "NineSwordTechniques:Enlightenment";
@@ -32,8 +34,12 @@ public final class EnlightenmentManager {
             return;
         }
         if (pendingCount <= 0 || AbstractDungeon.player.masterDeck == null
-                || AbstractDungeon.gridSelectScreen == null
-                || AbstractDungeon.isScreenUp) {
+                || AbstractDungeon.gridSelectScreen == null) {
+            return;
+        }
+
+        AbstractRoom room = AbstractDungeon.getCurrRoom();
+        if (room != null && room.phase == AbstractRoom.RoomPhase.COMBAT) {
             return;
         }
 
@@ -50,6 +56,11 @@ public final class EnlightenmentManager {
             return;
         }
 
+        if (!SwordCardChoiceManager.canOpenSelectionScreen()) {
+            return;
+        }
+
+        SwordCardChoiceManager.preserveCurrentScreen();
         choosingCard = true;
         String prompt = CardCrawlGame.languagePack.getUIString(UI_ID).TEXT[0];
         AbstractDungeon.gridSelectScreen.open(candidates, 1, prompt, false, false, false, false);

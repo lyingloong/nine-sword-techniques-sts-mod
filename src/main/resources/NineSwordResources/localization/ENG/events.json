@@ -1,0 +1,48 @@
+{
+  "NineSwordTechniques:WhiteCave": {
+    "NAME": "White Cave",
+    "DESCRIPTIONS": [
+      "The gray-white land stretches to the horizon, layered with countless bones and filled with a dead, chilling air. NL A dull tremor rises from deep below. NL “Boom... boom... boom...” NL A giant skeleton slowly pushes itself from the soil. A hundred-meter-tall bone giant rises, pale soul-fire burning in its empty eye sockets. NL Its giant hand sweeps across the land, shattering rock and crushing several cultivators who fail to flee. NL Within the White Cave, cultivators are not the only ones slaughtering each other. These ancient monsters also see every intruder as prey.",
+      "You join the slaughter, lose #b25% HP, and Enlighten once.",
+      "You snatch a sword and escape the White Cave, losing #b10% HP and obtaining a random Sword Technique card.",
+      "You turn and leave the White Cave."
+    ],
+    "OPTIONS": [
+      "Join the slaughter (lose #b25% HP and Enlighten once).",
+      "Snatch a sword and run (lose #b10% HP and obtain a random Sword Technique card).",
+      "Leave."
+    ]
+  },
+  "NineSwordTechniques:VoidIsland": {
+    "NAME": "Void Island",
+    "DESCRIPTIONS": [
+      "The Void Attendant, a stone giant reaching the heavens, looks down upon the cultivators on the island, faint golden light flowing from its eye sockets. NL “All who land here are sinners of Void Island.” NL Its heavy voice sounds directly inside every mind. NL “Complete the Void's tasks to receive Void Crystals. Void Crystals can be exchanged for opportunities, or for absolution.”",
+      "Hunt ghost beasts. Lose #b25% HP and obtain a Void Crystal.",
+      "Resist the Void Attendant. Gain Pain and Enlighten once.",
+      "Flee, taking #b50 Gold from the dead."
+    ],
+    "OPTIONS": [
+      "Hunt ghost beasts (lose #b25% HP and obtain a Void Crystal).",
+      "Resist the Void Attendant (gain Pain and Enlighten once).",
+      "Flee (gain #b50 Gold)."
+    ]
+  },
+  "NineSwordTechniques:Bazunan": {
+    "NAME": "Bazun'an",
+    "DESCRIPTIONS": [
+      "A man in black stands before you. He looks so frail that even the weakest Slime could defeat him. NL He beckons you closer. NL “Boy, both black and white lineages bow to me. Will you take me as your master?”",
+      "You become Bazun'an's disciple and obtain The Canon of Sword Observation.",
+      "You bow to Bazun'an and offer him a card.",
+      "You beat Bazun'an up and leave with #b50 Gold."
+    ],
+    "OPTIONS": [
+      "Become his disciple (obtain The Canon of Sword Observation).",
+      "(Already have The Canon)",
+      "Salute (offer a card).",
+      "(No evolved Sword Technique to offer)",
+      "Beat him up (gain #b50 Gold).",
+      "Choose a card to remove.",
+      "Leave."
+    ]
+  }
+}

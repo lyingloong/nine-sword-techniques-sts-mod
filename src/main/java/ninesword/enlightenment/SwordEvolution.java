@@ -40,6 +40,22 @@ public final class SwordEvolution {
                 || NinefoldSword.ID.equals(cardId);
     }
 
+    public static boolean isEvolvedSwordTechnique(AbstractCard card) {
+        if (card == null) {
+            return false;
+        }
+        String cardId = card.cardID;
+        return UnsheathedBlade.ID.equals(cardId)
+                || SpacetimeLeap.ID.equals(cardId)
+                || VoidBladeStyle.ID.equals(cardId)
+                || AbsoluteImperialRule.ID.equals(cardId)
+                || MortalBladeAllLivingFaces.ID.equals(cardId)
+                || AzureRiverSwordDomain.ID.equals(cardId)
+                || SoulControlTrickery.ID.equals(cardId)
+                || UnderOnesGaze.ID.equals(cardId)
+                || InfiniteNumeration.ID.equals(cardId);
+    }
+
     public static AbstractCard evolve(AbstractCard source) {
         AbstractCard evolved = createEvolution(source.cardID);
         if (evolved == null) {

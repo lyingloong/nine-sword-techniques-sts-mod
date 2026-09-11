@@ -1,7 +1,7 @@
 package ninesword.cards;
 
-import com.megacrit.cardcrawl.actions.common.EndTurnAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -32,7 +32,7 @@ public class HiddenSword extends SwordTechniqueCard {
     protected void repeatEffect(AbstractPlayer p, AbstractMonster m) {
         addToBot(new MakeTempCardInDrawPileAction(
                 new UnsheathedBlade(), 1, false, true, true));
-        addToBot(new EndTurnAction());
+        addToBot(new PressEndTurnButtonAction());
     }
 
     @Override

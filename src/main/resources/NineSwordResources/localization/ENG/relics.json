@@ -3,7 +3,7 @@
     "NAME": "Sword Ancestor's Legacy",
     "FLAVOR": "The Sword Ancestor's way, left to those who follow.",
     "DESCRIPTIONS": [
-      "Right-click: choose to Sacrifice or Abandon. Sacrifice makes you lose #b10 HP, then choose a Sword Technique card to obtain. Can only be used outside combat, and only once."
+      "Right-click: choose to Sacrifice or Abandon. Sacrifice makes you lose #b18 HP, then choose a Sword Technique card to obtain. Can only be used outside combat, and only once."
     ]
   },
   "NineSwordTechniques:TheCanonOfSwordObservation": {
@@ -39,6 +39,13 @@
     "FLAVOR": "At the end of the ashes, a white flame is born.",
     "DESCRIPTIONS": [
       "On pickup, gain #b30 Max HP. At the start of each turn, non-Boss enemies lose #b10% of their Max HP; Boss enemies lose #b5% instead."
+    ]
+  },
+  "NineSwordTechniques:VoidCrystal": {
+    "NAME": "Void Crystal",
+    "FLAVOR": "Absolution on Void Island always comes at a cost.",
+    "DESCRIPTIONS": [
+      "Starts with #b0 Charge. Each time you kill an enemy, gain #b1 Charge. At the start of each turn, if you have at least #b2 Charge, spend #b2 and gain 1 Intangible."
     ]
   }
 }

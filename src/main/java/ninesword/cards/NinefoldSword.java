@@ -19,8 +19,8 @@ public class NinefoldSword extends SwordTechniqueCard {
     public NinefoldSword() {
         super(ID, CARD_STRINGS.NAME, IMG_PATH, 1, CARD_STRINGS.DESCRIPTION,
                 CardType.ATTACK, CardColor.COLORLESS, CardRarity.RARE, CardTarget.ENEMY);
-        baseDamage = damage = 8;
-        baseBlock = block = 8;
+        baseDamage = damage = 6;
+        baseBlock = block = 6;
     }
 
     @Override

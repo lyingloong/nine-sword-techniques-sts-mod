@@ -22,7 +22,7 @@ public class MortalBladeAllLivingFaces extends SwordTechniqueCard {
     public MortalBladeAllLivingFaces() {
         super(ID, CARD_STRINGS.NAME, IMG_PATH, 1, CARD_STRINGS.DESCRIPTION,
                 CardType.ATTACK, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.ENEMY);
-        baseDamage = damage = 4;
+        baseDamage = damage = 2;
         baseBlock = block = 6;
         baseMagicNumber = magicNumber = 3;
     }

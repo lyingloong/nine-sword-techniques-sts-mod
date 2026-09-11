@@ -34,7 +34,7 @@ public final class SwordAncestorsLegacyManager {
         }
 
         AbstractDungeon.player.damage(new DamageInfo(
-                null, 10, DamageInfo.DamageType.HP_LOSS));
+                null, 18, DamageInfo.DamageType.HP_LOSS));
         if (AbstractDungeon.player.currentHealth > 0) {
             SwordCardChoiceManager.request();
         }

@@ -10,8 +10,12 @@ import basemod.interfaces.PostUpdateSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.Exordium;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
+import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
@@ -35,12 +39,16 @@ import ninesword.cards.evolved.SpacetimeLeap;
 import ninesword.cards.evolved.UnderOnesGaze;
 import ninesword.cards.evolved.VoidBladeStyle;
 import ninesword.enlightenment.EnlightenmentManager;
+import ninesword.events.BazunanEvent;
+import ninesword.events.VoidIslandEvent;
+import ninesword.events.WhiteCaveEvent;
 import ninesword.relics.EmberSeed;
 import ninesword.relics.EmberWhiteFlame;
 import ninesword.relics.FlameSwordYanmang;
 import ninesword.relics.SwordAncestorsLegacy;
 import ninesword.relics.TheCanonOfSwordObservation;
 import ninesword.relics.TheYousiSword;
+import ninesword.relics.VoidCrystal;
 import ninesword.relics.evolution.RelicEvolutionManager;
 
 import java.util.ArrayList;
@@ -83,6 +91,11 @@ public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
         BaseMod.addRelic(new FlameSwordYanmang(), RelicType.SHARED);
         BaseMod.addRelic(new EmberSeed(), RelicType.SHARED);
         BaseMod.addRelic(new EmberWhiteFlame(), RelicType.SHARED);
+        BaseMod.addRelic(new VoidCrystal(), RelicType.SHARED);
+
+        BaseMod.addEvent(WhiteCaveEvent.ID, WhiteCaveEvent.class, Exordium.ID);
+        BaseMod.addEvent(VoidIslandEvent.ID, VoidIslandEvent.class, TheCity.ID, TheBeyond.ID);
+        BaseMod.addEvent(BazunanEvent.ID, BazunanEvent.class);
         BaseMod.logger.info("Nine Sword Techniques relics registered");
     }
 
@@ -101,6 +114,7 @@ public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
         BaseMod.loadCustomStringsFile(CardStrings.class, base + "cards.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class, base + "powers.json");
         BaseMod.loadCustomStringsFile(CharacterStrings.class, base + "characters.json");
+        BaseMod.loadCustomStringsFile(EventStrings.class, base + "events.json");
         BaseMod.loadCustomStringsFile(RelicStrings.class, base + "relics.json");
         BaseMod.loadCustomStringsFile(UIStrings.class, base + "ui.json");
     }

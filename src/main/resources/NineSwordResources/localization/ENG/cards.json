@@ -56,18 +56,18 @@
   },
   "NineSwordTechniques:VoidBladeStyle": {
     "NAME": "Void Blade Style",
-    "DESCRIPTION": "*Sword *Technique *Card. NL Gain !M! Strength, Dexterity, Focus, and Metallicize. NL At the start of each turn, gain #b1 of each again.",
-    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Gain !M! Strength, Dexterity, Focus, and Metallicize. NL At the start of each turn, gain #b1 of each again."
+    "DESCRIPTION": "*Sword *Technique *Card. NL Gain !M! Strength, Dexterity, Focus, and Metallicize. NL At the start of each turn, gain 1 of each again.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Gain !M! Strength, Dexterity, Focus, and Metallicize. NL At the start of each turn, gain 1 of each again."
   },
   "NineSwordTechniques:AbsoluteImperialRule": {
     "NAME": "Absolute Imperial Rule",
-    "DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage to random enemies !M! times. NL After each hit, subsequent hits from this card deal #b1 more damage to that enemy.",
-    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage to random enemies !M! times. NL After each hit, subsequent hits from this card deal #b1 more damage to that enemy."
+    "DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage to random enemies !M! times. NL After each hit, subsequent hits from this card deal 1 more damage to that enemy.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage to random enemies !M! times. NL After each hit, subsequent hits from this card deal 1 more damage to that enemy."
   },
   "NineSwordTechniques:MortalBladeAllLivingFaces": {
     "NAME": "Mortal Blade: All Living Faces",
-    "DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. NL If the enemy intends to Attack, apply !M! Weak and gain !B! Block. Otherwise, deal #b12 additional True Damage and apply #b2 Vulnerable.",
-    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. NL If the enemy intends to Attack, apply !M! Weak and gain !B! Block. Otherwise, deal #b12 additional True Damage and apply #b2 Vulnerable."
+    "DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. NL If the enemy intends to Attack, apply !M! Weak and gain !B! Block. Otherwise, deal 12 additional True Damage and apply 2 Vulnerable.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. NL If the enemy intends to Attack, apply !M! Weak and gain !B! Block. Otherwise, deal 12 additional True Damage and apply 2 Vulnerable."
   },
   "NineSwordTechniques:AzureRiverSwordDomain": {
     "NAME": "Azure River Sword Domain",
@@ -76,22 +76,22 @@
   },
   "NineSwordTechniques:SoulControlTrickery": {
     "NAME": "Soul Control Trickery",
-    "DESCRIPTION": "*Sword *Technique *Card. NL *Return. NL Deal !D! damage. NL All Ghostly Sword cards deal #b3 additional damage this combat. NL If this kills the enemy, gain [E] .",
-    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL *Return. NL Deal !D! damage. NL All Ghostly Sword cards deal #b3 additional damage this combat. NL If this kills the enemy, gain [E] ."
+    "DESCRIPTION": "*Sword *Technique *Card. NL *Return. NL Deal !D! damage. NL All Ghostly Sword cards deal 3 additional damage this combat. NL If this kills the enemy, gain [E] .",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL *Return. NL Deal !D! damage. NL All Ghostly Sword cards deal 3 additional damage this combat. NL If this kills the enemy, gain [E] ."
   },
   "NineSwordTechniques:UnderOnesGaze": {
     "NAME": "Under One's Gaze",
-    "DESCRIPTION": "*Sword *Technique *Card. NL Remove all your Debuffs. NL Gain !M! Artifact and !B! Block. NL Draw #b1 card for each Debuff removed, up to #b3.",
-    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Remove all your Debuffs. NL Gain !M! Artifact and !B! Block. NL Draw #b1 card for each Debuff removed, up to #b3."
+    "DESCRIPTION": "*Sword *Technique *Card. NL Remove all your Debuffs. NL Gain !M! Artifact and !B! Block. NL Draw 1 card for each Debuff removed, up to 3.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Remove all your Debuffs. NL Gain !M! Artifact and !B! Block. NL Draw 1 card for each Debuff removed, up to 3."
   },
   "NineSwordTechniques:InfiniteNumeration": {
     "NAME": "Infinite Numeration",
-    "DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. Gain !B! Block. NL Each card played this combat adds #b1 to both values; cards played this turn add #b1 more.",
-    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. Gain !B! Block. NL Each card played this combat adds #b1 to both values; cards played this turn add #b1 more."
+    "DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. Gain !B! Block. NL Each card played this combat adds 1 to both values; cards played this turn add 1 more.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. Gain !B! Block. NL Each card played this combat adds 1 to both values; cards played this turn add 1 more."
   },
   "NineSwordTechniques:SacrificeLegacyOption": {
     "NAME": "Sacrifice",
-    "DESCRIPTION": "Lose #b10 HP. NL Choose a Sword Technique card to obtain."
+    "DESCRIPTION": "Lose 18 HP. NL Choose a Sword Technique card to obtain."
   },
   "NineSwordTechniques:AbandonLegacyOption": {
     "NAME": "Abandon",
