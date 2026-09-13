@@ -1,0 +1,12 @@
+muzixi.png
+size: 400,600
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+muzixi
+  rotate: false
+  xy: 0, 0
+  size: 400, 600
+  orig: 400, 600
+  offset: 0, 0
+  index: -1

@@ -96,5 +96,130 @@
   "NineSwordTechniques:AbandonLegacyOption": {
     "NAME": "放弃",
     "DESCRIPTION": "不获得任何效果，并放弃本次传承。"
+  },
+  "NineSwordTechniques:MuzixiStrike": {
+    "NAME": "青木击",
+    "DESCRIPTION": "造成 !D! 点伤害。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。"
+  },
+  "NineSwordTechniques:MuzixiDefend": {
+    "NAME": "扎根",
+    "DESCRIPTION": "获得 !B! 点格挡。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡。"
+  },
+  "NineSwordTechniques:PersonaShift": {
+    "NAME": "人格交替",
+    "DESCRIPTION": "切换人格。 NL 抽 1 张牌。",
+    "UPGRADE_DESCRIPTION": "切换人格。 NL 抽 1 张牌。"
+  },
+  "NineSwordTechniques:ThornWhip": {
+    "NAME": "荆棘鞭",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 1 点生机。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 获得 1 点生机。"
+  },
+  "NineSwordTechniques:ParalysisFlower": {
+    "NAME": "麻痹之花",
+    "DESCRIPTION": "施加 !M! 层虚弱。 NL 获得 !M! 点生机。",
+    "UPGRADE_DESCRIPTION": "施加 !M! 层虚弱。 NL 获得 !M! 点生机。"
+  },
+  "NineSwordTechniques:RootGuard": {
+    "NAME": "根脉守护",
+    "DESCRIPTION": "获得 !B! 点格挡。 NL 若处于木子汐人格，获得 1 点生机。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡。 NL 若处于木子汐人格，获得 1 点生机。"
+  },
+  "NineSwordTechniques:SapSurge": {
+    "NAME": "生机奔涌",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点生机。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点生机。"
+  },
+  "NineSwordTechniques:VineLash": {
+    "NAME": "藤蔓抽击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 若敌人处于易伤，施加 !M! 层中毒。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 若敌人处于易伤，施加 !M! 层中毒。"
+  },
+  "NineSwordTechniques:LifeDrain": {
+    "NAME": "生命汲取",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 若拥有至少 2 点生机，消耗 2 点并回复 !M! 点生命。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 若拥有至少 2 点生机，消耗 2 点并回复 !M! 点生命。"
+  },
+  "NineSwordTechniques:LeafDance": {
+    "NAME": "落叶舞",
+    "DESCRIPTION": "获得 !M! 点生机。 NL 抽 1 张牌。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点生机。 NL 抽 1 张牌。"
+  },
+  "NineSwordTechniques:CreepingRoots": {
+    "NAME": "蔓生根须",
+    "DESCRIPTION": "施加 !M! 层中毒。 NL 获得 1 点生机。",
+    "UPGRADE_DESCRIPTION": "施加 !M! 层中毒。 NL 获得 2 点生机。"
+  },
+  "NineSwordTechniques:Vinesnare": {
+    "NAME": "藤网",
+    "DESCRIPTION": "获得 !B! 点格挡。 NL 施加 !M! 层虚弱和易伤。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡。 NL 施加 !M! 层虚弱和易伤。"
+  },
+  "NineSwordTechniques:GiantTree": {
+    "NAME": "参天古木",
+    "DESCRIPTION": "获得常青：每获得 1 点生机，获得 !M! 点格挡。 NL 获得 5 点格挡。",
+    "UPGRADE_DESCRIPTION": "获得常青：每获得 1 点生机，获得 !M! 点格挡。 NL 获得 5 点格挡。"
+  },
+  "NineSwordTechniques:Awakening": {
+    "NAME": "觉醒",
+    "DESCRIPTION": "切换人格。 NL 获得 2 点生机。 NL 抽 1 张牌。 NL 消耗。",
+    "UPGRADE_DESCRIPTION": "切换人格。 NL 获得 3 点生机。 NL 抽 2 张牌。 NL 消耗。"
+  },
+  "NineSwordTechniques:EyeOfLife": {
+    "NAME": "神魔瞳",
+    "DESCRIPTION": "获得 !M! 层生生不息。 NL 获得 1 点生机。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 层生生不息。 NL 获得 1 点生机。"
+  },
+  "NineSwordTechniques:ParasiticSeed": {
+    "NAME": "寄生种",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 施加 !M! 层中毒。 NL 获得 2 点生机。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 施加 !M! 层中毒。 NL 获得 2 点生机。"
+  },
+  "NineSwordTechniques:AncientBark": {
+    "NAME": "远古树皮",
+    "DESCRIPTION": "获得远古树皮：回合结束时，若拥有至少 4 点生机，获得 !M! 点格挡。",
+    "UPGRADE_DESCRIPTION": "获得远古树皮：回合结束时，若拥有至少 4 点生机，获得 !M! 点格挡。"
+  },
+  "NineSwordTechniques:NaturalCycle": {
+    "NAME": "自然循环",
+    "DESCRIPTION": "每回合开始时，获得 !M! 点生机。",
+    "UPGRADE_DESCRIPTION": "每回合开始时，获得 !M! 点生机。"
+  },
+  "NineSwordTechniques:MindGarden": {
+    "NAME": "心灵花园",
+    "DESCRIPTION": "抽 !M! 张牌。 NL 若拥有至少 3 点生机，获得 1 点能量。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 若拥有至少 3 点生机，获得 1 点能量。"
+  },
+  "NineSwordTechniques:VerdantRebirth": {
+    "NAME": "青木回生",
+    "DESCRIPTION": "回复 !M! 点生命。 NL 获得 4 点生机。 NL 消耗。",
+    "UPGRADE_DESCRIPTION": "回复 !M! 点生命。 NL 获得 6 点生机。 NL 消耗。"
+  },
+  "NineSwordTechniques:DivineDemonicGaze": {
+    "NAME": "神魔之眼",
+    "DESCRIPTION": "获得灵魂共鸣：每次切换人格时抽 !M! 张牌并获得 1 点能量。 NL 获得 3 点生机。",
+    "UPGRADE_DESCRIPTION": "获得灵魂共鸣：每次切换人格时抽 !M! 张牌并获得 1 点能量。 NL 获得 3 点生机。"
+  },
+  "NineSwordTechniques:WorldTree": {
+    "NAME": "世界树",
+    "DESCRIPTION": "最多消耗 !M! 点生机。 NL 每消耗 1 点生机，获得 !B! 点格挡。",
+    "UPGRADE_DESCRIPTION": "最多消耗 !M! 点生机。 NL 每消耗 1 点生机，获得 !B! 点格挡。"
+  },
+  "NineSwordTechniques:TenThousandFlowers": {
+    "NAME": "万花",
+    "DESCRIPTION": "最多消耗 !M! 点生机。 NL 对所有敌人造成 !D! 点伤害，每消耗 1 点生机额外造成 2 点伤害。",
+    "UPGRADE_DESCRIPTION": "最多消耗 !M! 点生机。 NL 对所有敌人造成 !D! 点伤害，每消耗 1 点生机额外造成 2 点伤害。"
+  },
+  "NineSwordTechniques:TearOfGod": {
+    "NAME": "神之泪",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 若处于泪汐儿人格，最多消耗 !M! 点生机并施加等量虚弱和易伤。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 若处于泪汐儿人格，最多消耗 !M! 点生机并施加等量虚弱和易伤。"
+  },
+  "NineSwordTechniques:SoulReflection": {
+    "NAME": "灵魂倒影",
+    "DESCRIPTION": "获得 !M! 层常青。 NL 获得 2 点生机。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 层常青。 NL 获得 2 点生机。"
   }
 }

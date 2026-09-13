@@ -3,6 +3,8 @@ package ninesword.modcore;
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.EditCardsSubscriber;
+import basemod.interfaces.EditCharactersSubscriber;
+import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostCreateStartingRelicsSubscriber;
@@ -10,6 +12,7 @@ import basemod.interfaces.PostUpdateSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
@@ -42,6 +45,35 @@ import ninesword.enlightenment.EnlightenmentManager;
 import ninesword.events.BazunanEvent;
 import ninesword.events.VoidIslandEvent;
 import ninesword.events.WhiteCaveEvent;
+import ninesword.modspire.ModEnums;
+import ninesword.muzixi.cards.AncientBark;
+import ninesword.muzixi.cards.Awakening;
+import ninesword.muzixi.cards.CreepingRoots;
+import ninesword.muzixi.cards.DivineDemonicGaze;
+import ninesword.muzixi.cards.EyeOfLife;
+import ninesword.muzixi.cards.GiantTree;
+import ninesword.muzixi.cards.LeafDance;
+import ninesword.muzixi.cards.LifeDrain;
+import ninesword.muzixi.cards.MindGarden;
+import ninesword.muzixi.cards.MuzixiDefend;
+import ninesword.muzixi.cards.MuzixiStrike;
+import ninesword.muzixi.cards.NaturalCycle;
+import ninesword.muzixi.cards.ParalysisFlower;
+import ninesword.muzixi.cards.ParasiticSeed;
+import ninesword.muzixi.cards.PersonaShift;
+import ninesword.muzixi.cards.RootGuard;
+import ninesword.muzixi.cards.SapSurge;
+import ninesword.muzixi.cards.SoulReflection;
+import ninesword.muzixi.cards.TearOfGod;
+import ninesword.muzixi.cards.TenThousandFlowers;
+import ninesword.muzixi.cards.ThornWhip;
+import ninesword.muzixi.cards.VerdantRebirth;
+import ninesword.muzixi.cards.VineLash;
+import ninesword.muzixi.cards.Vinesnare;
+import ninesword.muzixi.cards.WorldTree;
+import ninesword.muzixi.characters.MuzixiCharacter;
+import ninesword.muzixi.relics.DivineDemonicEyes;
+import ninesword.muzixi.powers.VitalityPower;
 import ninesword.relics.EmberSeed;
 import ninesword.relics.EmberWhiteFlame;
 import ninesword.relics.FlameSwordYanmang;
@@ -55,7 +87,8 @@ import java.util.ArrayList;
 
 @SpireInitializer
 public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
-        EditStringsSubscriber, PostCreateStartingRelicsSubscriber, PostUpdateSubscriber {
+        EditStringsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber,
+        PostCreateStartingRelicsSubscriber, PostUpdateSubscriber {
     private static final NineSwordRunState RUN_STATE = new NineSwordRunState();
 
     public NineSword() {
@@ -65,6 +98,8 @@ public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
 
     @Override
     public void receiveEditCards() {
+        // Register the color before creating any cards that use it.
+        MuzixiCharacter.registerColor();
         BaseMod.addCard(new HiddenSword());
         BaseMod.addCard(new IllusorySword());
         BaseMod.addCard(new NonSword());
@@ -83,6 +118,31 @@ public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
         BaseMod.addCard(new SoulControlTrickery());
         BaseMod.addCard(new UnderOnesGaze());
         BaseMod.addCard(new InfiniteNumeration());
+        BaseMod.addCard(new MuzixiStrike());
+        BaseMod.addCard(new MuzixiDefend());
+        BaseMod.addCard(new PersonaShift());
+        BaseMod.addCard(new ThornWhip());
+        BaseMod.addCard(new ParalysisFlower());
+        BaseMod.addCard(new RootGuard());
+        BaseMod.addCard(new SapSurge());
+        BaseMod.addCard(new VineLash());
+        BaseMod.addCard(new LifeDrain());
+        BaseMod.addCard(new LeafDance());
+        BaseMod.addCard(new CreepingRoots());
+        BaseMod.addCard(new Vinesnare());
+        BaseMod.addCard(new GiantTree());
+        BaseMod.addCard(new Awakening());
+        BaseMod.addCard(new EyeOfLife());
+        BaseMod.addCard(new ParasiticSeed());
+        BaseMod.addCard(new AncientBark());
+        BaseMod.addCard(new NaturalCycle());
+        BaseMod.addCard(new MindGarden());
+        BaseMod.addCard(new VerdantRebirth());
+        BaseMod.addCard(new DivineDemonicGaze());
+        BaseMod.addCard(new WorldTree());
+        BaseMod.addCard(new TenThousandFlowers());
+        BaseMod.addCard(new TearOfGod());
+        BaseMod.addCard(new SoulReflection());
         BaseMod.logger.info("Nine Sword Techniques cards registered");
     }
 
@@ -95,6 +155,7 @@ public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
         BaseMod.addRelic(new EmberSeed(), RelicType.SHARED);
         BaseMod.addRelic(new EmberWhiteFlame(), RelicType.SHARED);
         BaseMod.addRelic(new VoidCrystal(), RelicType.SHARED);
+        BaseMod.addRelicToCustomPool(new DivineDemonicEyes(), ModEnums.MUZIXI_GREEN);
 
         BaseMod.addEvent(WhiteCaveEvent.ID, WhiteCaveEvent.class, Exordium.ID);
         BaseMod.addEvent(VoidIslandEvent.ID, VoidIslandEvent.class, TheCity.ID, TheBeyond.ID);
@@ -106,8 +167,34 @@ public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
     public void receivePostCreateStartingRelics(
             AbstractPlayer.PlayerClass playerClass, ArrayList<String> relics) {
         RUN_STATE.clear();
-        if (!relics.contains(SwordAncestorsLegacy.ID)) {
+        if (playerClass != ModEnums.MUZIXI && !relics.contains(SwordAncestorsLegacy.ID)) {
             relics.add(SwordAncestorsLegacy.ID);
+        }
+    }
+
+    @Override
+    public void receiveEditCharacters() {
+        MuzixiCharacter.registerColor();
+        BaseMod.addCharacter(new MuzixiCharacter("Muzixi", ModEnums.MUZIXI),
+                MuzixiCharacter.CHARACTER_BUTTON,
+                MuzixiCharacter.PORTRAIT,
+                ModEnums.MUZIXI,
+                MuzixiCharacter.CUSTOM_MODE_BUTTON);
+        BaseMod.logger.info("Muzixi character registered");
+    }
+
+    @Override
+    public void receiveEditKeywords() {
+        if (Settings.language == Settings.GameLanguage.ZHS) {
+            BaseMod.addKeyword("NineSwordTechniques", "生机", new String[]{"生机"},
+                    "木子汐的战斗资源。它会在战斗结束时消失，可被泪汐儿人格和部分卡牌消耗。");
+            BaseMod.addKeyword("NineSwordTechniques", "人格", new String[]{"人格"},
+                    "木子汐与泪汐儿共享肉身，但拥有不同的回合开始效果。通过人格交替可在两者之间切换。");
+        } else {
+            BaseMod.addKeyword("NineSwordTechniques", "Vitality", new String[]{"Vitality"},
+                    "Muzixi's combat resource. It disappears after combat and can be spent by Leixier's form and several cards.");
+            BaseMod.addKeyword("NineSwordTechniques", "persona", new String[]{"persona"},
+                    "Muzixi and Leixier share one body but have different start-of-turn effects. Persona Shift changes between them.");
         }
     }
 
@@ -128,6 +215,9 @@ public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
         EnlightenmentManager.update();
         RelicEvolutionManager.update();
         SwordCardChoiceManager.update();
+        if (AbstractDungeon.player != null) {
+            VitalityPower.removeExpired(AbstractDungeon.player);
+        }
     }
 
     public static void initialize() {

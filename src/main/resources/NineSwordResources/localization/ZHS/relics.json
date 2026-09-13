@@ -47,5 +47,12 @@
     "DESCRIPTIONS": [
       "初始充能为 #b0 。每次击杀敌人时充能增加 #b1 。每回合开始时，若充能至少为 #b2 ，消耗 #b2 点充能并获得一层无实体。"
     ]
+  },
+  "NineSwordTechniques:DivineDemonicEyes": {
+    "NAME": "神魔瞳",
+    "FLAVOR": "一眼看尽生机，一眼映照深渊。",
+    "DESCRIPTIONS": [
+      "战斗开始时，进入木子汐人格并获得 2 点生机。"
+    ]
   }
 }

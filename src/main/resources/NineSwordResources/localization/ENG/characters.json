@@ -5,5 +5,12 @@
       "[ #gChoose #gand #gobtain #gone #gcolorless #gsword #gtechnique #gcard. ]"
     ],
     "UNIQUE_REWARDS": []
+  },
+  "NineSwordTechniques:Muzixi": {
+    "NAMES": ["Muzixi"],
+    "TEXT": [
+      "The girl with the divine-demonic eyes, carrying two souls and an endless spring of life.",
+      "The roots remember what the eyes have forgotten."
+    ]
   }
 }

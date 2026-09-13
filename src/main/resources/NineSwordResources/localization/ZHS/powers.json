@@ -16,5 +16,47 @@
     "DESCRIPTIONS": [
       "每回合开始时，获得 #b%d 层力量、敏捷、集中和金属化。"
     ]
+  },
+  "NineSwordTechniques:Vitality": {
+    "NAME": "生机",
+    "DESCRIPTIONS": [
+      "拥有 #b%d 点生机。部分卡牌会消耗生机，战斗结束时清除。"
+    ]
+  },
+  "NineSwordTechniques:MuzixiPersona": {
+    "NAME": "木子汐",
+    "DESCRIPTIONS": [
+      "每回合开始时，获得 3 点格挡和 1 点生机。"
+    ]
+  },
+  "NineSwordTechniques:TearPersona": {
+    "NAME": "泪汐儿",
+    "DESCRIPTIONS": [
+      "每回合开始时，若可能，消耗 2 点生机并对所有敌人造成 7 点伤害。"
+    ]
+  },
+  "NineSwordTechniques:Evergreen": {
+    "NAME": "常青",
+    "DESCRIPTIONS": [
+      "每当获得生机时，获得 #b%d 点格挡。"
+    ]
+  },
+  "NineSwordTechniques:NaturalCycle": {
+    "NAME": "自然循环",
+    "DESCRIPTIONS": [
+      "每回合开始时，获得 #b%d 点生机。"
+    ]
+  },
+  "NineSwordTechniques:AncientBark": {
+    "NAME": "远古树皮",
+    "DESCRIPTIONS": [
+      "回合结束时，若拥有至少 4 点生机，获得 #b%d 点格挡。"
+    ]
+  },
+  "NineSwordTechniques:HarmonicSoul": {
+    "NAME": "灵魂共鸣",
+    "DESCRIPTIONS": [
+      "每当切换人格时，抽 #b%d 张牌并获得 1 点能量。"
+    ]
   }
 }

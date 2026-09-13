@@ -47,5 +47,12 @@
     "DESCRIPTIONS": [
       "Starts with #b0 Charge. Each time you kill an enemy, gain #b1 Charge. At the start of each turn, if you have at least #b2 Charge, spend #b2 and gain 1 Intangible."
     ]
+  },
+  "NineSwordTechniques:DivineDemonicEyes": {
+    "NAME": "Divine-Demonic Eyes",
+    "FLAVOR": "One gaze sees the sap of life; the other remembers the abyss.",
+    "DESCRIPTIONS": [
+      "At the start of combat, enter Muzixi's persona and gain 2 Vitality."
+    ]
   }
 }

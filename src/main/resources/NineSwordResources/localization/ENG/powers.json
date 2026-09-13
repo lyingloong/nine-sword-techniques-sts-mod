@@ -16,5 +16,47 @@
     "DESCRIPTIONS": [
       "At the start of each turn, gain #b%d Strength, Dexterity, Focus, and Metallicize."
     ]
+  },
+  "NineSwordTechniques:Vitality": {
+    "NAME": "Vitality",
+    "DESCRIPTIONS": [
+      "You have #b%d Vitality. It is spent by several cards and clears after combat."
+    ]
+  },
+  "NineSwordTechniques:MuzixiPersona": {
+    "NAME": "Muzixi",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain 3 Block and 1 Vitality."
+    ]
+  },
+  "NineSwordTechniques:TearPersona": {
+    "NAME": "Leixier",
+    "DESCRIPTIONS": [
+      "At the start of your turn, spend 2 Vitality to deal 7 damage to ALL enemies, if possible."
+    ]
+  },
+  "NineSwordTechniques:Evergreen": {
+    "NAME": "Evergreen",
+    "DESCRIPTIONS": [
+      "Whenever you gain Vitality, gain #b%d Block."
+    ]
+  },
+  "NineSwordTechniques:NaturalCycle": {
+    "NAME": "Natural Cycle",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain #b%d Vitality."
+    ]
+  },
+  "NineSwordTechniques:AncientBark": {
+    "NAME": "Ancient Bark",
+    "DESCRIPTIONS": [
+      "At the end of your turn, if you have at least 4 Vitality, gain #b%d Block."
+    ]
+  },
+  "NineSwordTechniques:HarmonicSoul": {
+    "NAME": "Harmonic Soul",
+    "DESCRIPTIONS": [
+      "Whenever you change persona, draw #b%d card and gain 1 Energy."
+    ]
   }
 }
