@@ -20,7 +20,25 @@
   "NineSwordTechniques:Vitality": {
     "NAME": "生机",
     "DESCRIPTIONS": [
-      "拥有 #b%d 点生机。部分卡牌会消耗生机，战斗结束时清除。"
+      "拥有 #b%d 点生机。获得生机会提高本场战斗的临时最大生命；部分卡牌会消耗生机，战斗结束时清除。"
+    ]
+  },
+  "NineSwordTechniques:Wither": {
+    "NAME": "凋萎",
+    "DESCRIPTIONS": [
+      "拥有 #b%d 层凋萎。每层使本场战斗的临时最大生命减少 1 点；获得生机会优先移除凋萎，战斗结束时清除。"
+    ]
+  },
+  "NineSwordTechniques:VitalityMaxHealth": {
+    "NAME": "临时最大生命",
+    "DESCRIPTIONS": [
+      "本场战斗临时最大生命变化：#b%d。战斗结束时恢复。"
+    ]
+  },
+  "NineSwordTechniques:Paralysis": {
+    "NAME": "麻痹",
+    "DESCRIPTIONS": [
+      "目标本回合的力量和敏捷各降低 #b%d 点；目标回合结束时恢复并清除麻痹。"
     ]
   },
   "NineSwordTechniques:MuzixiPersona": {
@@ -32,7 +50,7 @@
   "NineSwordTechniques:TearPersona": {
     "NAME": "泪汐儿",
     "DESCRIPTIONS": [
-      "每回合开始时，若可能，消耗 2 点生机并对所有敌人造成 7 点伤害。"
+      "切换至此人格时，消耗至多 9 层灵魂共鸣，每层抽 1 张牌并获得 1 点能量。"
     ]
   },
   "NineSwordTechniques:Evergreen": {
@@ -44,7 +62,7 @@
   "NineSwordTechniques:NaturalCycle": {
     "NAME": "自然循环",
     "DESCRIPTIONS": [
-      "每回合开始时，获得 #b%d 点生机。"
+      "每回合开始时，若拥有生机，消耗 1 点并抽 1 张牌。"
     ]
   },
   "NineSwordTechniques:AncientBark": {
@@ -56,7 +74,13 @@
   "NineSwordTechniques:HarmonicSoul": {
     "NAME": "灵魂共鸣",
     "DESCRIPTIONS": [
-      "每当切换人格时，抽 #b%d 张牌并获得 1 点能量。"
+      "切换至泪汐儿人格时，每层抽 1 张牌并获得 1 点能量。"
+    ]
+  },
+  "NineSwordTechniques:WorldTree": {
+    "NAME": "世界树",
+    "DESCRIPTIONS": [
+      "每当能量减少时，获得等量生机。"
     ]
   }
 }

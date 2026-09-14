@@ -4,7 +4,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PoisonPower;
+import ninesword.muzixi.powers.ParalysisPower;
 
 public class CreepingRoots extends MuzixiCard {
     public static final String ID = "NineSwordTechniques:CreepingRoots";
@@ -12,13 +12,14 @@ public class CreepingRoots extends MuzixiCard {
 
     public CreepingRoots() {
         super(ID, "CreepingRoots", 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY);
-        magicNumber = 6;
-        baseMagicNumber = 6;
+        magicNumber = 5;
+        baseMagicNumber = 5;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        addToBot(new ApplyPowerAction(monster, player, new PoisonPower(monster, player, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(monster, player,
+                new ParalysisPower(monster, magicNumber), magicNumber));
         gainVitality(player, vitalityAmount);
     }
 
@@ -26,7 +27,7 @@ public class CreepingRoots extends MuzixiCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(3);
+            upgradeMagicNumber(4);
             vitalityAmount = 2;
             rawDescription = strings(ID).UPGRADE_DESCRIPTION;
             initializeDescription();

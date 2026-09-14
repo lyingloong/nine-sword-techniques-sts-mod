@@ -2,7 +2,6 @@ package ninesword.muzixi.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import ninesword.muzixi.powers.VitalityPower;
 
@@ -23,7 +22,7 @@ public class WorldTreeAction extends AbstractGameAction {
         int spent = Math.min(maximumSpend, VitalityPower.getAmount(player));
         if (spent > 0) {
             addToTop(new GainBlockAction(player, player, spent * blockPerVitality));
-            addToTop(new ReducePowerAction(player, player, VitalityPower.POWER_ID, spent));
+            addToTop(new SpendVitalityAction(player, spent));
         }
         isDone = true;
     }

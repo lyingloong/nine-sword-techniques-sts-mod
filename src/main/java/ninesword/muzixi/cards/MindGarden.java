@@ -2,6 +2,7 @@ package ninesword.muzixi.cards;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import ninesword.muzixi.actions.SpendVitalityAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -18,7 +19,8 @@ public class MindGarden extends MuzixiCard {
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
         addToBot(new DrawCardAction(magicNumber));
-        if (hasVitality(player, 3)) {
+        if (hasVitality(player, 1)) {
+            addToBot(new SpendVitalityAction(player, 1));
             addToBot(new GainEnergyAction(1));
         }
     }

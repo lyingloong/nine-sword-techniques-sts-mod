@@ -73,7 +73,11 @@ import ninesword.muzixi.cards.Vinesnare;
 import ninesword.muzixi.cards.WorldTree;
 import ninesword.muzixi.characters.MuzixiCharacter;
 import ninesword.muzixi.relics.DivineDemonicEyes;
+import ninesword.muzixi.powers.ParalysisPower;
+import ninesword.muzixi.powers.VitalityMaxHealthPower;
 import ninesword.muzixi.powers.VitalityPower;
+import ninesword.muzixi.powers.WitherPower;
+import ninesword.muzixi.powers.WorldTreePower;
 import ninesword.relics.EmberSeed;
 import ninesword.relics.EmberWhiteFlame;
 import ninesword.relics.FlameSwordYanmang;
@@ -188,13 +192,21 @@ public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
         if (Settings.language == Settings.GameLanguage.ZHS) {
             BaseMod.addKeyword("NineSwordTechniques", "生机", new String[]{"生机"},
                     "木子汐的战斗资源。它会在战斗结束时消失，可被泪汐儿人格和部分卡牌消耗。");
+            BaseMod.addKeyword("NineSwordTechniques", "凋萎", new String[]{"凋萎"},
+                    "生机的负面对应。失去生机超出当前数量时转化为凋萎；每层使本场战斗的临时最大生命减少 1 点，获得生机会优先移除凋萎。");
             BaseMod.addKeyword("NineSwordTechniques", "人格", new String[]{"人格"},
                     "木子汐与泪汐儿共享肉身，但拥有不同的回合开始效果。通过人格交替可在两者之间切换。");
+            BaseMod.addKeyword("NineSwordTechniques", "麻痹", new String[]{"麻痹"},
+                    "临时施加在目标身上的状态。每层使目标本回合力量和敏捷各降低 1，目标回合结束时恢复并清除。");
         } else {
             BaseMod.addKeyword("NineSwordTechniques", "Vitality", new String[]{"Vitality"},
                     "Muzixi's combat resource. It disappears after combat and can be spent by Leixier's form and several cards.");
+            BaseMod.addKeyword("NineSwordTechniques", "Wither", new String[]{"Wither"},
+                    "The negative counterpart to Vitality. Each stack reduces temporary Max HP by 1; gaining Vitality removes Wither first.");
             BaseMod.addKeyword("NineSwordTechniques", "persona", new String[]{"persona"},
                     "Muzixi and Leixier share one body but have different start-of-turn effects. Persona Shift changes between them.");
+            BaseMod.addKeyword("NineSwordTechniques", "Paralysis", new String[]{"Paralysis"},
+                    "A temporary debuff. Each stack lowers the target's Strength and Dexterity by 1 for this turn, then restores and clears at the end of the target's turn.");
         }
     }
 
@@ -216,7 +228,11 @@ public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
         RelicEvolutionManager.update();
         SwordCardChoiceManager.update();
         if (AbstractDungeon.player != null) {
+            WorldTreePower.poll(AbstractDungeon.player);
             VitalityPower.removeExpired(AbstractDungeon.player);
+            WitherPower.removeExpired(AbstractDungeon.player);
+            VitalityMaxHealthPower.removeExpired(AbstractDungeon.player);
+            ParalysisPower.removeExpired(AbstractDungeon.player);
         }
     }
 

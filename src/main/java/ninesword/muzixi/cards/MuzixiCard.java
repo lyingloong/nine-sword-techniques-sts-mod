@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import ninesword.modspire.ModEnums;
+import ninesword.muzixi.actions.GainVitalityAction;
 import ninesword.muzixi.actions.SwitchPersonaAction;
 import ninesword.muzixi.powers.MuzixiPersonaPower;
 import ninesword.muzixi.powers.TearPersonaPower;
@@ -30,7 +31,7 @@ public abstract class MuzixiCard extends CustomCard {
     }
 
     protected void gainVitality(AbstractPlayer player, int amount) {
-        addToBot(new ApplyPowerAction(player, player, new VitalityPower(player, amount), amount));
+        addToBot(new GainVitalityAction(player, amount));
     }
 
     protected void switchPersona(AbstractPlayer player) {

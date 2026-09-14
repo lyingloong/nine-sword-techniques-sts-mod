@@ -1,12 +1,11 @@
 package ninesword.muzixi.relics;
 
 import basemod.abstracts.CustomRelic;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import ninesword.muzixi.powers.MuzixiPersonaPower;
-import ninesword.muzixi.powers.VitalityPower;
+import ninesword.muzixi.actions.EnterMuzixiPersonaAction;
+import ninesword.muzixi.actions.GainVitalityAction;
 
 public class DivineDemonicEyes extends CustomRelic {
     public static final String ID = "NineSwordTechniques:DivineDemonicEyes";
@@ -21,10 +20,8 @@ public class DivineDemonicEyes extends CustomRelic {
     @Override
     public void atBattleStartPreDraw() {
         flash();
-        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                new MuzixiPersonaPower(AbstractDungeon.player), 1));
-        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                new VitalityPower(AbstractDungeon.player, 2), 2));
+        addToBot(new EnterMuzixiPersonaAction(AbstractDungeon.player));
+        addToBot(new GainVitalityAction(AbstractDungeon.player, 2));
     }
 
     @Override

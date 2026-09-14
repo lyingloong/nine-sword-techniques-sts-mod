@@ -20,7 +20,25 @@
   "NineSwordTechniques:Vitality": {
     "NAME": "Vitality",
     "DESCRIPTIONS": [
-      "You have #b%d Vitality. It is spent by several cards and clears after combat."
+      "You have #b%d Vitality. Gaining it increases temporary Max HP; it is spent by several cards and clears after combat."
+    ]
+  },
+  "NineSwordTechniques:Wither": {
+    "NAME": "Wither",
+    "DESCRIPTIONS": [
+      "You have #b%d Wither. Each stack reduces temporary Max HP by 1; gaining Vitality removes Wither first. It clears after combat."
+    ]
+  },
+  "NineSwordTechniques:VitalityMaxHealth": {
+    "NAME": "Temporary Max HP",
+    "DESCRIPTIONS": [
+      "Temporary Max HP change this combat: #b%d. Restored after combat."
+    ]
+  },
+  "NineSwordTechniques:Paralysis": {
+    "NAME": "Paralysis",
+    "DESCRIPTIONS": [
+      "Lose #b%d Strength and Dexterity this turn. Restored and removed at the end of the target's turn."
     ]
   },
   "NineSwordTechniques:MuzixiPersona": {
@@ -32,7 +50,7 @@
   "NineSwordTechniques:TearPersona": {
     "NAME": "Leixier",
     "DESCRIPTIONS": [
-      "At the start of your turn, spend 2 Vitality to deal 7 damage to ALL enemies, if possible."
+      "When entering this persona, spend up to 9 Harmonic Soul. Draw 1 card and gain 1 Energy per stack."
     ]
   },
   "NineSwordTechniques:Evergreen": {
@@ -44,7 +62,7 @@
   "NineSwordTechniques:NaturalCycle": {
     "NAME": "Natural Cycle",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain #b%d Vitality."
+      "At the start of your turn, if you have Vitality, spend 1 and draw 1 card."
     ]
   },
   "NineSwordTechniques:AncientBark": {
@@ -56,7 +74,13 @@
   "NineSwordTechniques:HarmonicSoul": {
     "NAME": "Harmonic Soul",
     "DESCRIPTIONS": [
-      "Whenever you change persona, draw #b%d card and gain 1 Energy."
+      "When entering Leixier, draw 1 card and gain 1 Energy per stack."
+    ]
+  },
+  "NineSwordTechniques:WorldTree": {
+    "NAME": "World Tree",
+    "DESCRIPTIONS": [
+      "Whenever Energy decreases, gain an equal amount of Vitality."
     ]
   }
 }

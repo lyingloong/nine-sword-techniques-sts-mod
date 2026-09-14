@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import ninesword.muzixi.actions.GainVitalityAction;
 
 public class MuzixiPersonaPower extends MuzixiPower {
     public static final String POWER_ID = "NineSwordTechniques:MuzixiPersona";
@@ -23,8 +24,7 @@ public class MuzixiPersonaPower extends MuzixiPower {
     public void atStartOfTurn() {
         flash();
         addToBot(new GainBlockAction(owner, owner, 3));
-        addToBot(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(
-                owner, owner, new VitalityPower(owner, 1), 1));
+        addToBot(new GainVitalityAction(owner, 1));
     }
 
     @Override

@@ -4,7 +4,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
+import ninesword.muzixi.powers.ParalysisPower;
 
 public class ParalysisFlower extends MuzixiCard {
     public static final String ID = "NineSwordTechniques:ParalysisFlower";
@@ -17,7 +17,8 @@ public class ParalysisFlower extends MuzixiCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        addToBot(new ApplyPowerAction(monster, player, new WeakPower(monster, magicNumber, false), magicNumber));
+        addToBot(new ApplyPowerAction(monster, player,
+                new ParalysisPower(monster, magicNumber), magicNumber));
         gainVitality(player, magicNumber);
     }
 

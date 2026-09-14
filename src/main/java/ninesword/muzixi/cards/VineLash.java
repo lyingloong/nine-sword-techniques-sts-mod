@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
+import ninesword.muzixi.powers.ParalysisPower;
 
 public class VineLash extends MuzixiCard {
     public static final String ID = "NineSwordTechniques:VineLash";
@@ -22,7 +22,7 @@ public class VineLash extends MuzixiCard {
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
         damage(player, monster, damage);
-        if (monster.hasPower(VulnerablePower.POWER_ID)) {
+        if (monster.hasPower(ParalysisPower.POWER_ID)) {
             addToBot(new ApplyPowerAction(monster, player, new PoisonPower(monster, player, magicNumber), magicNumber));
         }
     }

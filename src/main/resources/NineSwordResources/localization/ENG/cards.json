@@ -109,8 +109,8 @@
   },
   "NineSwordTechniques:PersonaShift": {
     "NAME": "Persona Shift",
-    "DESCRIPTION": "Change persona. NL Draw 1 card.",
-    "UPGRADE_DESCRIPTION": "Change persona. NL Draw 1 card."
+    "DESCRIPTION": "Gain 1 Harmonic Soul, then change persona.",
+    "UPGRADE_DESCRIPTION": "Gain 1 Harmonic Soul, then change persona."
   },
   "NineSwordTechniques:ThornWhip": {
     "NAME": "Thorn Whip",
@@ -119,8 +119,8 @@
   },
   "NineSwordTechniques:ParalysisFlower": {
     "NAME": "Paralysis Flower",
-    "DESCRIPTION": "Apply !M! Weak. NL Gain !M! Vitality.",
-    "UPGRADE_DESCRIPTION": "Apply !M! Weak. NL Gain !M! Vitality."
+    "DESCRIPTION": "Apply !M! Paralysis. NL Gain !M! Vitality.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Paralysis. NL Gain !M! Vitality."
   },
   "NineSwordTechniques:RootGuard": {
     "NAME": "Root Guard",
@@ -134,8 +134,8 @@
   },
   "NineSwordTechniques:VineLash": {
     "NAME": "Vine Lash",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy is Vulnerable, apply !M! Poison.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If the enemy is Vulnerable, apply !M! Poison."
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has Paralysis, apply !M! Poison.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If the enemy has Paralysis, apply !M! Poison."
   },
   "NineSwordTechniques:LifeDrain": {
     "NAME": "Life Drain",
@@ -144,23 +144,23 @@
   },
   "NineSwordTechniques:LeafDance": {
     "NAME": "Leaf Dance",
-    "DESCRIPTION": "Gain !M! Vitality. NL Draw 1 card.",
-    "UPGRADE_DESCRIPTION": "Gain !M! Vitality. NL Draw 1 card."
+    "DESCRIPTION": "Gain !M! Vitality.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Vitality."
   },
   "NineSwordTechniques:CreepingRoots": {
     "NAME": "Creeping Roots",
-    "DESCRIPTION": "Apply !M! Poison. NL Gain 1 Vitality.",
-    "UPGRADE_DESCRIPTION": "Apply !M! Poison. NL Gain 2 Vitality."
+    "DESCRIPTION": "Apply !M! Paralysis. NL Gain 1 Vitality.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Paralysis. NL Gain 2 Vitality."
   },
   "NineSwordTechniques:Vinesnare": {
     "NAME": "Vinesnare",
-    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak and !M! Vulnerable.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak and !M! Vulnerable."
+    "DESCRIPTION": "Gain !B! Block. NL Apply 1 Weak and 1 Vulnerable to the target.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Apply 1 Weak and 1 Vulnerable to the target."
   },
   "NineSwordTechniques:GiantTree": {
     "NAME": "Giant Tree",
-    "DESCRIPTION": "Gain Evergreen: whenever you gain Vitality, gain !M! Block. NL Gain 5 Block.",
-    "UPGRADE_DESCRIPTION": "Gain Evergreen: whenever you gain Vitality, gain !M! Block. NL Gain 5 Block."
+    "DESCRIPTION": "Gain Evergreen: whenever you gain Vitality, gain !M! Block.",
+    "UPGRADE_DESCRIPTION": "Gain Evergreen: whenever you gain Vitality, gain !M! Block."
   },
   "NineSwordTechniques:Awakening": {
     "NAME": "Awakening",
@@ -169,8 +169,8 @@
   },
   "NineSwordTechniques:EyeOfLife": {
     "NAME": "Eye of Life",
-    "DESCRIPTION": "Gain !M! Natural Cycle. NL Gain 1 Vitality.",
-    "UPGRADE_DESCRIPTION": "Gain !M! Natural Cycle. NL Gain 1 Vitality."
+    "DESCRIPTION": "Enter Muzixi persona. NL Gain !M! Vitality.",
+    "UPGRADE_DESCRIPTION": "Enter Muzixi persona. NL Gain !M! Vitality."
   },
   "NineSwordTechniques:ParasiticSeed": {
     "NAME": "Parasitic Seed",
@@ -184,13 +184,13 @@
   },
   "NineSwordTechniques:NaturalCycle": {
     "NAME": "Natural Cycle",
-    "DESCRIPTION": "At the start of each turn, gain !M! Vitality.",
-    "UPGRADE_DESCRIPTION": "At the start of each turn, gain !M! Vitality."
+    "DESCRIPTION": "At the start of each turn, if you have at least 1 Vitality, spend 1 and draw 1 card.",
+    "UPGRADE_DESCRIPTION": "At the start of each turn, if you have at least 1 Vitality, spend 1 and draw 1 card."
   },
   "NineSwordTechniques:MindGarden": {
     "NAME": "Mind Garden",
-    "DESCRIPTION": "Draw !M! cards. NL If you have at least 3 Vitality, gain 1 Energy.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL If you have at least 3 Vitality, gain 1 Energy."
+    "DESCRIPTION": "Draw !M! cards. NL If you have at least 1 Vitality, spend 1 and gain 1 Energy.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL If you have at least 1 Vitality, spend 1 and gain 1 Energy."
   },
   "NineSwordTechniques:VerdantRebirth": {
     "NAME": "Verdant Rebirth",
@@ -199,26 +199,27 @@
   },
   "NineSwordTechniques:DivineDemonicGaze": {
     "NAME": "Divine-Demonic Gaze",
-    "DESCRIPTION": "Gain Harmonic Soul: whenever you change persona, draw !M! cards and gain 1 Energy. NL Gain 3 Vitality.",
-    "UPGRADE_DESCRIPTION": "Gain Harmonic Soul: whenever you change persona, draw !M! cards and gain 1 Energy. NL Gain 3 Vitality."
+    "DESCRIPTION": "Gain 9 Harmonic Soul. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 9 Harmonic Soul. NL Exhaust."
   },
   "NineSwordTechniques:WorldTree": {
     "NAME": "World Tree",
-    "DESCRIPTION": "Spend up to !M! Vitality. NL Gain !B! Block for each Vitality spent."
+    "DESCRIPTION": "Whenever your current Energy decreases by 1, gain 1 Vitality. Energy gains do not trigger this.",
+    "UPGRADE_DESCRIPTION": "Whenever your current Energy decreases by 1, gain 1 Vitality. Energy gains do not trigger this."
   },
   "NineSwordTechniques:TenThousandFlowers": {
     "NAME": "Ten Thousand Flowers",
-    "DESCRIPTION": "Spend up to !M! Vitality. NL Deal !D! damage to ALL enemies plus 2 damage for each Vitality spent.",
-    "UPGRADE_DESCRIPTION": "Spend up to !M! Vitality. NL Deal !D! damage to ALL enemies plus 2 damage for each Vitality spent."
+    "DESCRIPTION": "Exhaust. NL Snapshot and remove all enemy Buffs and Debuffs, gaining Vitality equal to their total stacks (unstacked powers count as 1).",
+    "UPGRADE_DESCRIPTION": "Snapshot and remove all enemy Buffs and Debuffs, gaining Vitality equal to their total stacks (unstacked powers count as 1)."
   },
   "NineSwordTechniques:TearOfGod": {
     "NAME": "Tear of God",
-    "DESCRIPTION": "Deal !D! damage. NL In Leixier's persona, spend up to !M! Vitality to apply that much Weak and Vulnerable.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL In Leixier's persona, spend up to !M! Vitality to apply that much Weak and Vulnerable."
+    "DESCRIPTION": "Spend all Vitality. NL Deal !D! HP Loss to ALL enemies per Vitality spent. NL In Leixier's persona, apply Weak and Vulnerable equal to damage dealt; in Muzixi's persona, gain half the spent Vitality (rounded down).",
+    "UPGRADE_DESCRIPTION": "Spend all Vitality. NL Deal !D! HP Loss to ALL enemies per Vitality spent. NL In Leixier's persona, apply Weak and Vulnerable equal to damage dealt; in Muzixi's persona, gain half the spent Vitality (rounded down)."
   },
   "NineSwordTechniques:SoulReflection": {
     "NAME": "Soul Reflection",
-    "DESCRIPTION": "Gain !M! Evergreen. NL Gain 2 Vitality.",
-    "UPGRADE_DESCRIPTION": "Gain !M! Evergreen. NL Gain 2 Vitality."
+    "DESCRIPTION": "Exhaust. NL Set your HP to max(1, Max HP - current HP). Losing HP uses HP Loss; otherwise heal.",
+    "UPGRADE_DESCRIPTION": "Exhaust. NL Set your HP to max(1, Max HP - current HP). Losing HP uses HP Loss; otherwise heal."
   }
 }

@@ -12,9 +12,9 @@ public class ParasiticSeed extends MuzixiCard {
 
     public ParasiticSeed() {
         super(ID, "ParasiticSeed", 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = 10;
-        magicNumber = 8;
-        baseMagicNumber = 8;
+        baseDamage = 2;
+        magicNumber = 4;
+        baseMagicNumber = 4;
         damageTypeForTurn = DamageInfo.DamageType.NORMAL;
     }
 
@@ -30,7 +30,7 @@ public class ParasiticSeed extends MuzixiCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(4);
-            upgradeMagicNumber(4);
+            upgradeMagicNumber(1);
         }
     }
 

@@ -9,10 +9,10 @@ public class SapSurge extends MuzixiCard {
     public static final String ID = "NineSwordTechniques:SapSurge";
 
     public SapSurge() {
-        super(ID, "SapSurge", 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = 5;
-        magicNumber = 3;
-        baseMagicNumber = 3;
+        super(ID, "SapSurge", 2, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
+        baseDamage = 8;
+        magicNumber = 2;
+        baseMagicNumber = 2;
         damageTypeForTurn = DamageInfo.DamageType.NORMAL;
     }
 
@@ -26,7 +26,7 @@ public class SapSurge extends MuzixiCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(3);
+            upgradeDamage(2);
             upgradeMagicNumber(1);
         }
     }

@@ -1,6 +1,5 @@
 package ninesword.muzixi.cards;
 
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -17,7 +16,6 @@ public class LeafDance extends MuzixiCard {
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
         gainVitality(player, magicNumber);
-        addToBot(new DrawCardAction(1));
     }
 
     @Override

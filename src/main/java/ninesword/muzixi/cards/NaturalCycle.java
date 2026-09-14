@@ -11,20 +11,18 @@ public class NaturalCycle extends MuzixiCard {
 
     public NaturalCycle() {
         super(ID, "NaturalCycle", 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        magicNumber = 2;
-        baseMagicNumber = 2;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        addToBot(new ApplyPowerAction(player, player, new NaturalCyclePower(player, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(player, player, new NaturalCyclePower(player, 1), 1));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeBaseCost(0);
         }
     }
 

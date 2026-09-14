@@ -1,9 +1,10 @@
 package ninesword.muzixi.powers;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import ninesword.muzixi.actions.SpendVitalityAction;
 
 public class NaturalCyclePower extends MuzixiPower {
     public static final String POWER_ID = "NineSwordTechniques:NaturalCycle";
@@ -21,12 +22,15 @@ public class NaturalCyclePower extends MuzixiPower {
 
     @Override
     public void atStartOfTurn() {
-        flash();
-        addToBot(new ApplyPowerAction(owner, owner, new VitalityPower(owner, amount), amount));
+        if (VitalityPower.getAmount(owner) > 0) {
+            flash();
+            addToBot(new SpendVitalityAction(owner, 1));
+            addToBot(new DrawCardAction(1));
+        }
     }
 
     @Override
     public void updateDescription() {
-        description = String.format(STRINGS.DESCRIPTIONS[0], amount);
+        description = STRINGS.DESCRIPTIONS[0];
     }
 }

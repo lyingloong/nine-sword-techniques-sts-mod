@@ -13,8 +13,8 @@ public class Vinesnare extends MuzixiCard {
     public Vinesnare() {
         super(ID, "Vinesnare", 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY);
         baseBlock = 5;
-        magicNumber = 2;
-        baseMagicNumber = 2;
+        magicNumber = 1;
+        baseMagicNumber = 1;
     }
 
     @Override
@@ -29,7 +29,6 @@ public class Vinesnare extends MuzixiCard {
         if (!upgraded) {
             upgradeName();
             upgradeBlock(3);
-            upgradeMagicNumber(1);
         }
     }
 
