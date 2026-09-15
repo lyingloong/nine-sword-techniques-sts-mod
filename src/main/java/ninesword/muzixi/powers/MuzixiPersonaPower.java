@@ -30,6 +30,7 @@ public class MuzixiPersonaPower extends MuzixiPower {
 
     @Override
     public void onInitialApplication() {
+        playPersonaEntryVisuals(false);
         boolean actualSwitch = owner != null && owner.isPlayer
                 && owner.hasPower(TearPersonaPower.POWER_ID);
         if (actualSwitch) {
@@ -37,6 +38,11 @@ public class MuzixiPersonaPower extends MuzixiPower {
                     (com.megacrit.cardcrawl.characters.AbstractPlayer) owner));
         }
         removeOpposingPersona();
+    }
+
+    @Override
+    public void updateParticles() {
+        updatePersonaVisuals(false);
     }
 
     private void removeOpposingPersona() {

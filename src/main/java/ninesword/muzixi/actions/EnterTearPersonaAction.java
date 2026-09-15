@@ -59,7 +59,9 @@ public class EnterTearPersonaAction extends AbstractGameAction {
                 // owned by ApplyPowerAction), so this action remains the sole
                 // owner of the conversion and cannot recursively enqueue
                 // itself.
-                player.addPower(new TearPersonaPower(player));
+                TearPersonaPower personaPower = new TearPersonaPower(player);
+                player.addPower(personaPower);
+                personaPower.playEntryVisualsForDirectApplication();
             }
             entered = player.hasPower(TearPersonaPower.POWER_ID);
         } else {

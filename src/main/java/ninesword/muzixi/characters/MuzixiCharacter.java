@@ -22,9 +22,10 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import ninesword.modspire.ModEnums;
 import ninesword.muzixi.cards.MuzixiDefend;
+import ninesword.muzixi.cards.LifeDrain;
 import ninesword.muzixi.cards.MuzixiStrike;
-import ninesword.muzixi.cards.PersonaShift;
 import ninesword.muzixi.cards.RootGuard;
+import ninesword.muzixi.cards.SapSurge;
 import ninesword.muzixi.relics.DivineDemonicEyes;
 
 import java.util.ArrayList;
@@ -105,13 +106,14 @@ public class MuzixiCharacter extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> cards = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 4; i++) {
             cards.add(MuzixiStrike.ID);
         }
         for (int i = 0; i < 4; i++) {
             cards.add(MuzixiDefend.ID);
         }
-        cards.add(PersonaShift.ID);
+        cards.add(SapSurge.ID);
+        cards.add(LifeDrain.ID);
         return cards;
     }
 

@@ -29,6 +29,7 @@ public class TearPersonaPower extends MuzixiPower {
 
     @Override
     public void onInitialApplication() {
+        playPersonaEntryVisuals(true);
         boolean actualSwitch = owner != null && owner.isPlayer
                 && owner.hasPower(MuzixiPersonaPower.POWER_ID);
         if (actualSwitch) {
@@ -51,6 +52,20 @@ public class TearPersonaPower extends MuzixiPower {
         // Added last so it executes first, before entry conversion and the
         // switch payoff queued above.
         removeOpposingPersona();
+    }
+
+    @Override
+    public void updateParticles() {
+        updatePersonaVisuals(true);
+    }
+
+    /**
+     * Direct-entry actions use {@code AbstractCreature.addPower} and therefore
+     * do not receive {@link #onInitialApplication()}. Keep their transition
+     * feedback identical to an ordinary power application.
+     */
+    public void playEntryVisualsForDirectApplication() {
+        playPersonaEntryVisuals(true);
     }
 
     private void removeOpposingPersona() {
