@@ -19,9 +19,9 @@ public class SoulReflectionAction extends AbstractGameAction {
         int current = player.currentHealth;
         int desired = Math.max(1, player.maxHealth - current);
         if (desired < current) {
-            addToBot(new LoseHPAction(player, player, current - desired));
+            addToTop(new LoseHPAction(player, player, current - desired));
         } else if (desired > current) {
-            addToBot(new HealAction(player, player, desired - current));
+            addToTop(new HealAction(player, player, desired - current));
         }
         isDone = true;
     }

@@ -1,5 +1,7 @@
 package ninesword.muzixi.powers;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -25,8 +27,6 @@ import java.util.Set;
  */
 public class ParalysisPower extends MuzixiPower {
     public static final String POWER_ID = "NineSwordTechniques:Paralysis";
-    private static final int MAX_STAT = 999;
-    private static final int MIN_STAT = -999;
     private static final PowerStrings STRINGS = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     private static final Set<AbstractCreature> PENDING_COMBAT_CLEANUP =
             Collections.newSetFromMap(new IdentityHashMap<AbstractCreature, Boolean>());
@@ -49,10 +49,7 @@ public class ParalysisPower extends MuzixiPower {
         this.amount = Math.max(0, amount);
         type = PowerType.DEBUFF;
         canGoNegative = false;
-        // There is intentionally no second, mandatory art asset for this
-        // status yet.  Vitality is the shared Muzixi resource icon and keeps
-        // the Power safe to load in both languages/build configurations.
-        loadIcons("Vitality");
+        loadIcons("Paralysis");
         updateDescription();
     }
 
@@ -114,13 +111,22 @@ public class ParalysisPower extends MuzixiPower {
             return;
         }
         flash();
-        cleanupReductions();
-        amount = 0;
-        updateDescription();
-        // Defer list removal until the callback iteration has finished.  The
-        // cleanup above is immediate, so no later end-of-turn effect sees a
-        // stale Strength/Dexterity penalty.
-        addToBot(new RemoveSpecificPowerAction(owner, owner, this));
+        // Absolute Paralysis is a player-side power that changes the normal
+        // end-of-turn expiry.  Keep half of the stacks (rounding up the
+        // amount that expires) and restore only the reductions represented by
+        // the stacks that actually left.  Looking at the player here is
+        // intentional: Paralysis is a debuff on the enemy, while the card
+        // which grants Absolute Paralysis is a buff on its source.
+        int removed = amount;
+        if (!owner.isPlayer && AbstractDungeon.player != null
+                && AbstractDungeon.player.hasPower(AbsoluteParalysisPower.POWER_ID)) {
+            // Avoid integer overflow for malformed/imported powers while
+            // retaining the documented ceiling division.
+            removed = (amount / 2) + (amount % 2);
+        }
+        removeStacks(removed);
+        // removeStacks queues the structural removal when all stacks expired.
+        // Do not mutate the power list directly during the callback iteration.
     }
 
     /** Forced removal (including dispel effects) must never leave a stat debuff. */
@@ -172,8 +178,10 @@ public class ParalysisPower extends MuzixiPower {
             return;
         }
         amount = safeAdd(amount, requested);
-        strengthReduction += lowerStat(true, requested);
-        dexterityReduction += lowerStat(false, requested);
+        int appliedStrength = lowerStat(true, requested);
+        strengthReduction = safeAdd(strengthReduction, appliedStrength);
+        int appliedDexterity = lowerStat(false, requested);
+        dexterityReduction = safeAdd(dexterityReduction, appliedDexterity);
         updateDescription();
     }
 
@@ -210,6 +218,28 @@ public class ParalysisPower extends MuzixiPower {
         }
         String id = strength ? StrengthPower.POWER_ID : DexterityPower.POWER_ID;
         AbstractPower stat = owner.getPower(id);
+        AbstractPower reference = strength ? strengthReference : dexterityReference;
+        if (reference != null && stat != reference) {
+            // A zero-valued standard stat removes itself after an exact
+            // cancellation. Its pending restoration still belongs to
+            // Paralysis and can be transferred to the replacement object.
+            // Any nonzero detached object was explicitly purged, so its old
+            // reduction no longer exists and must leave the ledger too.
+            if (reference.amount != 0) {
+                if (strength) {
+                    strengthReduction = 0;
+                } else {
+                    dexterityReduction = 0;
+                }
+            }
+            if (strength) {
+                strengthReference = null;
+                createdStrengthPower = false;
+            } else {
+                dexterityReference = null;
+                createdDexterityPower = false;
+            }
+        }
         boolean created = false;
         if (stat == null) {
             // Add a zero-valued standard stat first, then apply the same
@@ -231,25 +261,40 @@ public class ParalysisPower extends MuzixiPower {
         stat.updateDescription();
         AbstractDungeon.onModifyPower();
         int applied = before - after;
-        if (strength) {
-            if (strengthReference == null) {
-                strengthReference = stat;
-                createdStrengthPower = created;
-            }
-        } else if (dexterityReference == null) {
+        if (strength && strengthReference == null) {
+            strengthReference = stat;
+            createdStrengthPower = created;
+        } else if (!strength && dexterityReference == null) {
             dexterityReference = stat;
             createdDexterityPower = created;
         }
         return Math.max(0, applied);
     }
 
-    /** Restore a stat only when the original power is still present. */
+    /** Restore a stat without losing buffs that replaced the original Power. */
     private void restoreStat(boolean strength, int requested) {
         if (requested <= 0 || owner == null || owner.powers == null) {
             return;
         }
         AbstractPower reference = strength ? strengthReference : dexterityReference;
-        if (reference == null || owner.getPower(reference.ID) != reference) {
+        if (reference == null) {
+            return;
+        }
+        if (owner.getPower(reference.ID) != reference) {
+            // StrengthPower/DexterityPower remove themselves when a later
+            // stack lands exactly on zero. In that case the positive stack
+            // was only canceling Paralysis and must reappear when Paralysis
+            // ends. A nonzero detached reference, however, was explicitly
+            // removed by an effect such as Ten Thousand Flowers; restoring it
+            // would leave a new stat Power behind after that purge.
+            if (reference.amount == 0) {
+                // Apply it on the action queue because restoreStat can run
+                // while the owner's Power list is being iterated.
+                AbstractPower restoration = strength
+                        ? new StrengthPower(owner, requested)
+                        : new DexterityPower(owner, requested);
+                addToTop(new ApplyPowerAction(owner, owner, restoration, requested));
+            }
             return;
         }
         reference.amount = clamp((long) reference.amount + requested);
@@ -257,7 +302,10 @@ public class ParalysisPower extends MuzixiPower {
         AbstractDungeon.onModifyPower();
         boolean created = strength ? createdStrengthPower : createdDexterityPower;
         if (created && reference.amount == 0) {
-            addToBot(new RemoveSpecificPowerAction(owner, owner, reference));
+            // Another queued effect may modify this Power before cleanup.
+            // Recheck both identity and amount at execution time so a delayed
+            // removal never deletes a newly gained positive stat.
+            addToTop(new RemoveZeroStatPowerAction(owner, reference));
         }
     }
 
@@ -280,7 +328,32 @@ public class ParalysisPower extends MuzixiPower {
     }
 
     private static int clamp(long value) {
-        return (int) Math.max(MIN_STAT, Math.min(MAX_STAT, value));
+        return value >= Integer.MAX_VALUE ? Integer.MAX_VALUE
+                : value <= Integer.MIN_VALUE ? Integer.MIN_VALUE : (int) value;
+    }
+
+    private static final class RemoveZeroStatPowerAction extends AbstractGameAction {
+        private final AbstractCreature target;
+        private final AbstractPower power;
+
+        private RemoveZeroStatPowerAction(AbstractCreature target, AbstractPower power) {
+            this.target = target;
+            this.power = power;
+            actionType = ActionType.POWER;
+        }
+
+        @Override
+        public void update() {
+            if (target != null && target.powers != null && power != null
+                    && power.amount == 0 && target.getPower(power.ID) == power) {
+                power.onRemove();
+                target.powers.remove(power);
+                if (AbstractDungeon.getCurrMapNode() != null) {
+                    AbstractDungeon.onModifyPower();
+                }
+            }
+            isDone = true;
+        }
     }
 
     @Override

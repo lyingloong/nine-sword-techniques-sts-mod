@@ -39,8 +39,8 @@ public class VitalityPower extends MuzixiPower {
 
     /**
      * Gain vitality while respecting the mutual exclusion with Wither. A gain
-     * first removes Wither, including its temporary max-health penalty, and
-     * only the remaining amount becomes Vitality.
+     * first removes Wither stacks without changing the independent temporary
+     * max-health ledger; only the remaining amount becomes Vitality.
      */
     public static int gain(AbstractCreature creature, int requested) {
         if (creature == null || requested <= 0) {
@@ -115,15 +115,14 @@ public class VitalityPower extends MuzixiPower {
         return power instanceof WitherPower ? (WitherPower) power : null;
     }
 
-    /** Notify other powers after a custom gain action has resolved. */
-    public static void notifyVitalityGained(AbstractCreature creature, int gained) {
+    /** Notify only powers that explicitly subscribe to resolved Vitality gains. */
+    private static void notifyVitalityGained(AbstractCreature creature, int gained) {
         if (creature == null || gained <= 0) {
             return;
         }
-        VitalityPower notification = new VitalityPower(creature, gained);
         for (AbstractPower power : new ArrayList<>(creature.powers)) {
-            if (power.ID != null && !POWER_ID.equals(power.ID)) {
-                power.onApplyPower(notification, creature, creature);
+            if (power instanceof VitalityGainListener) {
+                ((VitalityGainListener) power).onVitalityGained(gained);
             }
         }
     }
@@ -139,13 +138,26 @@ public class VitalityPower extends MuzixiPower {
         }
     }
 
-    /** Remove the zeroed combat resource after the victory callback finishes iterating powers. */
+    /** Remove a zero marker after callbacks, or the combat resource after victory. */
     public static void removeExpired(AbstractCreature creature) {
         if (creature == null || creature.powers == null) {
             return;
         }
         if (PENDING_COMBAT_CLEANUP.remove(creature)) {
             cleanupAfterCombat(creature);
+            return;
+        }
+        VitalityPower vitality = getVitality(creature);
+        if (vitality != null && vitality.amount <= 0) {
+            // spend() can run while ApplyPowerAction is iterating this list.
+            // PostUpdate reaches here after that callback has returned, so a
+            // zero resource marker can now be removed without invalidating an
+            // iterator. A later gain simply creates a fresh marker.
+            vitality.onRemove();
+            creature.powers.remove(vitality);
+            if (AbstractDungeon.getCurrMapNode() != null) {
+                AbstractDungeon.onModifyPower();
+            }
         }
     }
 
@@ -171,8 +183,8 @@ public class VitalityPower extends MuzixiPower {
     @Override
     public void reducePower(int reduceAmount) {
         // ReducePowerAction handles the exact-removal branch itself. Internal
-        // cards use SpendVitalityAction, while this override keeps partial
-        // reductions from ever driving the resource below zero.
+        // cards use the atomic Vitality spend/payment actions, while this
+        // override keeps partial reductions from driving the resource below zero.
         spend(owner, reduceAmount);
     }
 

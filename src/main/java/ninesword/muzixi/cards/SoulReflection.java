@@ -22,6 +22,9 @@ public class SoulReflection extends MuzixiCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            selfRetain = true;
+            rawDescription = strings(ID).UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 

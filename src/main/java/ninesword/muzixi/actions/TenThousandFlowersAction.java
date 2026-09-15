@@ -40,12 +40,15 @@ public class TenThousandFlowersAction extends AbstractGameAction {
             }
         }
 
-        // Remove in the same action sequence after the snapshot has been made.
-        for (PowerRef ref : powersToRemove) {
-            addToBot(new RemoveSpecificPowerAction(ref.monster, source, ref.power.ID));
-        }
+        // Insert in reverse order so this fixed snapshot is resolved before
+        // unrelated queued actions. Passing the exact object also prevents a
+        // newly replaced Power with the same ID from being removed by mistake.
         if (total > 0) {
-            addToBot(new GainVitalityAction(source, total));
+            addToTop(new GainVitalityAction(source, total));
+        }
+        for (int i = powersToRemove.size() - 1; i >= 0; i--) {
+            PowerRef ref = powersToRemove.get(i);
+            addToTop(new RemoveSpecificPowerAction(ref.monster, source, ref.power));
         }
         isDone = true;
     }

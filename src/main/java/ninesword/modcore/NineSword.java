@@ -7,6 +7,7 @@ import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
+import basemod.interfaces.PostBattleSubscriber;
 import basemod.interfaces.PostCreateStartingRelicsSubscriber;
 import basemod.interfaces.PostUpdateSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -22,6 +23,7 @@ import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import ninesword.cards.EmotionalSword;
 import ninesword.cards.GhostlySword;
 import ninesword.cards.HiddenSword;
@@ -71,9 +73,44 @@ import ninesword.muzixi.cards.VerdantRebirth;
 import ninesword.muzixi.cards.VineLash;
 import ninesword.muzixi.cards.Vinesnare;
 import ninesword.muzixi.cards.WorldTree;
+import ninesword.muzixi.cards.Sprout;
+import ninesword.muzixi.cards.VitalExchange;
+import ninesword.muzixi.cards.RootedBlow;
+import ninesword.muzixi.cards.VitalGuard;
+import ninesword.muzixi.cards.GreenPulse;
+import ninesword.muzixi.cards.RenewalSeed;
+import ninesword.muzixi.cards.Flourish;
+import ninesword.muzixi.cards.VitalCycle;
+import ninesword.muzixi.cards.NumbingPollen;
+import ninesword.muzixi.cards.NeedleVines;
+import ninesword.muzixi.cards.ParalyzingBloom;
+import ninesword.muzixi.cards.NerveCut;
+import ninesword.muzixi.cards.BindingRoots;
+import ninesword.muzixi.cards.NumbnessMist;
+import ninesword.muzixi.cards.EchoingNumbness;
+import ninesword.muzixi.cards.ParalyzedVenom;
+import ninesword.muzixi.cards.EyeOfDeath;
+import ninesword.muzixi.cards.VerdantMiracle;
+import ninesword.muzixi.cards.VitalityTide;
+import ninesword.muzixi.cards.VitalityReservoir;
+import ninesword.muzixi.cards.ThickenedLifeblood;
+import ninesword.muzixi.cards.RootedFortification;
+import ninesword.muzixi.cards.VitalityDistillation;
+import ninesword.muzixi.cards.LivingArmor;
+import ninesword.muzixi.cards.RootOfRenewal;
+import ninesword.muzixi.cards.ParalyticField;
+import ninesword.muzixi.cards.NeuralCollapse;
+import ninesword.muzixi.cards.NerveLock;
+import ninesword.muzixi.cards.PollenStorm;
+import ninesword.muzixi.cards.NumbingEcho;
+import ninesword.muzixi.cards.ParalysisHarvest;
+import ninesword.muzixi.cards.AbsoluteParalysis;
+import ninesword.muzixi.cards.NerveRupture;
+import ninesword.muzixi.cards.DualityConvergence;
 import ninesword.muzixi.characters.MuzixiCharacter;
 import ninesword.muzixi.relics.DivineDemonicEyes;
 import ninesword.muzixi.powers.ParalysisPower;
+import ninesword.muzixi.powers.PersonaManager;
 import ninesword.muzixi.powers.VitalityMaxHealthPower;
 import ninesword.muzixi.powers.VitalityPower;
 import ninesword.muzixi.powers.WitherPower;
@@ -92,7 +129,9 @@ import java.util.ArrayList;
 @SpireInitializer
 public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
         EditStringsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber,
-        PostCreateStartingRelicsSubscriber, PostUpdateSubscriber {
+        PostCreateStartingRelicsSubscriber, PostUpdateSubscriber,
+        PostBattleSubscriber {
+    private static final String KEYWORD_NAMESPACE = "nineswordtechniques";
     private static final NineSwordRunState RUN_STATE = new NineSwordRunState();
 
     public NineSword() {
@@ -147,6 +186,42 @@ public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
         BaseMod.addCard(new TenThousandFlowers());
         BaseMod.addCard(new TearOfGod());
         BaseMod.addCard(new SoulReflection());
+        // Muzixi common cards.
+        BaseMod.addCard(new Sprout());
+        BaseMod.addCard(new VitalExchange());
+        BaseMod.addCard(new RootedBlow());
+        BaseMod.addCard(new VitalGuard());
+        BaseMod.addCard(new GreenPulse());
+        BaseMod.addCard(new RenewalSeed());
+        BaseMod.addCard(new Flourish());
+        BaseMod.addCard(new VitalCycle());
+        BaseMod.addCard(new NumbingPollen());
+        BaseMod.addCard(new NeedleVines());
+        BaseMod.addCard(new ParalyzingBloom());
+        BaseMod.addCard(new NerveCut());
+        BaseMod.addCard(new BindingRoots());
+        BaseMod.addCard(new NumbnessMist());
+        BaseMod.addCard(new EchoingNumbness());
+        BaseMod.addCard(new ParalyzedVenom());
+        // Muzixi uncommon and rare cards.
+        BaseMod.addCard(new EyeOfDeath());
+        BaseMod.addCard(new VerdantMiracle());
+        BaseMod.addCard(new VitalityTide());
+        BaseMod.addCard(new VitalityReservoir());
+        BaseMod.addCard(new ThickenedLifeblood());
+        BaseMod.addCard(new RootedFortification());
+        BaseMod.addCard(new VitalityDistillation());
+        BaseMod.addCard(new LivingArmor());
+        BaseMod.addCard(new RootOfRenewal());
+        BaseMod.addCard(new ParalyticField());
+        BaseMod.addCard(new NeuralCollapse());
+        BaseMod.addCard(new NerveLock());
+        BaseMod.addCard(new PollenStorm());
+        BaseMod.addCard(new NumbingEcho());
+        BaseMod.addCard(new ParalysisHarvest());
+        BaseMod.addCard(new AbsoluteParalysis());
+        BaseMod.addCard(new NerveRupture());
+        BaseMod.addCard(new DualityConvergence());
         BaseMod.logger.info("Nine Sword Techniques cards registered");
     }
 
@@ -171,9 +246,23 @@ public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
     public void receivePostCreateStartingRelics(
             AbstractPlayer.PlayerClass playerClass, ArrayList<String> relics) {
         RUN_STATE.clear();
-        if (playerClass != ModEnums.MUZIXI && !relics.contains(SwordAncestorsLegacy.ID)) {
+        // Sword Ancestors' Legacy is a shared starting relic for every
+        // character, including Muzixi.  The character-specific starting
+        // relic is added by the character itself; this hook only guarantees
+        // the common relic is present once.
+        if (!relics.contains(SwordAncestorsLegacy.ID)) {
             relics.add(SwordAncestorsLegacy.ID);
         }
+    }
+
+    /** AbstractPlayer.onVictory() has finished, so combat-local Powers can be removed safely. */
+    @Override
+    public void receivePostBattle(AbstractRoom room) {
+        PersonaManager.clear(AbstractDungeon.player);
+        VitalityPower.removeExpired(AbstractDungeon.player);
+        WitherPower.removeExpired(AbstractDungeon.player);
+        VitalityMaxHealthPower.removeExpired(AbstractDungeon.player);
+        ParalysisPower.removeExpired(AbstractDungeon.player);
     }
 
     @Override
@@ -190,23 +279,29 @@ public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
     @Override
     public void receiveEditKeywords() {
         if (Settings.language == Settings.GameLanguage.ZHS) {
-            BaseMod.addKeyword("NineSwordTechniques", "生机", new String[]{"生机"},
-                    "木子汐的战斗资源。它会在战斗结束时消失，可被泪汐儿人格和部分卡牌消耗。");
-            BaseMod.addKeyword("NineSwordTechniques", "凋萎", new String[]{"凋萎"},
-                    "生机的负面对应。失去生机超出当前数量时转化为凋萎；每层使本场战斗的临时最大生命减少 1 点，获得生机会优先移除凋萎。");
-            BaseMod.addKeyword("NineSwordTechniques", "人格", new String[]{"人格"},
-                    "木子汐与泪汐儿共享肉身，但拥有不同的回合开始效果。通过人格交替可在两者之间切换。");
-            BaseMod.addKeyword("NineSwordTechniques", "麻痹", new String[]{"麻痹"},
+            BaseMod.addKeyword(KEYWORD_NAMESPACE, "生机", new String[]{"生机"},
+                    "战斗资源。实际获得的每点生机会使本场战斗的临时最大生命增加 1 点；生机不会低于 0，可被部分卡牌消耗，消耗不会减少临时最大生命，战斗结束时清除。");
+            BaseMod.addKeyword(KEYWORD_NAMESPACE, "凋萎", new String[]{"凋萎"},
+                    "生机的负面对应。失去生机超出当前数量时转化为凋萎；每层使本场战斗的临时最大生命减少 1 点。获得生机会优先移除凋萎，但临时最大生命变化保留到战斗结束。");
+            BaseMod.addKeyword(KEYWORD_NAMESPACE, "人格",
+                    new String[]{"人格", "木子汐人格", "泪汐儿人格"},
+                    "战斗内的双魂状态。木子汐人格在回合开始时提供效果；进入泪汐儿人格时会转化灵魂共鸣。通过人格交替可在两者之间切换。");
+            BaseMod.addKeyword(KEYWORD_NAMESPACE, "麻痹", new String[]{"麻痹"},
                     "临时施加在目标身上的状态。每层使目标本回合力量和敏捷各降低 1，目标回合结束时恢复并清除。");
+            BaseMod.addKeyword(KEYWORD_NAMESPACE, "灵魂共鸣", new String[]{"灵魂共鸣"},
+                    "进入泪汐儿人格时，最多消耗 9 层；每层抽 1 张牌并获得 1 点能量。");
         } else {
-            BaseMod.addKeyword("NineSwordTechniques", "Vitality", new String[]{"Vitality"},
-                    "Muzixi's combat resource. It disappears after combat and can be spent by Leixier's form and several cards.");
-            BaseMod.addKeyword("NineSwordTechniques", "Wither", new String[]{"Wither"},
-                    "The negative counterpart to Vitality. Each stack reduces temporary Max HP by 1; gaining Vitality removes Wither first.");
-            BaseMod.addKeyword("NineSwordTechniques", "persona", new String[]{"persona"},
-                    "Muzixi and Leixier share one body but have different start-of-turn effects. Persona Shift changes between them.");
-            BaseMod.addKeyword("NineSwordTechniques", "Paralysis", new String[]{"Paralysis"},
+            BaseMod.addKeyword(KEYWORD_NAMESPACE, "Vitality", new String[]{"vitality"},
+                    "A combat resource. Each point actually gained increases temporary Max HP by 1. Vitality cannot fall below 0; spending it does not reduce temporary Max HP. It clears after combat.");
+            BaseMod.addKeyword(KEYWORD_NAMESPACE, "Wither", new String[]{"wither"},
+                    "The negative counterpart to Vitality. Each stack reduces temporary Max HP by 1. Gaining Vitality removes Wither first, but the Max HP change remains until combat ends.");
+            BaseMod.addKeyword(KEYWORD_NAMESPACE, "Persona", new String[]{"persona"},
+                    "A combat-only dual-soul state. Muzixi grants a start-of-turn effect; entering Leixier converts Harmonic Soul. Persona Shift changes between them.");
+            BaseMod.addKeyword(KEYWORD_NAMESPACE, "Paralysis", new String[]{"paralysis"},
                     "A temporary debuff. Each stack lowers the target's Strength and Dexterity by 1 for this turn, then restores and clears at the end of the target's turn.");
+            BaseMod.addKeyword(KEYWORD_NAMESPACE, "Harmonic Soul",
+                    new String[]{"harmonic_soul"},
+                    "When entering Leixier's persona, spend up to 9. Draw 1 card and gain 1 Energy per stack.");
         }
     }
 

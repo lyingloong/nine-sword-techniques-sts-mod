@@ -25,9 +25,7 @@ public class WorldTreePower extends MuzixiPower {
         this.owner = owner;
         amount = 1;
         type = PowerType.BUFF;
-        // No dedicated icon is shipped yet; reuse the existing Vitality icon
-        // until a World Tree asset is added.
-        loadIcons("Vitality");
+        loadIcons("WorldTree");
         lastEnergy = readEnergy(owner);
         updateDescription();
     }
@@ -60,7 +58,7 @@ public class WorldTreePower extends MuzixiPower {
             // Advance the baseline before queuing effects; gaining Vitality
             // can cause another post-update pass in the same frame.
             power.lastEnergy = current;
-            power.addVitality(lost);
+            power.addVitalityOnePointAtATime(lost);
         } else {
             // Energy gains and cap changes establish a new baseline without
             // triggering the effect.
@@ -68,9 +66,19 @@ public class WorldTreePower extends MuzixiPower {
         }
     }
 
-    private void addVitality(int amount) {
-        if (amount > 0 && AbstractDungeon.actionManager != null) {
-            addToBot(new GainVitalityAction(owner, amount));
+    private void addVitalityOnePointAtATime(int lostEnergy) {
+        if (lostEnergy <= 0 || amount <= 0 || AbstractDungeon.actionManager == null) {
+            return;
+        }
+        // A drop from E to E-k represents k separate one-point triggers.
+        // Keep each copy's gain separate as well so "one gain" listeners see
+        // the same events they would if the energy changed point by point.
+        // These go to the top because the energy was already spent: World
+        // Tree must resolve before effects queued by the card that spent it.
+        for (int i = 0; i < lostEnergy; i++) {
+            for (int copy = 0; copy < amount; copy++) {
+                addToTop(new GainVitalityAction(owner, 1));
+            }
         }
     }
 
@@ -81,12 +89,21 @@ public class WorldTreePower extends MuzixiPower {
 
     @Override
     public void stackPower(int stackAmount) {
-        // There is only one World Tree marker; stacking refreshes its baseline.
-        lastEnergy = readEnergy(owner);
+        int current = readEnergy(owner);
+        if (current < lastEnergy) {
+            int lost = lastEnergy - current;
+            flash();
+            lastEnergy = current;
+            // Only copies already in play observe the cost of the new copy.
+            addVitalityOnePointAtATime(lost);
+        }
+        super.stackPower(stackAmount);
+        lastEnergy = current;
+        updateDescription();
     }
 
     @Override
     public void updateDescription() {
-        description = STRINGS.DESCRIPTIONS[0];
+        description = String.format(STRINGS.DESCRIPTIONS[0], amount);
     }
 }

@@ -1,12 +1,10 @@
 package ninesword.muzixi.cards;
 
-import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import ninesword.muzixi.actions.SpendVitalityAction;
-import ninesword.muzixi.powers.VitalityPower;
+import ninesword.muzixi.actions.VitalityPaymentAction;
 
 public class LifeDrain extends MuzixiCard {
     public static final String ID = "NineSwordTechniques:LifeDrain";
@@ -22,10 +20,7 @@ public class LifeDrain extends MuzixiCard {
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
         damage(player, monster, damage);
-        if (hasVitality(player, 2)) {
-            addToBot(new SpendVitalityAction(player, 2));
-            addToBot(new HealAction(player, player, magicNumber));
-        }
+        addToBot(new VitalityPaymentAction(player, 2, magicNumber, 0, 0));
     }
 
     @Override

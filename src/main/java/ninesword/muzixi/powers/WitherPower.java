@@ -1,8 +1,9 @@
 package ninesword.muzixi.powers;
 
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
@@ -25,7 +26,7 @@ public class WitherPower extends MuzixiPower {
         this.amount = Math.max(0, amount);
         type = PowerType.DEBUFF;
         canGoNegative = false;
-        loadIcons("Vitality");
+        loadIcons("Wither");
         updateDescription();
     }
 
@@ -69,19 +70,18 @@ public class WitherPower extends MuzixiPower {
             return;
         }
 
-        int applied = VitalityMaxHealthPower.addNegative(owner, excess);
-        amount += applied;
+        VitalityMaxHealthPower.addNegative(owner, excess);
+        amount = safeAdd(amount, excess);
         updateDescription();
     }
 
-    /** Remove Wither and restore its matching negative temporary max health. */
+    /** Remove Wither stacks without changing the independent max-health ledger. */
     public int removeStacks(int requested) {
         if (requested <= 0 || amount <= 0) {
             return 0;
         }
         int removed = Math.min(requested, amount);
         amount -= removed;
-        VitalityMaxHealthPower.restoreNegative(owner, removed);
         updateDescription();
         if (amount <= 0) {
             amount = 0;
@@ -110,18 +110,6 @@ public class WitherPower extends MuzixiPower {
     }
 
     @Override
-    public void onRemove() {
-        // Manual removal during combat also clears the linked negative
-        // modifier. Combat-end cleanup zeroes this Power first, leaving the
-        // independent temporary-max-health Power to restore its own ledger.
-        if (amount > 0) {
-            VitalityMaxHealthPower.restoreNegative(owner, amount);
-            amount = 0;
-            updateDescription();
-        }
-    }
-
-    @Override
     public void onVictory() {
         PENDING_COMBAT_CLEANUP.add(owner);
     }
@@ -132,20 +120,41 @@ public class WitherPower extends MuzixiPower {
     }
 
     public static void removeExpired(AbstractCreature creature) {
-        if (creature == null || creature.powers == null || !PENDING_COMBAT_CLEANUP.remove(creature)) {
+        if (creature == null || creature.powers == null) {
             return;
         }
-        Iterator<AbstractPower> iterator = creature.powers.iterator();
-        while (iterator.hasNext()) {
-            AbstractPower power = iterator.next();
-            if (POWER_ID.equals(power.ID)) {
-                // Do not let Wither restore the temporary max-health ledger at
-                // combat end; VitalityMaxHealthPower owns that cleanup.
-                power.amount = 0;
-                power.updateDescription();
-                power.onRemove();
-                iterator.remove();
+
+        if (PENDING_COMBAT_CLEANUP.remove(creature)) {
+            Iterator<AbstractPower> iterator = creature.powers.iterator();
+            while (iterator.hasNext()) {
+                AbstractPower power = iterator.next();
+                if (POWER_ID.equals(power.ID)) {
+                    // VitalityMaxHealthPower independently restores the full
+                    // combat ledger; removing this marker never changes it.
+                    power.amount = 0;
+                    power.updateDescription();
+                    power.onRemove();
+                    iterator.remove();
+                }
+            }
+            return;
+        }
+
+        WitherPower wither = getPower(creature);
+        if (wither != null && wither.amount <= 0) {
+            // A new application can be fully canceled by existing Vitality
+            // while ApplyPowerAction is iterating the Power list. Remove the
+            // resulting zero marker on the following post-update instead.
+            wither.onRemove();
+            creature.powers.remove(wither);
+            if (AbstractDungeon.getCurrMapNode() != null) {
+                AbstractDungeon.onModifyPower();
             }
         }
+    }
+
+    private static int safeAdd(int left, int right) {
+        long result = (long) left + right;
+        return result >= Integer.MAX_VALUE ? Integer.MAX_VALUE : (int) result;
     }
 }

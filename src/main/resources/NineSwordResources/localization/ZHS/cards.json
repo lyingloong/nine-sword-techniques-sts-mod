@@ -104,122 +104,292 @@
   },
   "NineSwordTechniques:MuzixiDefend": {
     "NAME": "防御",
-    "DESCRIPTION": "获得 !B! 点格挡。",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。"
   },
   "NineSwordTechniques:PersonaShift": {
     "NAME": "人格交替",
-    "DESCRIPTION": "获得 1 层灵魂共鸣，然后切换人格。",
-    "UPGRADE_DESCRIPTION": "获得 1 层灵魂共鸣，然后切换人格。"
+    "DESCRIPTION": "获得 1 层 nineswordtechniques:灵魂共鸣 ，然后切换 nineswordtechniques:人格 。",
+    "UPGRADE_DESCRIPTION": "获得 1 层 nineswordtechniques:灵魂共鸣 ，然后切换 nineswordtechniques:人格 。"
   },
   "NineSwordTechniques:ThornWhip": {
     "NAME": "荆棘鞭",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 1 点生机。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 获得 1 点生机。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 1 点 nineswordtechniques:生机 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 获得 1 点 nineswordtechniques:生机 。"
   },
   "NineSwordTechniques:ParalysisFlower": {
     "NAME": "麻痹之花",
-    "DESCRIPTION": "施加 !M! 层麻痹。 NL 获得 !M! 点生机。",
-    "UPGRADE_DESCRIPTION": "施加 !M! 层麻痹。 NL 获得 !M! 点生机。"
+    "DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 。 NL 获得 !M! 点 nineswordtechniques:生机 。",
+    "UPGRADE_DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 。 NL 获得 !M! 点 nineswordtechniques:生机 。"
   },
   "NineSwordTechniques:RootGuard": {
     "NAME": "根脉守护",
-    "DESCRIPTION": "获得 !B! 点格挡。 NL 若处于木子汐人格，获得 1 点生机。",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡。 NL 若处于木子汐人格，获得 1 点生机。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 若处于 nineswordtechniques:木子汐人格 ，获得 1 点 nineswordtechniques:生机 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 若处于 nineswordtechniques:木子汐人格 ，获得 1 点 nineswordtechniques:生机 。"
   },
   "NineSwordTechniques:SapSurge": {
     "NAME": "生机奔涌",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点生机。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点生机。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点 nineswordtechniques:生机 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点 nineswordtechniques:生机 。"
   },
   "NineSwordTechniques:VineLash": {
     "NAME": "藤蔓抽击",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 若目标有麻痹，施加 !M! 层中毒。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 若目标有麻痹，施加 !M! 层中毒。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 若目标有 nineswordtechniques:麻痹 ，施加 !M! 层 中毒 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 若目标有 nineswordtechniques:麻痹 ，施加 !M! 层 中毒 。"
   },
   "NineSwordTechniques:LifeDrain": {
     "NAME": "生命汲取",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 若至少有 2 点生机，消耗 2 点并回复 2 点生命。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 若至少有 2 点生机，消耗 2 点并回复 2 点生命。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 若至少有 2 点 nineswordtechniques:生机 ，消耗 2 点并回复 !M! 点生命。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 若至少有 2 点 nineswordtechniques:生机 ，消耗 2 点并回复 !M! 点生命。"
   },
   "NineSwordTechniques:LeafDance": {
     "NAME": "落叶舞",
-    "DESCRIPTION": "获得 !M! 点生机。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 点生机。"
+    "DESCRIPTION": "获得 !M! 点 nineswordtechniques:生机 。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点 nineswordtechniques:生机 。"
   },
   "NineSwordTechniques:CreepingRoots": {
     "NAME": "蔓生根须",
-    "DESCRIPTION": "施加 !M! 层麻痹。 NL 获得 1 点生机。",
-    "UPGRADE_DESCRIPTION": "施加 !M! 层麻痹。 NL 获得 2 点生机。"
+    "DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 。 NL 获得 1 点 nineswordtechniques:生机 。",
+    "UPGRADE_DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 。 NL 获得 2 点 nineswordtechniques:生机 。"
   },
   "NineSwordTechniques:Vinesnare": {
     "NAME": "藤网",
-    "DESCRIPTION": "获得 !B! 点格挡。 NL 对目标施加 1 层虚弱和 1 层易伤。",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡。 NL 对目标施加 1 层虚弱和 1 层易伤。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 对目标施加 1 层 虚弱 和 1 层 易伤 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 对目标施加 1 层 虚弱 和 1 层 易伤 。"
   },
   "NineSwordTechniques:GiantTree": {
     "NAME": "参天古木",
-    "DESCRIPTION": "获得常青：每获得 1 点生机，获得 !M! 点格挡。",
-    "UPGRADE_DESCRIPTION": "获得常青：每获得 1 点生机，获得 !M! 点格挡。"
+    "DESCRIPTION": "每获得 1 点 nineswordtechniques:生机 ，获得 !M! 点 格挡 。",
+    "UPGRADE_DESCRIPTION": "每获得 1 点 nineswordtechniques:生机 ，获得 !M! 点 格挡 。"
   },
   "NineSwordTechniques:Awakening": {
     "NAME": "觉醒",
-    "DESCRIPTION": "切换人格。 NL 获得 2 点生机。 NL 抽 1 张牌。 NL 消耗。",
-    "UPGRADE_DESCRIPTION": "切换人格。 NL 获得 3 点生机。 NL 抽 2 张牌。 NL 消耗。"
+    "DESCRIPTION": "切换 nineswordtechniques:人格 。 NL 获得 2 点 nineswordtechniques:生机 。 NL 抽 1 张牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "切换 nineswordtechniques:人格 。 NL 获得 3 点 nineswordtechniques:生机 。 NL 抽 2 张牌。 NL 消耗 。"
   },
   "NineSwordTechniques:EyeOfLife": {
     "NAME": "生之眼",
-    "DESCRIPTION": "进入木子汐人格。 NL 获得 !M! 点生机。",
-    "UPGRADE_DESCRIPTION": "进入木子汐人格。 NL 获得 !M! 点生机。"
+    "DESCRIPTION": "进入 nineswordtechniques:木子汐人格 。 NL 获得 !M! 点 nineswordtechniques:生机 。",
+    "UPGRADE_DESCRIPTION": "进入 nineswordtechniques:木子汐人格 。 NL 获得 !M! 点 nineswordtechniques:生机 。"
   },
   "NineSwordTechniques:ParasiticSeed": {
     "NAME": "寄生种",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 施加 !M! 层中毒。 NL 获得 2 点生机。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 施加 !M! 层中毒。 NL 获得 2 点生机。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 施加 !M! 层 中毒 。 NL 获得 2 点 nineswordtechniques:生机 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 施加 !M! 层 中毒 。 NL 获得 2 点 nineswordtechniques:生机 。"
   },
   "NineSwordTechniques:AncientBark": {
     "NAME": "远古树皮",
-    "DESCRIPTION": "获得远古树皮：回合结束时，若拥有至少 4 点生机，获得 !M! 点格挡。",
-    "UPGRADE_DESCRIPTION": "获得远古树皮：回合结束时，若拥有至少 4 点生机，获得 !M! 点格挡。"
+    "DESCRIPTION": "获得远古树皮：回合结束时，若拥有至少 4 点 nineswordtechniques:生机 ，获得 !M! 点 格挡 。",
+    "UPGRADE_DESCRIPTION": "获得远古树皮：回合结束时，若拥有至少 4 点 nineswordtechniques:生机 ，获得 !M! 点 格挡 。"
   },
   "NineSwordTechniques:NaturalCycle": {
     "NAME": "自然循环",
-    "DESCRIPTION": "每回合开始时，若至少有 1 点生机，消耗 1 点并抽 1 张牌。",
-    "UPGRADE_DESCRIPTION": "每回合开始时，若至少有 1 点生机，消耗 1 点并抽 1 张牌。"
+    "DESCRIPTION": "每回合开始时，若至少有 1 点 nineswordtechniques:生机 ，消耗 1 点并抽 1 张牌。",
+    "UPGRADE_DESCRIPTION": "每回合开始时，若至少有 1 点 nineswordtechniques:生机 ，消耗 1 点并抽 1 张牌。"
   },
   "NineSwordTechniques:MindGarden": {
     "NAME": "心灵花园",
-    "DESCRIPTION": "抽 !M! 张牌。 NL 若至少有 1 点生机，消耗 1 点并获得 1 点能量。",
-    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 若至少有 1 点生机，消耗 1 点并获得 1 点能量。"
+    "DESCRIPTION": "抽 !M! 张牌。 NL 若至少有 1 点 nineswordtechniques:生机 ，消耗 1 点并获得 1 点能量。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 若至少有 1 点 nineswordtechniques:生机 ，消耗 1 点并获得 1 点能量。"
   },
   "NineSwordTechniques:VerdantRebirth": {
     "NAME": "青木回生",
-    "DESCRIPTION": "回复 !M! 点生命。 NL 获得 4 点生机。 NL 消耗。",
-    "UPGRADE_DESCRIPTION": "回复 !M! 点生命。 NL 获得 6 点生机。 NL 消耗。"
+    "DESCRIPTION": "回复 !M! 点生命。 NL 获得 4 点 nineswordtechniques:生机 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "回复 !M! 点生命。 NL 获得 6 点 nineswordtechniques:生机 。 NL 消耗 。"
   },
   "NineSwordTechniques:DivineDemonicGaze": {
     "NAME": "神魔之眼",
-    "DESCRIPTION": "获得 9 层灵魂共鸣。 NL 消耗。",
-    "UPGRADE_DESCRIPTION": "获得 9 层灵魂共鸣。 NL 消耗。"
+    "DESCRIPTION": "获得 9 层 nineswordtechniques:灵魂共鸣 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得 9 层 nineswordtechniques:灵魂共鸣 。 NL 消耗 。"
   },
   "NineSwordTechniques:WorldTree": {
     "NAME": "世界树",
-    "DESCRIPTION": "每当当前能量减少 1 点，获得 1 点生机。能量增加不会触发。",
-    "UPGRADE_DESCRIPTION": "每当当前能量减少 1 点，获得 1 点生机。能量增加不会触发。"
+    "DESCRIPTION": "每当当前能量减少 1 点，获得 1 点 nineswordtechniques:生机 。能量增加不会触发。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 每当当前能量减少 1 点，获得 1 点 nineswordtechniques:生机 。能量增加不会触发。"
   },
   "NineSwordTechniques:TenThousandFlowers": {
     "NAME": "万花",
-    "DESCRIPTION": "本牌消耗。 NL 结算时记录所有敌人的增益和减益（有层数按绝对值，无层数按 1 层），移除它们并获得等量生机。",
-    "UPGRADE_DESCRIPTION": "结算时记录所有敌人的增益和减益（有层数按绝对值，无层数按 1 层），移除它们并获得等量生机。"
+    "DESCRIPTION": "本牌 消耗 。 NL 结算时记录所有敌人的增益和减益（有层数按绝对值，无层数按 1 层），移除它们并获得等量 nineswordtechniques:生机 。",
+    "UPGRADE_DESCRIPTION": "结算时记录所有敌人的增益和减益（有层数按绝对值，无层数按 1 层），移除它们并获得等量 nineswordtechniques:生机 。"
   },
   "NineSwordTechniques:TearOfGod": {
     "NAME": "神之泪",
-    "DESCRIPTION": "消耗所有生机。 NL 每消耗 1 点，对所有敌人造成 !D! 点真实伤害。 NL 泪汐儿人格：对每个敌人施加等同于其所受伤害的虚弱和易伤。 NL 木子汐人格：获得消耗生机的一半（向下取整）。",
-    "UPGRADE_DESCRIPTION": "消耗所有生机。 NL 每消耗 1 点，对所有敌人造成 !D! 点真实伤害。 NL 泪汐儿人格：对每个敌人施加等同于其所受伤害的虚弱和易伤。 NL 木子汐人格：获得消耗生机的一半（向下取整）。"
+    "DESCRIPTION": "消耗所有 nineswordtechniques:生机 。 NL 每消耗 1 点，对所有敌人造成 !M! 点真实伤害。 NL nineswordtechniques:泪汐儿人格 ：对每个敌人施加等同于其所受伤害的 虚弱 和 易伤 。 NL nineswordtechniques:木子汐人格 ：获得消耗 nineswordtechniques:生机 的一半（向下取整）。",
+    "UPGRADE_DESCRIPTION": "消耗所有 nineswordtechniques:生机 。 NL 每消耗 1 点，对所有敌人造成 !M! 点真实伤害。 NL nineswordtechniques:泪汐儿人格 ：对每个敌人施加等同于其所受伤害的 虚弱 和 易伤 。 NL nineswordtechniques:木子汐人格 ：获得消耗 nineswordtechniques:生机 的一半（向下取整）。"
   },
   "NineSwordTechniques:SoulReflection": {
     "NAME": "灵魂倒影",
-    "DESCRIPTION": "本牌消耗。 NL 将生命值变为最大生命值减当前生命值，至少为 1；若生命值降低则以生命流失失去生命，否则回复生命。",
-    "UPGRADE_DESCRIPTION": "本牌消耗。 NL 将生命值变为最大生命值减当前生命值，至少为 1；若生命值降低则以生命流失失去生命，否则回复生命。"
+    "DESCRIPTION": "本牌 消耗 。 NL 将生命值变为最大生命值减当前生命值，至少为 1；若生命值降低则以生命流失失去生命，否则回复生命。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 本牌 消耗 。 NL 将生命值变为最大生命值减当前生命值，至少为 1；若生命值降低则以生命流失失去生命，否则回复生命。"
+  },
+  "NineSwordTechniques:Sprout": {
+    "NAME": "萌芽",
+    "DESCRIPTION": "获得 !M! 点 nineswordtechniques:生机 。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点 nineswordtechniques:生机 。"
+  },
+  "NineSwordTechniques:VitalExchange": {
+    "NAME": "生机转化",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 消耗至多 2 点 nineswordtechniques:生机 ，每点回复 2 点生命。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 消耗至多 2 点 nineswordtechniques:生机 ，每点回复 2 点生命。"
+  },
+  "NineSwordTechniques:RootedBlow": {
+    "NAME": "根脉重击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 最多消耗 3 点 nineswordtechniques:生机 ，每点额外造成 4 点伤害。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 最多消耗 3 点 nineswordtechniques:生机 ，每点额外造成 5 点伤害。"
+  },
+  "NineSwordTechniques:VitalGuard": {
+    "NAME": "生机护体",
+    "DESCRIPTION": "最多消耗 3 点 nineswordtechniques:生机 ；每消耗 1 点获得 3 点 格挡 。",
+    "UPGRADE_DESCRIPTION": "最多消耗 5 点 nineswordtechniques:生机 ；每消耗 1 点获得 3 点 格挡 。"
+  },
+  "NineSwordTechniques:GreenPulse": {
+    "NAME": "青脉脉动",
+    "DESCRIPTION": "获得 !M! 点 nineswordtechniques:生机 。 NL 抽 1 张牌。 NL 本牌 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点 nineswordtechniques:生机 。 NL 抽 1 张牌。 NL 本牌 消耗 。"
+  },
+  "NineSwordTechniques:RenewalSeed": {
+    "NAME": "回生种",
+    "DESCRIPTION": "回复 !M! 点生命。 NL 获得 1 点 nineswordtechniques:生机 。",
+    "UPGRADE_DESCRIPTION": "回复 !M! 点生命。 NL 获得 2 点 nineswordtechniques:生机 。"
+  },
+  "NineSwordTechniques:Flourish": {
+    "NAME": "繁茂",
+    "DESCRIPTION": "若至少有 6 点 nineswordtechniques:生机 ，抽 2 张牌；否则获得 2 点 nineswordtechniques:生机 。",
+    "UPGRADE_DESCRIPTION": "若至少有 5 点 nineswordtechniques:生机 ，抽 3 张牌；否则获得 3 点 nineswordtechniques:生机 。"
+  },
+  "NineSwordTechniques:VitalCycle": {
+    "NAME": "生息回环",
+    "DESCRIPTION": "获得 2 点 nineswordtechniques:生机 。 NL 若结算后至少有 6 点 nineswordtechniques:生机 ，抽 1 张牌。",
+    "UPGRADE_DESCRIPTION": "获得 2 点 nineswordtechniques:生机 。 NL 若结算后至少有 6 点 nineswordtechniques:生机 ，抽 2 张牌。"
+  },
+  "NineSwordTechniques:NumbingPollen": {
+    "NAME": "麻痹花粉",
+    "DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 。 NL 若目标原本已有 nineswordtechniques:麻痹 ，获得 1 点 nineswordtechniques:生机 。",
+    "UPGRADE_DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 。 NL 若目标原本已有 nineswordtechniques:麻痹 ，获得 1 点 nineswordtechniques:生机 。"
+  },
+  "NineSwordTechniques:NeedleVines": {
+    "NAME": "针藤",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 施加 !M! 层 nineswordtechniques:麻痹 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 施加 !M! 层 nineswordtechniques:麻痹 。"
+  },
+  "NineSwordTechniques:ParalyzingBloom": {
+    "NAME": "麻痹绽放",
+    "DESCRIPTION": "对所有敌人施加 !M! 层 nineswordtechniques:麻痹 。",
+    "UPGRADE_DESCRIPTION": "对所有敌人施加 !M! 层 nineswordtechniques:麻痹 。"
+  },
+  "NineSwordTechniques:NerveCut": {
+    "NAME": "断脉",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 若目标至少有 3 层 nineswordtechniques:麻痹 ，额外造成 5 点伤害。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 若目标至少有 3 层 nineswordtechniques:麻痹 ，额外造成 7 点伤害。"
+  },
+  "NineSwordTechniques:BindingRoots": {
+    "NAME": "缚根",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 施加 !M! 层 nineswordtechniques:麻痹 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 施加 !M! 层 nineswordtechniques:麻痹 。"
+  },
+  "NineSwordTechniques:NumbnessMist": {
+    "NAME": "麻息雾",
+    "DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 和 2 层 虚弱 。",
+    "UPGRADE_DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 和 3 层 虚弱 。"
+  },
+  "NineSwordTechniques:EchoingNumbness": {
+    "NAME": "余麻回响",
+    "DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 。 NL 若目标至少有 4 层 nineswordtechniques:麻痹 ，抽 1 张牌。",
+    "UPGRADE_DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 。 NL 若目标至少有 3 层 nineswordtechniques:麻痹 ，抽 1 张牌。"
+  },
+  "NineSwordTechniques:ParalyzedVenom": {
+    "NAME": "麻毒",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 若目标有 nineswordtechniques:麻痹 ，施加 2 层 中毒 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 若目标有 nineswordtechniques:麻痹 ，施加 4 层 中毒 。"
+  },
+  "NineSwordTechniques:EyeOfDeath": {
+    "NAME": "死之眼",
+    "DESCRIPTION": "进入 nineswordtechniques:泪汐儿人格 。 NL 你和所有敌人失去 2 点生命（生命流失）。",
+    "UPGRADE_DESCRIPTION": "进入 nineswordtechniques:泪汐儿人格 。 NL 你和所有敌人失去 2 点生命（生命流失）。"
+  },
+  "NineSwordTechniques:VerdantMiracle": {
+    "NAME": "青木奇迹",
+    "DESCRIPTION": "回复 4 点生命。 NL 获得 8 点 nineswordtechniques:生机 。 NL 本牌 消耗 。",
+    "UPGRADE_DESCRIPTION": "回复 6 点生命。 NL 获得 12 点 nineswordtechniques:生机 。 NL 本牌 消耗 。"
+  },
+  "NineSwordTechniques:VitalityTide": {
+    "NAME": "生机潮汐",
+    "DESCRIPTION": "获得 !M! 点 nineswordtechniques:生机 。 NL 下回合开始时，再获得等量 nineswordtechniques:生机 。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点 nineswordtechniques:生机 。 NL 下回合开始时，再获得等量 nineswordtechniques:生机 。"
+  },
+  "NineSwordTechniques:VitalityReservoir": {
+    "NAME": "生机蓄池",
+    "DESCRIPTION": "每回合开始时，若 nineswordtechniques:生机 不超过 4 点，获得 2 点 nineswordtechniques:生机 。",
+    "UPGRADE_DESCRIPTION": "每回合开始时，若 nineswordtechniques:生机 不超过 5 点，获得 3 点 nineswordtechniques:生机 。"
+  },
+  "NineSwordTechniques:ThickenedLifeblood": {
+    "NAME": "厚重生机",
+    "DESCRIPTION": "每回合第一次单次获得至少 3 点 nineswordtechniques:生机 时，获得 4 点 格挡 。",
+    "UPGRADE_DESCRIPTION": "每回合第一次单次获得至少 3 点 nineswordtechniques:生机 时，获得 6 点 格挡 。"
+  },
+  "NineSwordTechniques:RootedFortification": {
+    "NAME": "根界壁垒",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 消耗至多 6 点 nineswordtechniques:生机 ，每点额外获得 3 点 格挡 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 消耗至多 6 点 nineswordtechniques:生机 ，每点额外获得 4 点 格挡 。"
+  },
+  "NineSwordTechniques:VitalityDistillation": {
+    "NAME": "生机淬炼",
+    "DESCRIPTION": "若至少有 6 点 nineswordtechniques:生机 ，消耗 6 点 nineswordtechniques:生机 ，获得 2 点能量并抽 2 张牌。",
+    "UPGRADE_DESCRIPTION": "若至少有 5 点 nineswordtechniques:生机 ，消耗 5 点 nineswordtechniques:生机 ，获得 2 点能量并抽 2 张牌。"
+  },
+  "NineSwordTechniques:LivingArmor": {
+    "NAME": "活体铠甲",
+    "DESCRIPTION": "回合结束时，若至少有 8 点 nineswordtechniques:生机 ，获得 6 点 格挡 。",
+    "UPGRADE_DESCRIPTION": "回合结束时，若至少有 8 点 nineswordtechniques:生机 ，获得 9 点 格挡 。"
+  },
+  "NineSwordTechniques:RootOfRenewal": {
+    "NAME": "再生根",
+    "DESCRIPTION": "获得 2 层 再生 。 NL 获得 3 点 nineswordtechniques:生机 。 NL 本牌 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得 2 层 再生 。 NL 获得 3 点 nineswordtechniques:生机 。 NL 本牌 消耗 。"
+  },
+  "NineSwordTechniques:ParalyticField": {
+    "NAME": "麻痹领域",
+    "DESCRIPTION": "每回合开始时，对所有敌人施加 !M! 层 nineswordtechniques:麻痹 。",
+    "UPGRADE_DESCRIPTION": "每回合开始时，对所有敌人施加 !M! 层 nineswordtechniques:麻痹 。"
+  },
+  "NineSwordTechniques:NeuralCollapse": {
+    "NAME": "神经崩解",
+    "DESCRIPTION": "目标每有 4 层 nineswordtechniques:麻痹 ，对其额外施加 1 层 nineswordtechniques:麻痹 。",
+    "UPGRADE_DESCRIPTION": "目标每有 3 层 nineswordtechniques:麻痹 ，对其额外施加 1 层 nineswordtechniques:麻痹 。"
+  },
+  "NineSwordTechniques:NerveLock": {
+    "NAME": "封脉",
+    "DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 。 NL 若结算后至少有 4 层 nineswordtechniques:麻痹 ，再施加 2 层 虚弱 。",
+    "UPGRADE_DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 。 NL 若结算后至少有 4 层 nineswordtechniques:麻痹 ，再施加 3 层 虚弱 。"
+  },
+  "NineSwordTechniques:PollenStorm": {
+    "NAME": "花粉风暴",
+    "DESCRIPTION": "对所有敌人施加 !M! 层 nineswordtechniques:麻痹 。",
+    "UPGRADE_DESCRIPTION": "对所有敌人施加 !M! 层 nineswordtechniques:麻痹 。"
+  },
+  "NineSwordTechniques:NumbingEcho": {
+    "NAME": "麻痹回响",
+    "DESCRIPTION": "每个玩家回合第一次对一个有效目标施加 nineswordtechniques:麻痹 时，对其额外施加相同层数。多份可叠加。",
+    "UPGRADE_DESCRIPTION": "每个玩家回合第一次对一个有效目标施加 nineswordtechniques:麻痹 时，对其额外施加相同层数。多份可叠加。"
+  },
+  "NineSwordTechniques:ParalysisHarvest": {
+    "NAME": "麻痹收割",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 若目标至少有 5 层 nineswordtechniques:麻痹 ，获得 2 点 nineswordtechniques:生机 并抽 1 张牌。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 若目标至少有 4 层 nineswordtechniques:麻痹 ，获得 3 点 nineswordtechniques:生机 并抽 1 张牌。"
+  },
+  "NineSwordTechniques:AbsoluteParalysis": {
+    "NAME": "绝对麻痹",
+    "DESCRIPTION": "敌人的 nineswordtechniques:麻痹 在回合结束时只会消失一半（向上取整）。",
+    "UPGRADE_DESCRIPTION": "敌人的 nineswordtechniques:麻痹 在回合结束时只会消失一半（向上取整）。"
+  },
+  "NineSwordTechniques:NerveRupture": {
+    "NAME": "神经断灭",
+    "DESCRIPTION": "造成 !D! 点伤害，移除目标所有 nineswordtechniques:麻痹 ；每移除 1 层额外造成 2 点伤害。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，移除目标所有 nineswordtechniques:麻痹 ；每移除 1 层额外造成 3 点伤害。"
+  },
+  "NineSwordTechniques:DualityConvergence": {
+    "NAME": "两仪归一",
+    "DESCRIPTION": "每次切换 nineswordtechniques:人格 时，获得 2 点 nineswordtechniques:生机 并对所有敌人施加 2 层 nineswordtechniques:麻痹 。",
+    "UPGRADE_DESCRIPTION": "每次切换 nineswordtechniques:人格 时，获得 3 点 nineswordtechniques:生机 并对所有敌人施加 3 层 nineswordtechniques:麻痹 。"
   }
 }

@@ -23,6 +23,8 @@ public class WorldTree extends MuzixiCard {
         if (!upgraded) {
             upgradeName();
             isInnate = true;
+            rawDescription = strings(ID).UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 

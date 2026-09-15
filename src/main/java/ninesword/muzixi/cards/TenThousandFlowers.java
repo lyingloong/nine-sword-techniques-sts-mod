@@ -23,6 +23,8 @@ public class TenThousandFlowers extends MuzixiCard {
         if (!upgraded) {
             upgradeName();
             exhaust = false;
+            rawDescription = strings(ID).UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 

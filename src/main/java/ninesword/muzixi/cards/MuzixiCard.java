@@ -50,6 +50,24 @@ public abstract class MuzixiCard extends CustomCard {
         return player.hasPower(TearPersonaPower.POWER_ID);
     }
 
+    /** Calculate a one-off attack value while preserving this card's displayed damage. */
+    protected int calculateDamageForBase(AbstractMonster monster, int alternateBaseDamage) {
+        int originalBaseDamage = baseDamage;
+        int originalDamage = damage;
+        boolean originalDamageModified = isDamageModified;
+        int[] originalMultiDamage = multiDamage;
+
+        baseDamage = Math.max(0, alternateBaseDamage);
+        super.calculateCardDamage(monster);
+        int calculatedDamage = damage;
+
+        baseDamage = originalBaseDamage;
+        damage = originalDamage;
+        isDamageModified = originalDamageModified;
+        multiDamage = originalMultiDamage;
+        return calculatedDamage;
+    }
+
     protected void damage(AbstractPlayer player, AbstractMonster monster, int amount) {
         player.useFastAttackAnimation();
         addToBot(new DamageAction(monster, new DamageInfo(player, amount, DamageInfo.DamageType.NORMAL)));

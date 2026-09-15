@@ -33,7 +33,7 @@ public class VitalityMaxHealthPower extends MuzixiPower {
         this.amount = 0;
         type = PowerType.BUFF;
         canGoNegative = true;
-        loadIcons("Vitality");
+        loadIcons("VitalityMaxHealth");
         updateDescription();
     }
 
@@ -71,25 +71,10 @@ public class VitalityMaxHealthPower extends MuzixiPower {
         VitalityMaxHealthPower power = ensurePower(creature);
         power.negativeAmount += applied;
         creature.maxHealth -= applied;
+        creature.currentHealth = Math.min(creature.currentHealth, creature.maxHealth);
         power.syncAmount();
         creature.healthBarUpdatedEvent();
         return applied;
-    }
-
-    /** Restores negative temporary maximum health when Wither is canceled. */
-    public static int restoreNegative(AbstractCreature creature, int requested) {
-        VitalityMaxHealthPower power = getPower(creature);
-        if (power == null || requested <= 0 || power.negativeAmount <= 0) {
-            return 0;
-        }
-        int restored = Math.min(requested, power.negativeAmount);
-        // The ledger is authoritative: never restore more than the negative
-        // maximum-health change that was actually applied.
-        power.negativeAmount -= restored;
-        creature.maxHealth += restored;
-        power.syncAmount();
-        creature.healthBarUpdatedEvent();
-        return restored;
     }
 
     private static VitalityMaxHealthPower ensurePower(AbstractCreature creature) {
@@ -121,6 +106,7 @@ public class VitalityMaxHealthPower extends MuzixiPower {
         // Undo the exact deltas recorded by this Power without silently
         // changing current HP.
         owner.maxHealth = Math.max(1, owner.maxHealth - positiveAmount + negativeAmount);
+        owner.currentHealth = Math.min(owner.currentHealth, owner.maxHealth);
         positiveAmount = 0;
         negativeAmount = 0;
         syncAmount();
@@ -164,7 +150,7 @@ public class VitalityMaxHealthPower extends MuzixiPower {
 
     /**
      * Victory callbacks run while the creature's Power list is being iterated.
-     * Defer removal until the next update, but keep the cleanup owned here.
+     * Defer removal until the post-battle hook, keeping cleanup owned here.
      */
     public static void removeExpired(AbstractCreature creature) {
         if (creature == null || creature.powers == null || !PENDING_COMBAT_CLEANUP.remove(creature)) {

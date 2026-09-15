@@ -21,26 +21,36 @@ public class SwitchPersonaAction extends AbstractGameAction {
         boolean hasTearPersona = player.hasPower(TearPersonaPower.POWER_ID);
 
         if (hasMuzixiPersona && !hasTearPersona) {
-            queueSwitch(new TearPersonaPower(player), hasMuzixiPersona, hasTearPersona);
+            // This is a genuine transition from Muzixi to Tear.
+            queueSwitch(new TearPersonaPower(player), true, false, true);
         } else {
             // No persona (or a malformed state containing both markers) starts
             // in Muzixi's persona; this is also the deterministic first switch.
-            queueSwitch(new MuzixiPersonaPower(player), hasMuzixiPersona, hasTearPersona);
+            // A neutral Persona Shift still counts as a switch for effects such
+            // as Duality Convergence; direct neutral entry cards do not.
+            boolean actualSwitch = !hasMuzixiPersona;
+            queueSwitch(new MuzixiPersonaPower(player), hasMuzixiPersona, hasTearPersona,
+                    actualSwitch);
         }
 
         isDone = true;
     }
 
     private void queueSwitch(com.megacrit.cardcrawl.powers.AbstractPower nextPersona,
-                             boolean removeMuzixi, boolean removeTear) {
-        // Append in execution order: remove old markers, then apply the new one.
-        // TearPersonaPower owns its universal enter effect (including Harmonic Soul conversion).
-        if (removeTear) {
-            addToBot(new RemoveSpecificPowerAction(player, player, TearPersonaPower.POWER_ID));
+                             boolean removeMuzixi, boolean removeTear,
+                             boolean actualSwitch) {
+        // This action may have card effects already queued behind it. Insert
+        // the transition at the top in reverse order so removal, application,
+        // Tear's entry conversion, and the switch payoff all finish first.
+        if (actualSwitch) {
+            addToTop(new TriggerDualityConvergenceAction(player));
         }
+        addToTop(new ApplyPowerAction(player, player, nextPersona, 1));
         if (removeMuzixi) {
-            addToBot(new RemoveSpecificPowerAction(player, player, MuzixiPersonaPower.POWER_ID));
+            addToTop(new RemoveSpecificPowerAction(player, player, MuzixiPersonaPower.POWER_ID));
         }
-        addToBot(new ApplyPowerAction(player, player, nextPersona, 1));
+        if (removeTear) {
+            addToTop(new RemoveSpecificPowerAction(player, player, TearPersonaPower.POWER_ID));
+        }
     }
 }

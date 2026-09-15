@@ -22,7 +22,11 @@ public class AncientBarkPower extends MuzixiPower {
 
     @Override
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
-        if (VitalityPower.getAmount(owner) >= THRESHOLD) {
+        // This callback is dispatched for both sides.  Ancient Bark belongs
+        // to the player, so it must only resolve during the player's own end
+        // of turn (the same contract used by LivingArmorPower).
+        if (owner != null && owner.isPlayer == isPlayer
+                && VitalityPower.getAmount(owner) >= THRESHOLD) {
             flash();
             addToBot(new GainBlockAction(owner, owner, amount));
         }
@@ -30,6 +34,6 @@ public class AncientBarkPower extends MuzixiPower {
 
     @Override
     public void updateDescription() {
-        description = String.format(STRINGS.DESCRIPTIONS[0], THRESHOLD, amount);
+        description = String.format(STRINGS.DESCRIPTIONS[0], amount);
     }
 }

@@ -39,3 +39,6 @@ build/
 
 ### TMP files ###
 tmp/
+/tmp_*
+/output/
+/localization/

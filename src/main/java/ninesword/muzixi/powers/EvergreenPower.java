@@ -4,9 +4,8 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class EvergreenPower extends MuzixiPower {
+public class EvergreenPower extends MuzixiPower implements VitalityGainListener {
     public static final String POWER_ID = "NineSwordTechniques:Evergreen";
     private static final PowerStrings STRINGS = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 
@@ -21,11 +20,16 @@ public class EvergreenPower extends MuzixiPower {
     }
 
     @Override
-    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (target == owner && VitalityPower.POWER_ID.equals(power.ID) && power.amount > 0) {
+    public void onVitalityGained(int gained) {
+        if (gained > 0) {
             flash();
-            addToTop(new GainBlockAction(owner, owner, amount));
+            addToTop(new GainBlockAction(owner, owner, safeMultiply(amount, gained)));
         }
+    }
+
+    private static int safeMultiply(int left, int right) {
+        long result = (long) left * right;
+        return result >= Integer.MAX_VALUE ? Integer.MAX_VALUE : (int) result;
     }
 
     @Override
