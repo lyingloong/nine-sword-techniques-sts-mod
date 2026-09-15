@@ -108,6 +108,7 @@ import ninesword.muzixi.cards.AbsoluteParalysis;
 import ninesword.muzixi.cards.NerveRupture;
 import ninesword.muzixi.cards.DualityConvergence;
 import ninesword.muzixi.characters.MuzixiCharacter;
+import ninesword.muzixi.dynamicvariables.CurrentVitalityVariable;
 import ninesword.muzixi.relics.DivineDemonicEyes;
 import ninesword.muzixi.powers.ParalysisPower;
 import ninesword.muzixi.powers.PersonaManager;
@@ -143,6 +144,7 @@ public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
     public void receiveEditCards() {
         // Register the color before creating any cards that use it.
         MuzixiCharacter.registerColor();
+        BaseMod.addDynamicVariable(new CurrentVitalityVariable());
         BaseMod.addCard(new HiddenSword());
         BaseMod.addCard(new IllusorySword());
         BaseMod.addCard(new NonSword());
