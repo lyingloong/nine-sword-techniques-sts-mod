@@ -14,20 +14,36 @@ public class VitalityPaymentAction extends AbstractGameAction {
     private final int heal;
     private final int energy;
     private final int cards;
+    /** Optional balance that must remain available when the payment resolves. */
+    private final int minimumVitality;
 
     public VitalityPaymentAction(AbstractPlayer player, int cost,
                                  int heal, int energy, int cards) {
+        this(player, cost, heal, energy, cards, 0);
+    }
+
+    /**
+     * Variant used by threshold cards (for example Vitality Distillation).
+     * Checking the threshold in the action, rather than while the card is
+     * played, keeps the result correct when earlier queued effects alter the
+     * player's Vitality before this payment resolves.
+     */
+    public VitalityPaymentAction(AbstractPlayer player, int cost,
+                                 int heal, int energy, int cards,
+                                 int minimumVitality) {
         this.player = player;
         this.cost = Math.max(0, cost);
         this.heal = Math.max(0, heal);
         this.energy = Math.max(0, energy);
         this.cards = Math.max(0, cards);
+        this.minimumVitality = Math.max(0, minimumVitality);
         actionType = ActionType.SPECIAL;
     }
 
     @Override
     public void update() {
-        if (player == null || VitalityPower.getAmount(player) < cost
+        if (player == null || VitalityPower.getAmount(player) < minimumVitality
+                || VitalityPower.getAmount(player) < cost
                 || VitalityPower.spend(player, cost) != cost) {
             isDone = true;
             return;

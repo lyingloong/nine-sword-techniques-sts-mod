@@ -114,8 +114,8 @@
   },
   "NineSwordTechniques:ThornWhip": {
     "NAME": "Thorn Whip",
-    "DESCRIPTION": "Deal !D! damage. NL Gain 1 nineswordtechniques:vitality.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Gain 1 nineswordtechniques:vitality."
+    "DESCRIPTION": "Deal !D! damage, apply 1 nineswordtechniques:paralysis, and gain 1 nineswordtechniques:vitality.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage, apply 1 nineswordtechniques:paralysis, and gain 1 nineswordtechniques:vitality."
   },
   "NineSwordTechniques:ParalysisFlower": {
     "NAME": "Paralysis Flower",
@@ -125,7 +125,7 @@
   "NineSwordTechniques:RootGuard": {
     "NAME": "Root Guard",
     "DESCRIPTION": "Gain !B! Block. NL If you are in Muzixi's nineswordtechniques:persona, gain 1 nineswordtechniques:vitality.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL If you are in Muzixi's nineswordtechniques:persona, gain 1 nineswordtechniques:vitality."
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL If you are in Muzixi's nineswordtechniques:persona, gain 2 nineswordtechniques:vitality."
   },
   "NineSwordTechniques:SapSurge": {
     "NAME": "Sap Surge",
@@ -139,8 +139,8 @@
   },
   "NineSwordTechniques:LifeDrain": {
     "NAME": "Life Drain",
-    "DESCRIPTION": "Deal !D! damage. NL If you have at least 2 nineswordtechniques:vitality, spend 2 to heal !M! HP.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If you have at least 2 nineswordtechniques:vitality, spend 2 to heal !M! HP."
+    "DESCRIPTION": "Spend up to 3 nineswordtechniques:vitality. For each spent, deal 2 damage and heal 2 HP.",
+    "UPGRADE_DESCRIPTION": "Spend up to 3 nineswordtechniques:vitality. For each spent, deal 3 damage and heal 3 HP."
   },
   "NineSwordTechniques:LeafDance": {
     "NAME": "Leaf Dance",
@@ -179,13 +179,13 @@
   },
   "NineSwordTechniques:AncientBark": {
     "NAME": "Ancient Bark",
-    "DESCRIPTION": "Gain Ancient Bark: at the end of your turn, if you have at least 4 nineswordtechniques:vitality, gain !M! Block.",
-    "UPGRADE_DESCRIPTION": "Gain Ancient Bark: at the end of your turn, if you have at least 4 nineswordtechniques:vitality, gain !M! Block."
+    "DESCRIPTION": "Gain Ancient Bark: at the end of your turn, if you have at least 6 nineswordtechniques:vitality, gain !M! Block.",
+    "UPGRADE_DESCRIPTION": "Gain Ancient Bark: at the end of your turn, if you have at least 6 nineswordtechniques:vitality, gain !M! Block."
   },
   "NineSwordTechniques:NaturalCycle": {
     "NAME": "Natural Cycle",
-    "DESCRIPTION": "At the start of each turn, if you have at least 1 nineswordtechniques:vitality, spend 1 and draw 1 card.",
-    "UPGRADE_DESCRIPTION": "At the start of each turn, if you have at least 1 nineswordtechniques:vitality, spend 1 and draw 1 card."
+    "DESCRIPTION": "At the start of each turn, if you have at least 1 nineswordtechniques:vitality, spend 1, draw 1 card, and gain 1 Energy.",
+    "UPGRADE_DESCRIPTION": "At the start of each turn, if you have at least 1 nineswordtechniques:vitality, spend 1, draw 1 card, and gain 1 Energy."
   },
   "NineSwordTechniques:MindGarden": {
     "NAME": "Mind Garden",
@@ -194,8 +194,8 @@
   },
   "NineSwordTechniques:VerdantRebirth": {
     "NAME": "Verdant Rebirth",
-    "DESCRIPTION": "Heal !M! HP. NL Gain 4 nineswordtechniques:vitality. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Heal !M! HP. NL Gain 6 nineswordtechniques:vitality. NL Exhaust."
+    "DESCRIPTION": "Heal !M! HP. NL Gain 3 nineswordtechniques:vitality. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Heal !M! HP. NL Gain 4 nineswordtechniques:vitality. NL Exhaust."
   },
   "NineSwordTechniques:DivineDemonicGaze": {
     "NAME": "Divine-Demonic Gaze",
@@ -224,13 +224,13 @@
   },
   "NineSwordTechniques:Sprout": {
     "NAME": "Sprout",
-    "DESCRIPTION": "Gain !M! nineswordtechniques:vitality.",
-    "UPGRADE_DESCRIPTION": "Gain !M! nineswordtechniques:vitality."
+    "DESCRIPTION": "Gain !M! nineswordtechniques:vitality and draw 1 card.",
+    "UPGRADE_DESCRIPTION": "Gain !M! nineswordtechniques:vitality and draw 2 cards."
   },
   "NineSwordTechniques:VitalExchange": {
     "NAME": "Vital Exchange",
-    "DESCRIPTION": "Gain !B! Block. NL Spend up to 2 nineswordtechniques:vitality; heal 2 HP per nineswordtechniques:vitality spent.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Spend up to 2 nineswordtechniques:vitality; heal 2 HP per nineswordtechniques:vitality spent."
+    "DESCRIPTION": "Spend up to 2 nineswordtechniques:vitality; heal 4 HP per nineswordtechniques:vitality spent.",
+    "UPGRADE_DESCRIPTION": "Spend up to 2 nineswordtechniques:vitality; heal 5 HP per nineswordtechniques:vitality spent."
   },
   "NineSwordTechniques:RootedBlow": {
     "NAME": "Rooted Blow",
@@ -239,18 +239,18 @@
   },
   "NineSwordTechniques:VitalGuard": {
     "NAME": "Vital Guard",
-    "DESCRIPTION": "Spend up to 3 nineswordtechniques:vitality. Gain 3 Block per nineswordtechniques:vitality spent.",
-    "UPGRADE_DESCRIPTION": "Spend up to 5 nineswordtechniques:vitality. Gain 3 Block per nineswordtechniques:vitality spent."
+    "DESCRIPTION": "Spend up to 3 nineswordtechniques:vitality. Gain 5 Block per nineswordtechniques:vitality spent.",
+    "UPGRADE_DESCRIPTION": "Spend up to 5 nineswordtechniques:vitality. Gain 5 Block per nineswordtechniques:vitality spent."
   },
   "NineSwordTechniques:GreenPulse": {
     "NAME": "Green Pulse",
-    "DESCRIPTION": "Gain !M! nineswordtechniques:vitality. NL Draw 1 card. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! nineswordtechniques:vitality. NL Draw 1 card. NL Exhaust."
+    "DESCRIPTION": "Gain !M! nineswordtechniques:vitality. NL Draw 2 cards. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! nineswordtechniques:vitality. NL Draw 3 cards. NL Exhaust."
   },
   "NineSwordTechniques:RenewalSeed": {
     "NAME": "Renewal Seed",
-    "DESCRIPTION": "Heal !M! HP. NL Gain 1 nineswordtechniques:vitality.",
-    "UPGRADE_DESCRIPTION": "Heal !M! HP. NL Gain 2 nineswordtechniques:vitality."
+    "DESCRIPTION": "Heal !M! HP. NL Gain 1 Energy.",
+    "UPGRADE_DESCRIPTION": "Heal !M! HP. NL Gain 2 Energy."
   },
   "NineSwordTechniques:Flourish": {
     "NAME": "Flourish",
@@ -259,13 +259,13 @@
   },
   "NineSwordTechniques:VitalCycle": {
     "NAME": "Vital Cycle",
-    "DESCRIPTION": "Gain 2 nineswordtechniques:vitality. NL If you have at least 6 nineswordtechniques:vitality after this, draw 1 card.",
-    "UPGRADE_DESCRIPTION": "Gain 2 nineswordtechniques:vitality. NL If you have at least 6 nineswordtechniques:vitality after this, draw 2 cards."
+    "DESCRIPTION": "Spend up to 1 nineswordtechniques:vitality; draw 1 card per nineswordtechniques:vitality spent.",
+    "UPGRADE_DESCRIPTION": "Spend up to 1 nineswordtechniques:vitality; draw 1 card per nineswordtechniques:vitality spent. NL Return."
   },
   "NineSwordTechniques:NumbingPollen": {
     "NAME": "Numbing Pollen",
-    "DESCRIPTION": "Apply !M! nineswordtechniques:paralysis. NL If the target already had nineswordtechniques:paralysis, gain 1 nineswordtechniques:vitality.",
-    "UPGRADE_DESCRIPTION": "Apply !M! nineswordtechniques:paralysis. NL If the target already had nineswordtechniques:paralysis, gain 1 nineswordtechniques:vitality."
+    "DESCRIPTION": "Apply !M! nineswordtechniques:paralysis and 1 Vulnerable.",
+    "UPGRADE_DESCRIPTION": "Apply !M! nineswordtechniques:paralysis and 1 Vulnerable."
   },
   "NineSwordTechniques:NeedleVines": {
     "NAME": "Needle Vines",
@@ -279,8 +279,8 @@
   },
   "NineSwordTechniques:NerveCut": {
     "NAME": "Nerve Cut",
-    "DESCRIPTION": "Deal !D! damage. NL If the target has at least 3 nineswordtechniques:paralysis, deal 5 additional damage.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If the target has at least 3 nineswordtechniques:paralysis, deal 7 additional damage."
+    "DESCRIPTION": "Deal !D! damage. NL If the target has at least 5 nineswordtechniques:paralysis, deal 5 additional damage.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If the target has at least 5 nineswordtechniques:paralysis, deal 7 additional damage."
   },
   "NineSwordTechniques:BindingRoots": {
     "NAME": "Binding Roots",
@@ -289,18 +289,18 @@
   },
   "NineSwordTechniques:NumbnessMist": {
     "NAME": "Numbness Mist",
-    "DESCRIPTION": "Apply !M! nineswordtechniques:paralysis and 2 Weak.",
-    "UPGRADE_DESCRIPTION": "Apply !M! nineswordtechniques:paralysis and 3 Weak."
+    "DESCRIPTION": "Apply !M! nineswordtechniques:paralysis and !M! Poison to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "Apply !M! nineswordtechniques:paralysis and !M! Poison to ALL enemies."
   },
   "NineSwordTechniques:EchoingNumbness": {
     "NAME": "Echoing Numbness",
-    "DESCRIPTION": "Apply !M! nineswordtechniques:paralysis. NL If the target has at least 4 nineswordtechniques:paralysis, draw 1 card.",
-    "UPGRADE_DESCRIPTION": "Apply !M! nineswordtechniques:paralysis. NL If the target has at least 3 nineswordtechniques:paralysis, draw 1 card."
+    "DESCRIPTION": "Return. NL Apply !M! nineswordtechniques:paralysis to the target.",
+    "UPGRADE_DESCRIPTION": "Return. NL Apply !M! nineswordtechniques:paralysis to the target."
   },
   "NineSwordTechniques:ParalyzedVenom": {
     "NAME": "Paralyzed Venom",
-    "DESCRIPTION": "Deal !D! damage. NL If the target has nineswordtechniques:paralysis, apply 2 Poison.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If the target has nineswordtechniques:paralysis, apply 4 Poison."
+    "DESCRIPTION": "Apply 1 Poison for each stack of nineswordtechniques:paralysis on the target. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Apply 1 Poison for each stack of nineswordtechniques:paralysis on the target."
   },
   "NineSwordTechniques:EyeOfDeath": {
     "NAME": "Eye of Death",
@@ -319,23 +319,23 @@
   },
   "NineSwordTechniques:VitalityReservoir": {
     "NAME": "Vitality Reservoir",
-    "DESCRIPTION": "At the start of each turn, if you have 4 or less nineswordtechniques:vitality, gain 2 nineswordtechniques:vitality.",
-    "UPGRADE_DESCRIPTION": "At the start of each turn, if you have 5 or less nineswordtechniques:vitality, gain 3 nineswordtechniques:vitality."
+    "DESCRIPTION": "At the start of each turn, gain 2 nineswordtechniques:vitality.",
+    "UPGRADE_DESCRIPTION": "At the start of each turn, gain 3 nineswordtechniques:vitality."
   },
   "NineSwordTechniques:ThickenedLifeblood": {
     "NAME": "Thickened Lifeblood",
-    "DESCRIPTION": "The first time each turn you gain at least 3 nineswordtechniques:vitality at once, gain 4 Block.",
-    "UPGRADE_DESCRIPTION": "The first time each turn you gain at least 3 nineswordtechniques:vitality at once, gain 6 Block."
+    "DESCRIPTION": "Whenever you gain 1 nineswordtechniques:vitality, heal 1 HP.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you gain 1 nineswordtechniques:vitality, heal 1 HP."
   },
   "NineSwordTechniques:RootedFortification": {
     "NAME": "Rooted Fortification",
-    "DESCRIPTION": "Gain !B! Block. NL Spend up to 6 nineswordtechniques:vitality; gain 3 additional Block per nineswordtechniques:vitality spent.",
+    "DESCRIPTION": "Gain !B! Block. NL Spend up to 6 nineswordtechniques:vitality; gain 4 additional Block per nineswordtechniques:vitality spent.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Spend up to 6 nineswordtechniques:vitality; gain 4 additional Block per nineswordtechniques:vitality spent."
   },
   "NineSwordTechniques:VitalityDistillation": {
     "NAME": "Vitality Distillation",
-    "DESCRIPTION": "If you have at least 6 nineswordtechniques:vitality, spend 6 to gain 2 Energy and draw 2 cards.",
-    "UPGRADE_DESCRIPTION": "If you have at least 5 nineswordtechniques:vitality, spend 5 to gain 2 Energy and draw 2 cards."
+    "DESCRIPTION": "If you have at least 8 nineswordtechniques:vitality, spend 1 nineswordtechniques:vitality to gain 2 Energy and draw 2 cards.",
+    "UPGRADE_DESCRIPTION": "If you have at least 6 nineswordtechniques:vitality, spend 1 nineswordtechniques:vitality to gain 2 Energy and draw 2 cards."
   },
   "NineSwordTechniques:LivingArmor": {
     "NAME": "Living Armor",
@@ -359,8 +359,8 @@
   },
   "NineSwordTechniques:NerveLock": {
     "NAME": "Nerve Lock",
-    "DESCRIPTION": "Apply !M! nineswordtechniques:paralysis. NL If the target has at least 4 nineswordtechniques:paralysis after this, apply 2 Weak.",
-    "UPGRADE_DESCRIPTION": "Apply !M! nineswordtechniques:paralysis. NL If the target has at least 4 nineswordtechniques:paralysis after this, apply 3 Weak."
+    "DESCRIPTION": "At the start of the target's turn, apply 2 nineswordtechniques:paralysis. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "At the start of the target's turn, apply 2 nineswordtechniques:paralysis."
   },
   "NineSwordTechniques:PollenStorm": {
     "NAME": "Pollen Storm",

@@ -10,8 +10,8 @@ public class VitalGuard extends MuzixiCard {
     private int maximumSpend = 3;
 
     public VitalGuard() {
-        super(ID, "VitalGuard", 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        magicNumber = baseMagicNumber = 3;
+        super(ID, "VitalGuard", 0, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        magicNumber = baseMagicNumber = 5;
     }
 
     @Override

@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class VerdantRebirth extends MuzixiCard {
     public static final String ID = "NineSwordTechniques:VerdantRebirth";
-    private int vitalityAmount = 4;
+    private int vitalityAmount = 3;
 
     public VerdantRebirth() {
         super(ID, "VerdantRebirth", 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
@@ -27,7 +27,7 @@ public class VerdantRebirth extends MuzixiCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(4);
-            vitalityAmount = 6;
+            vitalityAmount = 4;
             rawDescription = strings(ID).UPGRADE_DESCRIPTION;
             initializeDescription();
         }

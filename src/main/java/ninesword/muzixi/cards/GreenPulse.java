@@ -17,14 +17,15 @@ public class GreenPulse extends MuzixiCard {
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
         gainVitality(player, magicNumber);
-        addToBot(new DrawCardAction(player, 1));
+        addToBot(new DrawCardAction(player, upgraded ? 3 : 2));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            rawDescription = strings(ID).UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 

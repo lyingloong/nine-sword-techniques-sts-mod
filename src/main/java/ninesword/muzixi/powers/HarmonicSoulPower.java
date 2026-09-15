@@ -20,6 +20,9 @@ public class HarmonicSoulPower extends MuzixiPower {
 
     @Override
     public void updateDescription() {
-        description = String.format(STRINGS.DESCRIPTIONS[0], amount);
+        // The rule text intentionally uses the fixed nine-stack conversion
+        // cap; the current amount may be higher when multiple copies stack,
+        // so formatting it into this sentence would be misleading.
+        description = STRINGS.DESCRIPTIONS[0];
     }
 }

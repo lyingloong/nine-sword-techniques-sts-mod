@@ -5,26 +5,25 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import ninesword.muzixi.actions.GainVitalityAction;
 
+/** Grants a fixed amount of Vitality at the beginning of every turn. */
 public class VitalityReservoirPower extends MuzixiPower {
     public static final String POWER_ID = "NineSwordTechniques:VitalityReservoir";
     private static final PowerStrings STRINGS = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-    private static final int BASE_THRESHOLD = 4;
-    private static final int UPGRADED_GAIN = 3;
-    private static final int UPGRADED_THRESHOLD = 5;
-    private int baseGain;
-    private int upgradedGain;
 
-    public VitalityReservoirPower(AbstractCreature owner, int amount, int threshold) {
+    /**
+     * The third argument represented a threshold in an older design. Keep
+     * this overload so old card classes remain source-compatible, but ignore
+     * the obsolete threshold under the current fixed-gain rules.
+     */
+    public VitalityReservoirPower(AbstractCreature owner, int amount, int ignoredThreshold) {
+        this(owner, amount);
+    }
+
+    public VitalityReservoirPower(AbstractCreature owner, int amount) {
         name = STRINGS.NAME;
         ID = POWER_ID;
         this.owner = owner;
-        int gain = Math.max(0, amount);
-        if (threshold >= UPGRADED_THRESHOLD) {
-            upgradedGain = gain;
-        } else {
-            baseGain = gain;
-        }
-        syncAmount();
+        this.amount = Math.max(0, amount);
         type = PowerType.BUFF;
         loadIcons("VitalityReservoir");
         updateDescription();
@@ -32,47 +31,23 @@ public class VitalityReservoirPower extends MuzixiPower {
 
     @Override
     public void atStartOfTurn() {
-        int vitality = VitalityPower.getAmount(owner);
-        if (vitality <= BASE_THRESHOLD) {
-            queueGain(baseGain);
-            queueGain(upgradedGain);
-        } else if (vitality <= UPGRADED_THRESHOLD) {
-            queueGain(upgradedGain);
-        }
-    }
-
-    private void queueGain(int gain) {
-        if (gain > 0) {
+        if (owner != null && amount > 0) {
             flash();
-            addToBot(new GainVitalityAction(owner, gain));
+            addToBot(new GainVitalityAction(owner, amount));
         }
     }
 
     @Override
     public void stackPower(int stackAmount) {
-        if (stackAmount >= UPGRADED_GAIN) {
-            upgradedGain = safeAdd(upgradedGain, stackAmount);
-        } else if (stackAmount > 0) {
-            baseGain = safeAdd(baseGain, stackAmount);
+        if (stackAmount > 0) {
+            amount = safeAdd(amount, stackAmount);
+            updateDescription();
         }
-        syncAmount();
-        updateDescription();
     }
 
     @Override
     public void updateDescription() {
-        if (baseGain > 0 && upgradedGain > 0) {
-            description = String.format(STRINGS.DESCRIPTIONS[2],
-                    safeAdd(baseGain, upgradedGain), upgradedGain);
-        } else if (upgradedGain > 0) {
-            description = String.format(STRINGS.DESCRIPTIONS[1], upgradedGain);
-        } else {
-            description = String.format(STRINGS.DESCRIPTIONS[0], baseGain);
-        }
-    }
-
-    private void syncAmount() {
-        amount = safeAdd(baseGain, upgradedGain);
+        description = String.format(STRINGS.DESCRIPTIONS[0], amount);
     }
 
     private static int safeAdd(int left, int right) {

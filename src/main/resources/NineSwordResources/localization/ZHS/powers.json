@@ -8,37 +8,37 @@
   "NineSwordTechniques:GhostlySwordPower": {
     "NAME": "鬼剑术",
     "DESCRIPTIONS": [
-      "本场战斗中，所有鬼剑系牌伤害提高 #b%d 点。"
+      "本场战斗中，所有鬼剑系牌伤害提高 %d 点。"
     ]
   },
   "NineSwordTechniques:VoidBladeStylePower": {
     "NAME": "无有剑流",
     "DESCRIPTIONS": [
-      "每回合开始时，获得 #b%d 层力量、敏捷、集中和金属化。"
+      "每回合开始时，获得 %d 层力量、敏捷、集中和金属化。"
     ]
   },
   "NineSwordTechniques:Vitality": {
     "NAME": "生机",
     "DESCRIPTIONS": [
-      "拥有 #b%d 点生机。获得生机会提高本场战斗的临时最大生命；部分卡牌会消耗生机，战斗结束时清除。"
+      "拥有 %d 点生机。获得生机会提高本场战斗的临时最大生命；部分卡牌会消耗生机，战斗结束时清除。"
     ]
   },
   "NineSwordTechniques:Wither": {
     "NAME": "凋萎",
     "DESCRIPTIONS": [
-      "拥有 #b%d 层凋萎。每层使本场战斗的临时最大生命减少 1 点；获得生机会优先移除凋萎，但临时最大生命变化保留到战斗结束。"
+      "拥有 %d 层凋萎。每层使本场战斗的临时最大生命减少 1 点；获得生机会优先移除凋萎，但临时最大生命变化保留到战斗结束。"
     ]
   },
   "NineSwordTechniques:VitalityMaxHealth": {
     "NAME": "临时最大生命",
     "DESCRIPTIONS": [
-      "本场战斗临时最大生命变化：#b%d。战斗结束时恢复。"
+      "本场战斗临时最大生命变化：%d。战斗结束时恢复。"
     ]
   },
   "NineSwordTechniques:Paralysis": {
     "NAME": "麻痹",
     "DESCRIPTIONS": [
-      "目标本回合的力量和敏捷各降低 #b%d 点；目标回合结束时恢复并清除麻痹。"
+      "目标本回合的力量和敏捷各降低 %d 点；目标回合结束时恢复并清除麻痹。"
     ]
   },
   "NineSwordTechniques:MuzixiPersona": {
@@ -56,19 +56,19 @@
   "NineSwordTechniques:Evergreen": {
     "NAME": "常青",
     "DESCRIPTIONS": [
-      "每获得 1 点生机，获得 #b%d 点格挡。"
+      "每获得 1 点生机，获得 %d 点格挡。"
     ]
   },
   "NineSwordTechniques:NaturalCycle": {
     "NAME": "自然循环",
     "DESCRIPTIONS": [
-      "每回合开始时，消耗至多 #b%d 点生机，每消耗 1 点抽 1 张牌。"
+      "每回合开始时，消耗至多 %d 点生机；每消耗 1 点，抽 1 张牌并回复 1 点能量。"
     ]
   },
   "NineSwordTechniques:AncientBark": {
     "NAME": "远古树皮",
     "DESCRIPTIONS": [
-      "回合结束时，若拥有至少 4 点生机，获得 #b%d 点格挡。"
+      "回合结束时，若拥有至少 6 点生机，获得 %d 点格挡。"
     ]
   },
   "NineSwordTechniques:HarmonicSoul": {
@@ -80,45 +80,49 @@
   "NineSwordTechniques:WorldTree": {
     "NAME": "世界树",
     "DESCRIPTIONS": [
-      "每当能量减少 1 点，获得 #b%d 次 1 点生机。"
+      "每当能量减少 1 点，获得 %d 次 1 点生机。"
     ]
   },
   "NineSwordTechniques:VitalityTide": {
     "NAME": "生机潮汐",
     "DESCRIPTIONS": [
-      "下回合开始时，获得 #b%d 点生机。"
+      "下回合开始时，获得 %d 点生机。"
     ]
   },
   "NineSwordTechniques:VitalityReservoir": {
     "NAME": "生机蓄池",
     "DESCRIPTIONS": [
-      "每回合开始时，若生机不超过 #b4 点，获得 #b%d 点生机。",
-      "每回合开始时，若生机不超过 #b5 点，获得 #b%d 点生机。",
-      "每回合开始时，若生机不超过 #b4 点，获得 #b%d 点生机；若生机为 #b5 点，获得 #b%d 点生机。"
+      "每回合开始时，获得 %d 点生机。"
     ]
   },
   "NineSwordTechniques:ThickenedLifeblood": {
     "NAME": "厚重生机",
     "DESCRIPTIONS": [
-      "每回合第一次单次获得至少 #b%d 点生机时，获得 #b%d 点格挡。"
+      "每获得 1 点生机，回复 %d 点生命。"
     ]
   },
   "NineSwordTechniques:LivingArmor": {
     "NAME": "活体铠甲",
     "DESCRIPTIONS": [
-      "回合结束时，若拥有至少 #b%d 点生机，获得 #b%d 点格挡。"
+      "回合结束时，若拥有至少 %d 点生机，获得 %d 点格挡。"
     ]
   },
   "NineSwordTechniques:ParalyticField": {
     "NAME": "麻痹领域",
     "DESCRIPTIONS": [
-      "每回合开始时，对所有敌人施加 #b%d 层麻痹。"
+      "每回合开始时，对所有敌人施加 %d 层麻痹。"
     ]
   },
   "NineSwordTechniques:NumbingEcho": {
     "NAME": "麻痹回响",
     "DESCRIPTIONS": [
-      "每个玩家回合第一次对有效目标施加麻痹时，对该目标额外施加相同层数 #b%d 次。"
+      "每个玩家回合第一次对有效目标施加麻痹时，对该目标额外施加相同层数 %d 次。"
+    ]
+  },
+  "NineSwordTechniques:NerveLock": {
+    "NAME": "封脉",
+    "DESCRIPTIONS": [
+      "目标每回合开始时获得 %d 层麻痹。"
     ]
   },
   "NineSwordTechniques:AbsoluteParalysis": {
@@ -130,7 +134,7 @@
   "NineSwordTechniques:DualityConvergence": {
     "NAME": "两仪归一",
     "DESCRIPTIONS": [
-      "每次切换人格时，获得 #b%d 点生机并对所有敌人施加 #b%d 层麻痹。"
+      "每次切换人格时，获得 %d 点生机并对所有敌人施加 %d 层麻痹。"
     ]
   }
 }

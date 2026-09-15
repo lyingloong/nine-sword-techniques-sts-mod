@@ -27,7 +27,7 @@ public class CreepingRoots extends MuzixiCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(4);
+            upgradeMagicNumber(1);
             vitalityAmount = 2;
             rawDescription = strings(ID).UPGRADE_DESCRIPTION;
             initializeDescription();

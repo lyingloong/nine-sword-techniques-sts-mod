@@ -8,23 +8,23 @@ import ninesword.muzixi.powers.ThickenedLifebloodPower;
 
 public class ThickenedLifeblood extends MuzixiCard {
     public static final String ID = "NineSwordTechniques:ThickenedLifeblood";
-    private int blockAmount = 4;
+    private static final int HEAL_PER_VITALITY = 1;
 
     public ThickenedLifeblood() {
-        super(ID, "ThickenedLifeblood", 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, "ThickenedLifeblood", 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
         addToBot(new ApplyPowerAction(player, player,
-                new ThickenedLifebloodPower(player, blockAmount), blockAmount));
+                new ThickenedLifebloodPower(player, HEAL_PER_VITALITY), HEAL_PER_VITALITY));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            blockAmount = 6;
+            isInnate = true;
             rawDescription = strings(ID).UPGRADE_DESCRIPTION;
             initializeDescription();
         }

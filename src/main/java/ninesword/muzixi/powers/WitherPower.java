@@ -83,6 +83,9 @@ public class WitherPower extends MuzixiPower {
         int removed = Math.min(requested, amount);
         amount -= removed;
         updateDescription();
+        // This path is used by VitalityPower.gain rather than the vanilla
+        // ReducePowerAction, so explicitly refresh the power list/UI.
+        AbstractDungeon.onModifyPower();
         if (amount <= 0) {
             amount = 0;
             if (owner != null && owner.powers != null && owner.powers.contains(this)) {

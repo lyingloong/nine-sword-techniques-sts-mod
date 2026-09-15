@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 
 public class AncientBarkPower extends MuzixiPower {
     public static final String POWER_ID = "NineSwordTechniques:AncientBark";
-    private static final int THRESHOLD = 4;
+    private static final int THRESHOLD = 6;
     private static final PowerStrings STRINGS = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 
     public AncientBarkPower(AbstractCreature owner, int amount) {

@@ -12,7 +12,7 @@ public class ParalyzingBloom extends MuzixiCard {
 
     public ParalyzingBloom() {
         super(ID, "ParalyzingBloom", 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ALL_ENEMY);
-        magicNumber = baseMagicNumber = 3;
+        magicNumber = baseMagicNumber = 4;
     }
 
     @Override
@@ -32,7 +32,7 @@ public class ParalyzingBloom extends MuzixiCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeMagicNumber(2);
         }
     }
 

@@ -10,7 +10,7 @@ public class PollenStorm extends MuzixiCard {
 
     public PollenStorm() {
         super(ID, "PollenStorm", 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
-        magicNumber = baseMagicNumber = 6;
+        magicNumber = baseMagicNumber = 9;
     }
 
     @Override
@@ -22,7 +22,7 @@ public class PollenStorm extends MuzixiCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(3);
         }
     }
 

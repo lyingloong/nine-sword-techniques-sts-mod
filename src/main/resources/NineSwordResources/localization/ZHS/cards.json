@@ -114,8 +114,8 @@
   },
   "NineSwordTechniques:ThornWhip": {
     "NAME": "荆棘鞭",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 1 点 nineswordtechniques:生机 。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 获得 1 点 nineswordtechniques:生机 。"
+    "DESCRIPTION": "造成 !D! 点伤害，施加 1 层 nineswordtechniques:麻痹 ，并获得 1 点 nineswordtechniques:生机 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，施加 1 层 nineswordtechniques:麻痹 ，并获得 1 点 nineswordtechniques:生机 。"
   },
   "NineSwordTechniques:ParalysisFlower": {
     "NAME": "麻痹之花",
@@ -125,7 +125,7 @@
   "NineSwordTechniques:RootGuard": {
     "NAME": "根脉守护",
     "DESCRIPTION": "获得 !B! 点 格挡 。 NL 若处于 nineswordtechniques:木子汐人格 ，获得 1 点 nineswordtechniques:生机 。",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 若处于 nineswordtechniques:木子汐人格 ，获得 1 点 nineswordtechniques:生机 。"
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 若处于 nineswordtechniques:木子汐人格 ，获得 2 点 nineswordtechniques:生机 。"
   },
   "NineSwordTechniques:SapSurge": {
     "NAME": "生机奔涌",
@@ -139,8 +139,8 @@
   },
   "NineSwordTechniques:LifeDrain": {
     "NAME": "生命汲取",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 若至少有 2 点 nineswordtechniques:生机 ，消耗 2 点并回复 !M! 点生命。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 若至少有 2 点 nineswordtechniques:生机 ，消耗 2 点并回复 !M! 点生命。"
+    "DESCRIPTION": "消耗至多 3 点 nineswordtechniques:生机 ，每点造成 2 点伤害并回复 2 点生命。",
+    "UPGRADE_DESCRIPTION": "消耗至多 3 点 nineswordtechniques:生机 ，每点造成 3 点伤害并回复 3 点生命。"
   },
   "NineSwordTechniques:LeafDance": {
     "NAME": "落叶舞",
@@ -179,13 +179,13 @@
   },
   "NineSwordTechniques:AncientBark": {
     "NAME": "远古树皮",
-    "DESCRIPTION": "获得远古树皮：回合结束时，若拥有至少 4 点 nineswordtechniques:生机 ，获得 !M! 点 格挡 。",
-    "UPGRADE_DESCRIPTION": "获得远古树皮：回合结束时，若拥有至少 4 点 nineswordtechniques:生机 ，获得 !M! 点 格挡 。"
+    "DESCRIPTION": "获得远古树皮：回合结束时，若拥有至少 6 点 nineswordtechniques:生机 ，获得 !M! 点 格挡 。",
+    "UPGRADE_DESCRIPTION": "获得远古树皮：回合结束时，若拥有至少 6 点 nineswordtechniques:生机 ，获得 !M! 点 格挡 。"
   },
   "NineSwordTechniques:NaturalCycle": {
     "NAME": "自然循环",
-    "DESCRIPTION": "每回合开始时，若至少有 1 点 nineswordtechniques:生机 ，消耗 1 点并抽 1 张牌。",
-    "UPGRADE_DESCRIPTION": "每回合开始时，若至少有 1 点 nineswordtechniques:生机 ，消耗 1 点并抽 1 张牌。"
+    "DESCRIPTION": "每回合开始时，若至少有 1 点 nineswordtechniques:生机 ，消耗 1 点并抽 1 张牌，回复 1 点能量。",
+    "UPGRADE_DESCRIPTION": "每回合开始时，若至少有 1 点 nineswordtechniques:生机 ，消耗 1 点并抽 1 张牌，回复 1 点能量。"
   },
   "NineSwordTechniques:MindGarden": {
     "NAME": "心灵花园",
@@ -194,8 +194,8 @@
   },
   "NineSwordTechniques:VerdantRebirth": {
     "NAME": "青木回生",
-    "DESCRIPTION": "回复 !M! 点生命。 NL 获得 4 点 nineswordtechniques:生机 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "回复 !M! 点生命。 NL 获得 6 点 nineswordtechniques:生机 。 NL 消耗 。"
+    "DESCRIPTION": "回复 !M! 点生命。 NL 获得 3 点 nineswordtechniques:生机 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "回复 !M! 点生命。 NL 获得 4 点 nineswordtechniques:生机 。 NL 消耗 。"
   },
   "NineSwordTechniques:DivineDemonicGaze": {
     "NAME": "神魔之眼",
@@ -224,13 +224,13 @@
   },
   "NineSwordTechniques:Sprout": {
     "NAME": "萌芽",
-    "DESCRIPTION": "获得 !M! 点 nineswordtechniques:生机 。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 点 nineswordtechniques:生机 。"
+    "DESCRIPTION": "获得 !M! 点 nineswordtechniques:生机 ，抽 1 张牌。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点 nineswordtechniques:生机 ，抽 2 张牌。"
   },
   "NineSwordTechniques:VitalExchange": {
     "NAME": "生机转化",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 消耗至多 2 点 nineswordtechniques:生机 ，每点回复 2 点生命。",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 消耗至多 2 点 nineswordtechniques:生机 ，每点回复 2 点生命。"
+    "DESCRIPTION": "消耗至多 2 点 nineswordtechniques:生机 ，每点回复 4 点生命。",
+    "UPGRADE_DESCRIPTION": "消耗至多 2 点 nineswordtechniques:生机 ，每点回复 5 点生命。"
   },
   "NineSwordTechniques:RootedBlow": {
     "NAME": "根脉重击",
@@ -239,18 +239,18 @@
   },
   "NineSwordTechniques:VitalGuard": {
     "NAME": "生机护体",
-    "DESCRIPTION": "最多消耗 3 点 nineswordtechniques:生机 ；每消耗 1 点获得 3 点 格挡 。",
-    "UPGRADE_DESCRIPTION": "最多消耗 5 点 nineswordtechniques:生机 ；每消耗 1 点获得 3 点 格挡 。"
+    "DESCRIPTION": "最多消耗 3 点 nineswordtechniques:生机 ；每消耗 1 点获得 5 点格挡。",
+    "UPGRADE_DESCRIPTION": "最多消耗 5 点 nineswordtechniques:生机 ；每消耗 1 点获得 5 点格挡。"
   },
   "NineSwordTechniques:GreenPulse": {
     "NAME": "青脉脉动",
-    "DESCRIPTION": "获得 !M! 点 nineswordtechniques:生机 。 NL 抽 1 张牌。 NL 本牌 消耗 。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 点 nineswordtechniques:生机 。 NL 抽 1 张牌。 NL 本牌 消耗 。"
+    "DESCRIPTION": "获得 !M! 点 nineswordtechniques:生机 。 NL 抽 2 张牌。 NL 本牌消耗。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点 nineswordtechniques:生机 。 NL 抽 3 张牌。 NL 本牌消耗。"
   },
   "NineSwordTechniques:RenewalSeed": {
     "NAME": "回生种",
-    "DESCRIPTION": "回复 !M! 点生命。 NL 获得 1 点 nineswordtechniques:生机 。",
-    "UPGRADE_DESCRIPTION": "回复 !M! 点生命。 NL 获得 2 点 nineswordtechniques:生机 。"
+    "DESCRIPTION": "回复 !M! 点生命。 NL 获得 1 点能量。",
+    "UPGRADE_DESCRIPTION": "回复 !M! 点生命。 NL 获得 2 点能量。"
   },
   "NineSwordTechniques:Flourish": {
     "NAME": "繁茂",
@@ -259,13 +259,13 @@
   },
   "NineSwordTechniques:VitalCycle": {
     "NAME": "生息回环",
-    "DESCRIPTION": "获得 2 点 nineswordtechniques:生机 。 NL 若结算后至少有 6 点 nineswordtechniques:生机 ，抽 1 张牌。",
-    "UPGRADE_DESCRIPTION": "获得 2 点 nineswordtechniques:生机 。 NL 若结算后至少有 6 点 nineswordtechniques:生机 ，抽 2 张牌。"
+    "DESCRIPTION": "消耗至多 1 点 nineswordtechniques:生机 ，每消耗 1 点抽 1 张牌。",
+    "UPGRADE_DESCRIPTION": "消耗至多 1 点 nineswordtechniques:生机 ，每消耗 1 点抽 1 张牌。 NL 返回。"
   },
   "NineSwordTechniques:NumbingPollen": {
     "NAME": "麻痹花粉",
-    "DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 。 NL 若目标原本已有 nineswordtechniques:麻痹 ，获得 1 点 nineswordtechniques:生机 。",
-    "UPGRADE_DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 。 NL 若目标原本已有 nineswordtechniques:麻痹 ，获得 1 点 nineswordtechniques:生机 。"
+    "DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 和 1 层易伤。",
+    "UPGRADE_DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 和 1 层易伤。"
   },
   "NineSwordTechniques:NeedleVines": {
     "NAME": "针藤",
@@ -279,8 +279,8 @@
   },
   "NineSwordTechniques:NerveCut": {
     "NAME": "断脉",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 若目标至少有 3 层 nineswordtechniques:麻痹 ，额外造成 5 点伤害。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 若目标至少有 3 层 nineswordtechniques:麻痹 ，额外造成 7 点伤害。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 若目标至少有 5 层 nineswordtechniques:麻痹 ，额外造成 5 点伤害。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 若目标至少有 5 层 nineswordtechniques:麻痹 ，额外造成 7 点伤害。"
   },
   "NineSwordTechniques:BindingRoots": {
     "NAME": "缚根",
@@ -289,18 +289,18 @@
   },
   "NineSwordTechniques:NumbnessMist": {
     "NAME": "麻息雾",
-    "DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 和 2 层 虚弱 。",
-    "UPGRADE_DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 和 3 层 虚弱 。"
+    "DESCRIPTION": "对所有敌人施加 !M! 层 nineswordtechniques:麻痹 和 !M! 层中毒。",
+    "UPGRADE_DESCRIPTION": "对所有敌人施加 !M! 层 nineswordtechniques:麻痹 和 !M! 层中毒。"
   },
   "NineSwordTechniques:EchoingNumbness": {
     "NAME": "余麻回响",
-    "DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 。 NL 若目标至少有 4 层 nineswordtechniques:麻痹 ，抽 1 张牌。",
-    "UPGRADE_DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 。 NL 若目标至少有 3 层 nineswordtechniques:麻痹 ，抽 1 张牌。"
+    "DESCRIPTION": "返回。 NL 对目标施加 !M! 层 nineswordtechniques:麻痹 。",
+    "UPGRADE_DESCRIPTION": "返回。 NL 对目标施加 !M! 层 nineswordtechniques:麻痹 。"
   },
   "NineSwordTechniques:ParalyzedVenom": {
     "NAME": "麻毒",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 若目标有 nineswordtechniques:麻痹 ，施加 2 层 中毒 。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 若目标有 nineswordtechniques:麻痹 ，施加 4 层 中毒 。"
+    "DESCRIPTION": "目标每有 1 层 nineswordtechniques:麻痹 ，对其施加 1 层中毒。 NL 消耗。",
+    "UPGRADE_DESCRIPTION": "目标每有 1 层 nineswordtechniques:麻痹 ，对其施加 1 层中毒。"
   },
   "NineSwordTechniques:EyeOfDeath": {
     "NAME": "死之眼",
@@ -319,23 +319,23 @@
   },
   "NineSwordTechniques:VitalityReservoir": {
     "NAME": "生机蓄池",
-    "DESCRIPTION": "每回合开始时，若 nineswordtechniques:生机 不超过 4 点，获得 2 点 nineswordtechniques:生机 。",
-    "UPGRADE_DESCRIPTION": "每回合开始时，若 nineswordtechniques:生机 不超过 5 点，获得 3 点 nineswordtechniques:生机 。"
+    "DESCRIPTION": "每回合开始时，获得 2 点 nineswordtechniques:生机 。",
+    "UPGRADE_DESCRIPTION": "每回合开始时，获得 3 点 nineswordtechniques:生机 。"
   },
   "NineSwordTechniques:ThickenedLifeblood": {
     "NAME": "厚重生机",
-    "DESCRIPTION": "每回合第一次单次获得至少 3 点 nineswordtechniques:生机 时，获得 4 点 格挡 。",
-    "UPGRADE_DESCRIPTION": "每回合第一次单次获得至少 3 点 nineswordtechniques:生机 时，获得 6 点 格挡 。"
+    "DESCRIPTION": "每获得 1 点 nineswordtechniques:生机 ，回复 1 点生命。",
+    "UPGRADE_DESCRIPTION": "固有。 NL 每获得 1 点 nineswordtechniques:生机 ，回复 1 点生命。"
   },
   "NineSwordTechniques:RootedFortification": {
     "NAME": "根界壁垒",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 消耗至多 6 点 nineswordtechniques:生机 ，每点额外获得 3 点 格挡 。",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 消耗至多 6 点 nineswordtechniques:生机 ，每点额外获得 4 点 格挡 。",
     "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 消耗至多 6 点 nineswordtechniques:生机 ，每点额外获得 4 点 格挡 。"
   },
   "NineSwordTechniques:VitalityDistillation": {
     "NAME": "生机淬炼",
-    "DESCRIPTION": "若至少有 6 点 nineswordtechniques:生机 ，消耗 6 点 nineswordtechniques:生机 ，获得 2 点能量并抽 2 张牌。",
-    "UPGRADE_DESCRIPTION": "若至少有 5 点 nineswordtechniques:生机 ，消耗 5 点 nineswordtechniques:生机 ，获得 2 点能量并抽 2 张牌。"
+    "DESCRIPTION": "若至少有 8 点 nineswordtechniques:生机 ，消耗 1 点 nineswordtechniques:生机 ，获得 2 点能量并抽 2 张牌。",
+    "UPGRADE_DESCRIPTION": "若至少有 6 点 nineswordtechniques:生机 ，消耗 1 点 nineswordtechniques:生机 ，获得 2 点能量并抽 2 张牌。"
   },
   "NineSwordTechniques:LivingArmor": {
     "NAME": "活体铠甲",
@@ -359,8 +359,8 @@
   },
   "NineSwordTechniques:NerveLock": {
     "NAME": "封脉",
-    "DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 。 NL 若结算后至少有 4 层 nineswordtechniques:麻痹 ，再施加 2 层 虚弱 。",
-    "UPGRADE_DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 。 NL 若结算后至少有 4 层 nineswordtechniques:麻痹 ，再施加 3 层 虚弱 。"
+    "DESCRIPTION": "目标每回合开始时获得 2 层 nineswordtechniques:麻痹 。 NL 消耗。",
+    "UPGRADE_DESCRIPTION": "目标每回合开始时获得 2 层 nineswordtechniques:麻痹 。"
   },
   "NineSwordTechniques:PollenStorm": {
     "NAME": "花粉风暴",

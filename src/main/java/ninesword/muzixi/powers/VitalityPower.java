@@ -79,6 +79,12 @@ public class VitalityPower extends MuzixiPower {
         int spent = Math.min(requested, vitality.amount);
         vitality.amount -= spent;
         vitality.updateDescription();
+        // Internal resource payments do not go through ReducePowerAction,
+        // therefore they must notify the power UI themselves.  Without this
+        // callback the icon/tooltip can remain stale until another power
+        // mutation happens (especially visible when a card spends all
+        // Vitality to cancel a Wither application).
+        AbstractDungeon.onModifyPower();
         // Do not remove the Power directly here.  spend() can be reached from
         // WitherPower.stackPower(), while ApplyPowerAction is iterating the
         // owner's Power list; structural removal at that point can throw a

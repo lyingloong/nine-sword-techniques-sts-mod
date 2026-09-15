@@ -8,37 +8,37 @@
   "NineSwordTechniques:GhostlySwordPower": {
     "NAME": "Ghostly Sword",
     "DESCRIPTIONS": [
-      "Ghostly Sword technique cards deal #b%d additional damage this combat."
+      "Ghostly Sword technique cards deal %d additional damage this combat."
     ]
   },
   "NineSwordTechniques:VoidBladeStylePower": {
     "NAME": "Void Blade Style",
     "DESCRIPTIONS": [
-      "At the start of each turn, gain #b%d Strength, Dexterity, Focus, and Metallicize."
+      "At the start of each turn, gain %d Strength, Dexterity, Focus, and Metallicize."
     ]
   },
   "NineSwordTechniques:Vitality": {
     "NAME": "Vitality",
     "DESCRIPTIONS": [
-      "You have #b%d Vitality. Gaining it increases temporary Max HP; it is spent by several cards and clears after combat."
+      "You have %d Vitality. Gaining it increases temporary Max HP; it is spent by several cards and clears after combat."
     ]
   },
   "NineSwordTechniques:Wither": {
     "NAME": "Wither",
     "DESCRIPTIONS": [
-      "You have #b%d Wither. Each stack reduces temporary Max HP by 1. Gaining Vitality removes Wither first, but the Max HP change remains until combat ends."
+      "You have %d Wither. Each stack reduces temporary Max HP by 1. Gaining Vitality removes Wither first, but the Max HP change remains until combat ends."
     ]
   },
   "NineSwordTechniques:VitalityMaxHealth": {
     "NAME": "Temporary Max HP",
     "DESCRIPTIONS": [
-      "Temporary Max HP change this combat: #b%d. Restored after combat."
+      "Temporary Max HP change this combat: %d. Restored after combat."
     ]
   },
   "NineSwordTechniques:Paralysis": {
     "NAME": "Paralysis",
     "DESCRIPTIONS": [
-      "Lose #b%d Strength and Dexterity this turn. Restored and removed at the end of the target's turn."
+      "Lose %d Strength and Dexterity this turn. Restored and removed at the end of the target's turn."
     ]
   },
   "NineSwordTechniques:MuzixiPersona": {
@@ -56,19 +56,19 @@
   "NineSwordTechniques:Evergreen": {
     "NAME": "Evergreen",
     "DESCRIPTIONS": [
-      "Whenever you gain Vitality, gain #b%d Block for each point gained."
+      "Whenever you gain Vitality, gain %d Block for each point gained."
     ]
   },
   "NineSwordTechniques:NaturalCycle": {
     "NAME": "Natural Cycle",
     "DESCRIPTIONS": [
-      "At the start of your turn, spend up to #b%d Vitality. Draw 1 card for each spent."
+      "At the start of your turn, spend up to %d Vitality. For each spent, draw 1 card and gain 1 Energy."
     ]
   },
   "NineSwordTechniques:AncientBark": {
     "NAME": "Ancient Bark",
     "DESCRIPTIONS": [
-      "At the end of your turn, if you have at least 4 Vitality, gain #b%d Block."
+      "At the end of your turn, if you have at least 6 Vitality, gain %d Block."
     ]
   },
   "NineSwordTechniques:HarmonicSoul": {
@@ -80,45 +80,49 @@
   "NineSwordTechniques:WorldTree": {
     "NAME": "World Tree",
     "DESCRIPTIONS": [
-      "Whenever Energy decreases by 1, gain 1 Vitality #b%d time(s)."
+      "Whenever Energy decreases by 1, gain 1 Vitality %d time(s)."
     ]
   },
   "NineSwordTechniques:VitalityTide": {
     "NAME": "Vitality Tide",
     "DESCRIPTIONS": [
-      "At the start of your next turn, gain #b%d Vitality."
+      "At the start of your next turn, gain %d Vitality."
     ]
   },
   "NineSwordTechniques:VitalityReservoir": {
     "NAME": "Vitality Reservoir",
     "DESCRIPTIONS": [
-      "At the start of each turn, if you have at most #b4 Vitality, gain #b%d Vitality.",
-      "At the start of each turn, if you have at most #b5 Vitality, gain #b%d Vitality.",
-      "At the start of each turn, gain #b%d Vitality if you have at most #b4, or #b%d Vitality if you have exactly #b5."
+      "At the start of each turn, gain %d Vitality."
     ]
   },
   "NineSwordTechniques:ThickenedLifeblood": {
     "NAME": "Thickened Lifeblood",
     "DESCRIPTIONS": [
-      "The first time each turn you gain at least #b%d Vitality at once, gain #b%d Block."
+      "Whenever you gain Vitality, heal %d HP for each point gained."
     ]
   },
   "NineSwordTechniques:LivingArmor": {
     "NAME": "Living Armor",
     "DESCRIPTIONS": [
-      "At the end of your turn, if you have at least #b%d Vitality, gain #b%d Block."
+      "At the end of your turn, if you have at least %d Vitality, gain %d Block."
     ]
   },
   "NineSwordTechniques:ParalyticField": {
     "NAME": "Paralytic Field",
     "DESCRIPTIONS": [
-      "At the start of each turn, apply #b%d Paralysis to ALL enemies."
+      "At the start of each turn, apply %d Paralysis to ALL enemies."
     ]
   },
   "NineSwordTechniques:NumbingEcho": {
     "NAME": "Numbing Echo",
     "DESCRIPTIONS": [
-      "The first time during each of your turns that you apply Paralysis to a valid target, apply the same amount #b%d additional time(s)."
+      "The first time during each of your turns that you apply Paralysis to a valid target, apply the same amount %d additional time(s)."
+    ]
+  },
+  "NineSwordTechniques:NerveLock": {
+    "NAME": "Nerve Lock",
+    "DESCRIPTIONS": [
+      "At the start of the target's turn, apply %d Paralysis to it."
     ]
   },
   "NineSwordTechniques:AbsoluteParalysis": {
@@ -130,7 +134,7 @@
   "NineSwordTechniques:DualityConvergence": {
     "NAME": "Duality Convergence",
     "DESCRIPTIONS": [
-      "Whenever you change persona, gain #b%d Vitality and apply #b%d Paralysis to ALL enemies."
+      "Whenever you change persona, gain %d Vitality and apply %d Paralysis to ALL enemies."
     ]
   }
 }

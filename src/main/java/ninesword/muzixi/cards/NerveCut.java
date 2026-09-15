@@ -8,13 +8,12 @@ import ninesword.muzixi.powers.ParalysisPower;
 
 public class NerveCut extends MuzixiCard {
     public static final String ID = "NineSwordTechniques:NerveCut";
-    private int threshold = 3;
+    private int threshold = 5;
     private int bonusDamage = 5;
 
     public NerveCut() {
         super(ID, "NerveCut", 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = 9;
-        magicNumber = baseMagicNumber = 3;
+        baseDamage = 7;
         damageTypeForTurn = DamageInfo.DamageType.NORMAL;
     }
 
@@ -34,7 +33,7 @@ public class NerveCut extends MuzixiCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(3);
+            upgradeDamage(2);
             bonusDamage = 7;
             rawDescription = strings(ID).UPGRADE_DESCRIPTION;
             initializeDescription();

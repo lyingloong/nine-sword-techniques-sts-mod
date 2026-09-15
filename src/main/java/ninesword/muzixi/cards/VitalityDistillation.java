@@ -7,7 +7,7 @@ import ninesword.muzixi.actions.VitalityPaymentAction;
 
 public class VitalityDistillation extends MuzixiCard {
     public static final String ID = "NineSwordTechniques:VitalityDistillation";
-    private int threshold = 6;
+    private int threshold = 8;
 
     public VitalityDistillation() {
         super(ID, "VitalityDistillation", 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
@@ -15,14 +15,14 @@ public class VitalityDistillation extends MuzixiCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        addToBot(new VitalityPaymentAction(player, threshold, 0, 2, 2));
+        addToBot(new VitalityPaymentAction(player, 1, 0, 2, 2, threshold));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            threshold = 5;
+            threshold = 6;
             rawDescription = strings(ID).UPGRADE_DESCRIPTION;
             initializeDescription();
         }

@@ -9,14 +9,14 @@ public class RootGuard extends MuzixiCard {
 
     public RootGuard() {
         super(ID, "RootGuard", 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        baseBlock = 8;
+        baseBlock = 7;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
         block(player, block);
         if (isMuzixi(player)) {
-            gainVitality(player, 1);
+            gainVitality(player, upgraded ? 2 : 1);
         }
     }
 
@@ -24,7 +24,9 @@ public class RootGuard extends MuzixiCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(3);
+            upgradeBlock(2);
+            rawDescription = strings(ID).UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 

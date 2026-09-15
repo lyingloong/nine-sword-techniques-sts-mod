@@ -11,8 +11,8 @@ public class GiantTree extends MuzixiCard {
 
     public GiantTree() {
         super(ID, "GiantTree", 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        magicNumber = 2;
-        baseMagicNumber = 2;
+        magicNumber = 1;
+        baseMagicNumber = 1;
     }
 
     @Override
@@ -24,7 +24,7 @@ public class GiantTree extends MuzixiCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeBaseCost(1);
         }
     }
 

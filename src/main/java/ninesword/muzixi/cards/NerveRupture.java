@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import ninesword.muzixi.actions.NerveRuptureAction;
-import ninesword.muzixi.powers.ParalysisPower;
 
 public class NerveRupture extends MuzixiCard {
     public static final String ID = "NineSwordTechniques:NerveRupture";
@@ -17,11 +16,24 @@ public class NerveRupture extends MuzixiCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        int paralysis = ParalysisPower.getAmount(monster);
-        long scaledBase = (long) baseDamage + (long) paralysis * damagePerStack;
-        int dynamicBase = scaledBase >= Integer.MAX_VALUE ? Integer.MAX_VALUE : (int) scaledBase;
-        int finalDamage = calculateDamageForBase(monster, dynamicBase);
-        addToBot(new NerveRuptureAction(player, monster, finalDamage));
+        // The paralysis count is deliberately read by the action at resolution
+        // time.  Other queued effects may add/remove paralysis after the card is
+        // played, and the design calls for damage to match the layers actually
+        // removed by this card.
+        addToBot(new NerveRuptureAction(player, monster, this));
+    }
+
+    /**
+     * Calculates the attack value for the number of paralysis stacks removed at
+     * resolution.  Keeping this on the card preserves the normal card/relic/
+     * power damage modifiers while allowing the action to use a late snapshot.
+     */
+    public int calculateDamageForParalysis(AbstractMonster monster, int paralysis) {
+        long scaledBase = (long) baseDamage
+                + (long) Math.max(0, paralysis) * damagePerStack;
+        int dynamicBase = scaledBase >= Integer.MAX_VALUE
+                ? Integer.MAX_VALUE : (int) scaledBase;
+        return calculateDamageForBase(monster, dynamicBase);
     }
 
     @Override

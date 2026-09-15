@@ -24,8 +24,12 @@ public class NaturalCyclePower extends MuzixiPower {
     public void atStartOfTurn() {
         if (owner instanceof AbstractPlayer && amount > 0 && VitalityPower.getAmount(owner) > 0) {
             flash();
+            // Spend the resource once and derive both rewards from the same
+            // amount.  This is deliberately one action: two independent
+            // spend actions could consume two different portions of Vitality
+            // when several copies of the power are present.
             addToBot(new VitalitySpendAction((AbstractPlayer) owner, amount, 1,
-                    VitalitySpendAction.Effect.DRAW));
+                    VitalitySpendAction.Effect.DRAW_AND_ENERGY));
         }
     }
 

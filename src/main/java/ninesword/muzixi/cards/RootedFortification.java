@@ -9,7 +9,7 @@ import ninesword.muzixi.actions.VitalitySpendAction;
 public class RootedFortification extends MuzixiCard {
     public static final String ID = "NineSwordTechniques:RootedFortification";
     private int maximumSpend = 6;
-    private int perVitality = 3;
+    private int perVitality = 4;
 
     public RootedFortification() {
         super(ID, "RootedFortification", 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
@@ -27,7 +27,7 @@ public class RootedFortification extends MuzixiCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            perVitality = 4;
+            selfRetain = true;
             rawDescription = strings(ID).UPGRADE_DESCRIPTION;
             initializeDescription();
         }

@@ -8,7 +8,6 @@ import ninesword.muzixi.powers.VitalityReservoirPower;
 
 public class VitalityReservoir extends MuzixiCard {
     public static final String ID = "NineSwordTechniques:VitalityReservoir";
-    private int threshold = 4;
     private int gain = 2;
 
     public VitalityReservoir() {
@@ -18,14 +17,13 @@ public class VitalityReservoir extends MuzixiCard {
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
         addToBot(new ApplyPowerAction(player, player,
-                new VitalityReservoirPower(player, gain, threshold), gain));
+                new VitalityReservoirPower(player, gain), gain));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            threshold = 5;
             gain = 3;
             rawDescription = strings(ID).UPGRADE_DESCRIPTION;
             initializeDescription();

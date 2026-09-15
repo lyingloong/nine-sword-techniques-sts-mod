@@ -4,19 +4,22 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import ninesword.muzixi.powers.ParalysisPower;
 
 public class ThornWhip extends MuzixiCard {
     public static final String ID = "NineSwordTechniques:ThornWhip";
 
     public ThornWhip() {
         super(ID, "ThornWhip", 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = 8;
+        baseDamage = 6;
         damageTypeForTurn = DamageInfo.DamageType.NORMAL;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
         damage(player, monster, damage, com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.SLASH_HEAVY);
+        addToBot(new ApplyPowerAction(monster, player, new ParalysisPower(monster, 1), 1));
         gainVitality(player, 1);
     }
 

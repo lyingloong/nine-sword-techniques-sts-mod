@@ -3,20 +3,21 @@ package ninesword.muzixi.cards;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import ninesword.muzixi.actions.EchoingNumbnessAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import ninesword.muzixi.powers.ParalysisPower;
 
 public class EchoingNumbness extends MuzixiCard {
     public static final String ID = "NineSwordTechniques:EchoingNumbness";
-    private int threshold = 4;
-
     public EchoingNumbness() {
         super(ID, "EchoingNumbness", 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY);
-        magicNumber = baseMagicNumber = 2;
+        magicNumber = baseMagicNumber = 4;
+        returnToHand = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        addToBot(new EchoingNumbnessAction(player, monster, magicNumber, threshold, 1));
+        addToBot(new ApplyPowerAction(monster, player,
+                new ParalysisPower(monster, magicNumber), magicNumber));
     }
 
     @Override
@@ -24,9 +25,6 @@ public class EchoingNumbness extends MuzixiCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
-            threshold = 3;
-            rawDescription = strings(ID).UPGRADE_DESCRIPTION;
-            initializeDescription();
         }
     }
 

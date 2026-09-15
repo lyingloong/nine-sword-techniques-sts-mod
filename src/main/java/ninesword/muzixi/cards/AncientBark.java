@@ -11,8 +11,8 @@ public class AncientBark extends MuzixiCard {
 
     public AncientBark() {
         super(ID, "AncientBark", 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        magicNumber = 6;
-        baseMagicNumber = 6;
+        magicNumber = 8;
+        baseMagicNumber = 8;
     }
 
     @Override
@@ -24,7 +24,7 @@ public class AncientBark extends MuzixiCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(3);
+            upgradeMagicNumber(4);
         }
     }
 
