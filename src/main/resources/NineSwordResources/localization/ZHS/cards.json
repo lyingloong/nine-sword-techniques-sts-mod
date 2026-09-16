@@ -268,6 +268,11 @@
     "UPGRADE_DESCRIPTION": "消耗 1 点 nineswordtechniques:生机 。 NL 抽 1 张牌。 NL 返回。 NL （当前生机 !NSTV! ）",
     "EXTENDED_DESCRIPTION": ["至少需要 1 点生机才能打出。"]
   },
+  "NineSwordTechniques:WoodSpiritSeed": {
+    "NAME": "木灵种子",
+    "DESCRIPTION": "消耗 。 NL 施加 !M! 层 nineswordtechniques:麻痹 。 NL 获得 !M! 点 nineswordtechniques:生机 。 NL 抽到此牌时，在弃牌堆中加入一张此牌的复制。 NL （当前生机 !NSTV! ）",
+    "UPGRADE_DESCRIPTION": "消耗 。 NL 施加 !M! 层 nineswordtechniques:麻痹 。 NL 获得 !M! 点 nineswordtechniques:生机 。 NL 抽到此牌时，在弃牌堆中加入一张此牌的复制。 NL （当前生机 !NSTV! ）"
+  },
   "NineSwordTechniques:NumbingPollen": {
     "NAME": "麻痹花粉",
     "DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 和 1 层易伤。",

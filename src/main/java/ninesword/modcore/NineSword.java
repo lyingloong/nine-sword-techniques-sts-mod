@@ -74,6 +74,7 @@ import ninesword.muzixi.cards.VerdantRebirth;
 import ninesword.muzixi.cards.VineLash;
 import ninesword.muzixi.cards.Vinesnare;
 import ninesword.muzixi.cards.WorldTree;
+import ninesword.muzixi.cards.WoodSpiritSeed;
 import ninesword.muzixi.cards.Sprout;
 import ninesword.muzixi.cards.VitalExchange;
 import ninesword.muzixi.cards.RootedBlow;
@@ -193,6 +194,7 @@ public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
         BaseMod.addCard(new LifeDevouringWoodBody());
         // Muzixi common cards.
         BaseMod.addCard(new Sprout());
+        BaseMod.addCard(new WoodSpiritSeed());
         BaseMod.addCard(new VitalExchange());
         BaseMod.addCard(new RootedBlow());
         BaseMod.addCard(new VitalGuard());
