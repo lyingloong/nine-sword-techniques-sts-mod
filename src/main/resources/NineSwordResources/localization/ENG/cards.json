@@ -222,6 +222,11 @@
     "DESCRIPTION": "Exhaust. NL Set your HP to the amount of HP you have lost, but not below 1.",
     "UPGRADE_DESCRIPTION": "Retain. NL Exhaust. NL Set your HP to the amount of HP you have lost, but not below 1."
   },
+  "NineSwordTechniques:LifeDevouringWoodBody": {
+    "NAME": "Life-Devouring Woodform",
+    "DESCRIPTION": "Lose all nineswordtechniques:vitality. NL Gain that much Strength. NL Ethereal. NL Exhaust. NL (Current Vitality !NSTV!)",
+    "UPGRADE_DESCRIPTION": "Lose all nineswordtechniques:vitality. NL Gain that much Strength. NL Exhaust. NL (Current Vitality !NSTV!)"
+  },
   "NineSwordTechniques:Sprout": {
     "NAME": "Sprout",
     "DESCRIPTION": "Gain !M! nineswordtechniques:vitality and draw 1 card. NL (Current Vitality !NSTV!)",

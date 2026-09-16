@@ -222,6 +222,11 @@
     "DESCRIPTION": "消耗 。 NL 将生命值变为已损失生命值，至少为 1。",
     "UPGRADE_DESCRIPTION": " 保留 。 NL 消耗 。 NL 将生命值变为已损失生命值，至少为 1。"
   },
+  "NineSwordTechniques:LifeDevouringWoodBody": {
+    "NAME": "吞生木体",
+    "DESCRIPTION": "失去所有 nineswordtechniques:生机 。 NL 获得等量 力量 。 NL 虚无 。 NL 本牌消耗。 NL （当前生机 !NSTV! ）",
+    "UPGRADE_DESCRIPTION": "失去所有 nineswordtechniques:生机 。 NL 获得等量 力量 。 NL 本牌消耗。 NL （当前生机 !NSTV! ）"
+  },
   "NineSwordTechniques:Sprout": {
     "NAME": "萌芽",
     "DESCRIPTION": "获得 !M! 点 nineswordtechniques:生机 ，抽 1 张牌。 NL （当前生机 !NSTV! ）",

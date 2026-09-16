@@ -56,6 +56,7 @@ import ninesword.muzixi.cards.EyeOfLife;
 import ninesword.muzixi.cards.GiantTree;
 import ninesword.muzixi.cards.LeafDance;
 import ninesword.muzixi.cards.LifeDrain;
+import ninesword.muzixi.cards.LifeDevouringWoodBody;
 import ninesword.muzixi.cards.MindGarden;
 import ninesword.muzixi.cards.MuzixiDefend;
 import ninesword.muzixi.cards.MuzixiStrike;
@@ -189,6 +190,7 @@ public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
         BaseMod.addCard(new TenThousandFlowers());
         BaseMod.addCard(new TearOfGod());
         BaseMod.addCard(new SoulReflection());
+        BaseMod.addCard(new LifeDevouringWoodBody());
         // Muzixi common cards.
         BaseMod.addCard(new Sprout());
         BaseMod.addCard(new VitalExchange());
