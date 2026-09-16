@@ -293,7 +293,7 @@ public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
                     "生机的负面对应。失去生机超出当前数量时转化为凋萎；每层使本场战斗的临时最大生命减少 1 点。获得生机会优先移除凋萎，但临时最大生命变化保留到战斗结束。");
             BaseMod.addKeyword(KEYWORD_NAMESPACE, "人格",
                     new String[]{"人格", "木子汐人格", "泪汐儿人格"},
-                    "战斗内的双魂状态。木子汐人格在回合开始时提供效果；进入泪汐儿人格时会转化灵魂共鸣。通过人格交替可在两者之间切换。");
+                    "战斗内的双魂状态。木子汐人格在回合开始时获得灵魂共鸣；进入泪汐儿人格时会转化灵魂共鸣，处于该人格时每打出一张牌都会失去最大生命并令所有敌人失去生命。通过人格交替可在两者之间切换。");
             BaseMod.addKeyword(KEYWORD_NAMESPACE, "麻痹", new String[]{"麻痹"},
                     "临时施加在目标身上的状态。每层使目标本回合力量和敏捷各降低 1，目标回合结束时恢复并清除。");
             BaseMod.addKeyword(KEYWORD_NAMESPACE, "灵魂共鸣", new String[]{"灵魂共鸣"},
@@ -308,7 +308,7 @@ public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
             BaseMod.addKeyword(KEYWORD_NAMESPACE, "Wither", new String[]{"wither"},
                     "The negative counterpart to Vitality. Each stack reduces temporary Max HP by 1. Gaining Vitality removes Wither first, but the Max HP change remains until combat ends.");
             BaseMod.addKeyword(KEYWORD_NAMESPACE, "Persona", new String[]{"persona"},
-                    "A combat-only dual-soul state. Muzixi grants a start-of-turn effect; entering Leixier converts Harmonic Soul. Persona Shift changes between them.");
+                    "A combat-only dual-soul state. Muzixi gains Harmonic Soul at the start of each turn. Entering Leixier converts Harmonic Soul; playing cards in Leixier costs Max HP and makes all enemies lose HP. Persona Shift changes between them.");
             BaseMod.addKeyword(KEYWORD_NAMESPACE, "Paralysis", new String[]{"paralysis"},
                     "A temporary debuff. Each stack lowers the target's Strength and Dexterity by 1 for this turn, then restores and clears at the end of the target's turn.");
             BaseMod.addKeyword(KEYWORD_NAMESPACE, "Harmonic Soul",

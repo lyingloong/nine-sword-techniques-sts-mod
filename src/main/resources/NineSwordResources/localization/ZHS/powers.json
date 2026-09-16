@@ -44,13 +44,13 @@
   "NineSwordTechniques:MuzixiPersona": {
     "NAME": "木子汐",
     "DESCRIPTIONS": [
-      "每回合开始时，获得 3 点格挡和 1 点生机。"
+      "每回合开始时，获得 1 层灵魂共鸣。"
     ]
   },
   "NineSwordTechniques:TearPersona": {
     "NAME": "泪汐儿",
     "DESCRIPTIONS": [
-      "切换至此人格时，消耗至多 9 层灵魂共鸣，每层抽 1 张牌并获得 1 点能量。"
+      "进入此人格时，消耗至多 9 层灵魂共鸣，每层抽 1 张牌并获得 1 点能量。 NL 每打出一张牌，失去 2 点最大生命，并令所有敌人失去 2 点生命。"
     ]
   },
   "NineSwordTechniques:Evergreen": {

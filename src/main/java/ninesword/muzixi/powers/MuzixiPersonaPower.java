@@ -1,11 +1,10 @@
 package ninesword.muzixi.powers;
 
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import ninesword.muzixi.actions.GainVitalityAction;
 import ninesword.muzixi.actions.TriggerDualityConvergenceAction;
 
 public class MuzixiPersonaPower extends MuzixiPower {
@@ -54,8 +53,8 @@ public class MuzixiPersonaPower extends MuzixiPower {
     @Override
     public void atStartOfTurn() {
         flash();
-        addToBot(new GainBlockAction(owner, owner, 3));
-        addToBot(new GainVitalityAction(owner, 1));
+        addToBot(new ApplyPowerAction(owner, owner,
+                new HarmonicSoulPower(owner, 1), 1));
     }
 
     @Override

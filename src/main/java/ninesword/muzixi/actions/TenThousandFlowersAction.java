@@ -24,8 +24,11 @@ public class TenThousandFlowersAction extends AbstractGameAction {
                     continue;
                 }
                 for (AbstractPower power : monster.powers) {
-                    if (power.type != AbstractPower.PowerType.BUFF
-                            && power.type != AbstractPower.PowerType.DEBUFF) {
+                    // A third-party power can leave a null entry in the list;
+                    // skip it instead of making the card crash while counting.
+                    if (power == null
+                            || (power.type != AbstractPower.PowerType.BUFF
+                                && power.type != AbstractPower.PowerType.DEBUFF)) {
                         continue;
                     }
                     if (total < Integer.MAX_VALUE) {

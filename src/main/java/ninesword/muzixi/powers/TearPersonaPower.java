@@ -1,10 +1,14 @@
 package ninesword.muzixi.powers;
 
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import ninesword.muzixi.actions.EnterTearPersonaAction;
+import ninesword.muzixi.actions.TearPersonaCardAction;
 import ninesword.muzixi.actions.TriggerDualityConvergenceAction;
 
 public class TearPersonaPower extends MuzixiPower {
@@ -57,6 +61,14 @@ public class TearPersonaPower extends MuzixiPower {
     @Override
     public void updateParticles() {
         updatePersonaVisuals(true);
+    }
+
+    @Override
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (owner != null && owner.isPlayer) {
+            flash();
+            addToBot(new TearPersonaCardAction((AbstractPlayer) owner));
+        }
     }
 
     /**
