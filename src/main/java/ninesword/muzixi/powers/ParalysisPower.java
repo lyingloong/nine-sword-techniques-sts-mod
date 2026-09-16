@@ -83,13 +83,16 @@ public class ParalysisPower extends MuzixiPower {
     public void onInitialApplication() {
         int initial = amount;
         amount = 0;
-        addStacks(initial);
+        addStacks(initial, false);
     }
 
     @Override
     public void stackPower(int stackAmount) {
         if (stackAmount > 0) {
-            addStacks(stackAmount);
+            // ApplyPowerAction calls stackPower while iterating owner.powers.
+            // If a stat Power is currently missing, create it after that
+            // iteration finishes instead of structurally modifying the list.
+            addStacks(stackAmount, true);
         } else if (stackAmount < 0) {
             removeStacks(-stackAmount);
         }
@@ -173,14 +176,14 @@ public class ParalysisPower extends MuzixiPower {
     }
 
     /** Add stacks and apply the paired stat reductions. */
-    private void addStacks(int requested) {
+    private void addStacks(int requested, boolean deferMissingStats) {
         if (owner == null || requested <= 0) {
             return;
         }
         amount = safeAdd(amount, requested);
-        int appliedStrength = lowerStat(true, requested);
+        int appliedStrength = lowerStat(true, requested, deferMissingStats);
         strengthReduction = safeAdd(strengthReduction, appliedStrength);
-        int appliedDexterity = lowerStat(false, requested);
+        int appliedDexterity = lowerStat(false, requested, deferMissingStats);
         dexterityReduction = safeAdd(dexterityReduction, appliedDexterity);
         updateDescription();
     }
@@ -212,7 +215,7 @@ public class ParalysisPower extends MuzixiPower {
      * A missing stat power is created with the negative amount; it is removed
      * again if cleanup brings it back to zero.
      */
-    private int lowerStat(boolean strength, int requested) {
+    private int lowerStat(boolean strength, int requested, boolean deferIfMissing) {
         if (requested <= 0 || owner == null || owner.powers == null) {
             return 0;
         }
@@ -242,6 +245,10 @@ public class ParalysisPower extends MuzixiPower {
         }
         boolean created = false;
         if (stat == null) {
+            if (deferIfMissing) {
+                addToTop(new ApplyMissingStatReductionAction(this, strength, requested));
+                return 0;
+            }
             // Add a zero-valued standard stat first, then apply the same
             // mutation path as an already-present stat.  Constructing it with
             // a negative amount here would count the reduction twice below.
@@ -269,6 +276,19 @@ public class ParalysisPower extends MuzixiPower {
             createdDexterityPower = created;
         }
         return Math.max(0, applied);
+    }
+
+    private void recordDeferredReduction(boolean strength, int requested) {
+        if (owner == null || owner.powers == null || owner.getPower(POWER_ID) != this
+                || amount <= 0) {
+            return;
+        }
+        int applied = lowerStat(strength, requested, false);
+        if (strength) {
+            strengthReduction = safeAdd(strengthReduction, applied);
+        } else {
+            dexterityReduction = safeAdd(dexterityReduction, applied);
+        }
     }
 
     /** Restore a stat without losing buffs that replaced the original Power. */
@@ -330,6 +350,28 @@ public class ParalysisPower extends MuzixiPower {
     private static int clamp(long value) {
         return value >= Integer.MAX_VALUE ? Integer.MAX_VALUE
                 : value <= Integer.MIN_VALUE ? Integer.MIN_VALUE : (int) value;
+    }
+
+    private static final class ApplyMissingStatReductionAction extends AbstractGameAction {
+        private final ParalysisPower power;
+        private final boolean strength;
+        private final int requested;
+
+        private ApplyMissingStatReductionAction(ParalysisPower power, boolean strength,
+                                                int requested) {
+            this.power = power;
+            this.strength = strength;
+            this.requested = requested;
+            actionType = ActionType.POWER;
+        }
+
+        @Override
+        public void update() {
+            if (power != null) {
+                power.recordDeferredReduction(strength, requested);
+            }
+            isDone = true;
+        }
     }
 
     private static final class RemoveZeroStatPowerAction extends AbstractGameAction {
