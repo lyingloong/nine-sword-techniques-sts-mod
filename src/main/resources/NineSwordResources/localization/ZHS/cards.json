@@ -149,8 +149,8 @@
   },
   "NineSwordTechniques:CreepingRoots": {
     "NAME": "蔓生根须",
-    "DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 。 NL 获得 1 点 nineswordtechniques:生机 。 NL （当前生机 !NSTV! ）",
-    "UPGRADE_DESCRIPTION": "施加 !M! 层 nineswordtechniques:麻痹 。 NL 获得 2 点 nineswordtechniques:生机 。 NL （当前生机 !NSTV! ）"
+    "DESCRIPTION": "吸取 !M! 点 nineswordtechniques:生机 。 NL （当前生机 !NSTV! ）",
+    "UPGRADE_DESCRIPTION": "吸取 !M! 点 nineswordtechniques:生机 。 NL （当前生机 !NSTV! ）"
   },
   "NineSwordTechniques:Vinesnare": {
     "NAME": "藤网",

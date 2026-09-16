@@ -149,8 +149,8 @@
   },
   "NineSwordTechniques:CreepingRoots": {
     "NAME": "Creeping Roots",
-    "DESCRIPTION": "Apply !M! nineswordtechniques:paralysis. NL Gain 1 nineswordtechniques:vitality. NL (Current Vitality !NSTV!)",
-    "UPGRADE_DESCRIPTION": "Apply !M! nineswordtechniques:paralysis. NL Gain 2 nineswordtechniques:vitality. NL (Current Vitality !NSTV!)"
+    "DESCRIPTION": "Drain !M! nineswordtechniques:vitality from the target. NL (Current Vitality !NSTV!)",
+    "UPGRADE_DESCRIPTION": "Drain !M! nineswordtechniques:vitality from the target. NL (Current Vitality !NSTV!)"
   },
   "NineSwordTechniques:Vinesnare": {
     "NAME": "Vinesnare",
