@@ -93,6 +93,7 @@ import ninesword.muzixi.cards.EyeOfDeath;
 import ninesword.muzixi.cards.VerdantMiracle;
 import ninesword.muzixi.cards.VitalityTide;
 import ninesword.muzixi.cards.VitalityReservoir;
+import ninesword.muzixi.cards.VitalityRiot;
 import ninesword.muzixi.cards.ThickenedLifeblood;
 import ninesword.muzixi.cards.RootedFortification;
 import ninesword.muzixi.cards.VitalityDistillation;
@@ -210,6 +211,7 @@ public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
         BaseMod.addCard(new VerdantMiracle());
         BaseMod.addCard(new VitalityTide());
         BaseMod.addCard(new VitalityReservoir());
+        BaseMod.addCard(new VitalityRiot());
         BaseMod.addCard(new ThickenedLifeblood());
         BaseMod.addCard(new RootedFortification());
         BaseMod.addCard(new VitalityDistillation());

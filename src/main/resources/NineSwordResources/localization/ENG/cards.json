@@ -391,5 +391,10 @@
     "NAME": "Duality Convergence",
     "DESCRIPTION": "Whenever you change nineswordtechniques:persona, gain 2 nineswordtechniques:vitality and apply 2 nineswordtechniques:paralysis to ALL enemies. NL (Current Vitality !NSTV!)",
     "UPGRADE_DESCRIPTION": "Whenever you change nineswordtechniques:persona, gain 3 nineswordtechniques:vitality and apply 3 nineswordtechniques:paralysis to ALL enemies. NL (Current Vitality !NSTV!)"
+  },
+  "NineSwordTechniques:VitalityRiot": {
+    "NAME": "Vitality Riot",
+    "DESCRIPTION": "Spend all nineswordtechniques:vitality. NL Deal damage to ALL enemies equal to !M! times the amount spent. NL Exhaust. NL (Current Vitality !NSTV!)",
+    "UPGRADE_DESCRIPTION": "Retain. NL Spend all nineswordtechniques:vitality. NL Deal damage to ALL enemies equal to !M! times the amount spent. NL Exhaust. NL (Current Vitality !NSTV!)"
   }
 }

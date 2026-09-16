@@ -391,5 +391,10 @@
     "NAME": "两仪归一",
     "DESCRIPTION": "每次切换 nineswordtechniques:人格 时，获得 2 点 nineswordtechniques:生机 并对所有敌人施加 2 层 nineswordtechniques:麻痹 。 NL （当前生机 !NSTV! ）",
     "UPGRADE_DESCRIPTION": "每次切换 nineswordtechniques:人格 时，获得 3 点 nineswordtechniques:生机 并对所有敌人施加 3 层 nineswordtechniques:麻痹 。 NL （当前生机 !NSTV! ）"
+  },
+  "NineSwordTechniques:VitalityRiot": {
+    "NAME": "生机暴动",
+    "DESCRIPTION": "消耗所有 nineswordtechniques:生机 。 NL 对所有敌人造成消耗量 !M! 倍的伤害。 NL 本牌消耗。 NL （当前生机 !NSTV! ）",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 消耗所有 nineswordtechniques:生机 。 NL 对所有敌人造成消耗量 !M! 倍的伤害。 NL 本牌消耗。 NL （当前生机 !NSTV! ）"
   }
 }
