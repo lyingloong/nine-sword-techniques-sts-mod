@@ -46,8 +46,8 @@
   },
   "NineSwordTechniques:UnsheathedBlade": {
     "NAME": "Unsheathed Blade",
-    "DESCRIPTION": "*Sword *Technique *Card. NL Double the damage dealt by your Attack cards.",
-    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Double the damage dealt by your Attack cards."
+    "DESCRIPTION": "*Sword *Technique *Card. NL Your Attack cards deal double damage.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Your Attack cards deal double damage."
   },
   "NineSwordTechniques:SpacetimeLeap": {
     "NAME": "Spacetime Leap",
@@ -184,8 +184,8 @@
   },
   "NineSwordTechniques:NaturalCycle": {
     "NAME": "Natural Cycle",
-    "DESCRIPTION": "At the start of each turn, if you have at least 1 nineswordtechniques:vitality, spend 1, draw 1 card, and gain 1 Energy. NL (Current Vitality !NSTV!)",
-    "UPGRADE_DESCRIPTION": "At the start of each turn, if you have at least 1 nineswordtechniques:vitality, spend 1, draw 1 card, and gain 1 Energy. NL (Current Vitality !NSTV!)"
+    "DESCRIPTION": "At the start of each turn, spend 1 nineswordtechniques:vitality. Draw that many cards and gain that much Energy. NL (Current Vitality !NSTV!)",
+    "UPGRADE_DESCRIPTION": "At the start of each turn, spend 1 nineswordtechniques:vitality. Draw that many cards and gain that much Energy. NL (Current Vitality !NSTV!)"
   },
   "NineSwordTechniques:MindGarden": {
     "NAME": "Mind Garden",
@@ -209,8 +209,8 @@
   },
   "NineSwordTechniques:TenThousandFlowers": {
     "NAME": "Ten Thousand Flowers",
-    "DESCRIPTION": "Exhaust. NL Snapshot and remove all enemy Buffs and Debuffs, gaining nineswordtechniques:vitality equal to their total stacks (unstacked powers count as 1). NL (Current Vitality !NSTV!)",
-    "UPGRADE_DESCRIPTION": "Snapshot and remove all enemy Buffs and Debuffs, gaining nineswordtechniques:vitality equal to their total stacks (unstacked powers count as 1). NL (Current Vitality !NSTV!)"
+    "DESCRIPTION": "Exhaust. NL Remove all Buffs and Debuffs from ALL enemies. Gain nineswordtechniques:vitality equal to the amount removed. NL (Current Vitality !NSTV!)",
+    "UPGRADE_DESCRIPTION": "Remove all Buffs and Debuffs from ALL enemies (using the absolute value of their stacks; unstacked Powers count as 1). Gain nineswordtechniques:vitality equal to the amount removed. NL (Current Vitality !NSTV!)"
   },
   "NineSwordTechniques:TearOfGod": {
     "NAME": "Tear of God",
@@ -374,8 +374,8 @@
   },
   "NineSwordTechniques:NumbingEcho": {
     "NAME": "Numbing Echo",
-    "DESCRIPTION": "The first time each turn you apply nineswordtechniques:paralysis to a target, apply it again.",
-    "UPGRADE_DESCRIPTION": "The first time each turn you apply nineswordtechniques:paralysis to a target, apply it again."
+    "DESCRIPTION": "The first time each turn you apply nineswordtechniques:paralysis, apply it again.",
+    "UPGRADE_DESCRIPTION": "The first time each turn you apply nineswordtechniques:paralysis, apply it again."
   },
   "NineSwordTechniques:ParalysisHarvest": {
     "NAME": "Paralysis Harvest",
