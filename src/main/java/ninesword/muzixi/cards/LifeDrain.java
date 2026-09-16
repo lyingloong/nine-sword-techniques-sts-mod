@@ -20,7 +20,7 @@ public class LifeDrain extends MuzixiCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        addToBot(new LifeDrainAction(player, monster, upgraded ? 3 : 2));
+        addToBot(new LifeDrainAction(player, monster, this, upgraded ? 3 : 2));
     }
 
     @Override
@@ -41,21 +41,30 @@ public class LifeDrain extends MuzixiCard {
 class LifeDrainAction extends AbstractGameAction {
     private final AbstractPlayer player;
     private final AbstractMonster monster;
+    private final LifeDrain card;
     private final int amountPerVitality;
-    LifeDrainAction(AbstractPlayer player, AbstractMonster monster, int amountPerVitality) {
-        this.player = player; this.monster = monster; this.amountPerVitality = amountPerVitality;
+
+    LifeDrainAction(AbstractPlayer player, AbstractMonster monster, LifeDrain card,
+                    int amountPerVitality) {
+        this.player = player;
+        this.monster = monster;
+        this.card = card;
+        this.amountPerVitality = amountPerVitality;
         actionType = ActionType.DAMAGE;
     }
-    @Override public void update() {
+
+    @Override
+    public void update() {
         int spent = VitalityPower.spend(player, 3);
         int total = safeMultiply(spent, amountPerVitality);
         if (total > 0) {
             // Actions are a stack: queue healing first so the damage resolves
             // before the recovery, matching the card's visible order.
             addToTop(new HealAction(player, player, total));
-            if (monster != null && !monster.isDeadOrEscaped()) {
+            if (card != null && monster != null && !monster.isDeadOrEscaped()) {
+                int modifiedDamage = card.calculateDamageForBase(monster, total);
                 addToTop(new DamageAction(monster,
-                        new DamageInfo(player, total, DamageInfo.DamageType.NORMAL),
+                        new DamageInfo(player, modifiedDamage, card.damageTypeForTurn),
                         AttackEffect.SLASH_HEAVY));
             }
         }

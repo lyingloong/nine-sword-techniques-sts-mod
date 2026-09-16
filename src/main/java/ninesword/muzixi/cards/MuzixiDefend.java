@@ -10,6 +10,7 @@ public class MuzixiDefend extends MuzixiCard {
     public MuzixiDefend() {
         super(ID, "MuzixiDefend", 1, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
         baseBlock = 5;
+        tags.add(CardTags.STARTER_DEFEND);
     }
 
     @Override

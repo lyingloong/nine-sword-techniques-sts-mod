@@ -13,6 +13,8 @@ public class MuzixiStrike extends MuzixiCard {
         super(ID, "MuzixiStrike", 1, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
         baseDamage = DAMAGE;
         damageTypeForTurn = DamageInfo.DamageType.NORMAL;
+        tags.add(CardTags.STRIKE);
+        tags.add(CardTags.STARTER_STRIKE);
     }
 
     @Override
