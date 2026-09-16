@@ -1,13 +1,13 @@
 {
   "NineSwordTechniques:EmotionalSword": {
     "NAME": "情剑术",
-    "DESCRIPTION": "*剑术牌。 NL 造成 !D! 点伤害。 NL 如果敌人的意图为攻击，则施加 !M! 层虚弱，否则再造成10点真实伤害。",
-    "UPGRADE_DESCRIPTION": "*剑术牌。 NL 造成 !D! 点伤害。 NL 如果敌人的意图为攻击，则施加 !M! 层虚弱，否则再造成10点真实伤害。"
+    "DESCRIPTION": "*剑术牌。 NL 造成 !D! 点伤害。 NL 如果敌人的意图为攻击，则施加 !M! 层虚弱，否则再造成 10 点 nineswordtechniques:真伤 。",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL 造成 !D! 点伤害。 NL 如果敌人的意图为攻击，则施加 !M! 层虚弱，否则再造成 10 点 nineswordtechniques:真伤 。"
   },
   "NineSwordTechniques:GhostlySword": {
     "NAME": "鬼剑术",
-    "DESCRIPTION": "*剑术牌。 NL *返回。 NL 造成 !D! 点伤害。 NL 本场战斗中所有鬼剑系牌伤害提高2点。",
-    "UPGRADE_DESCRIPTION": "*剑术牌。 NL *返回。 NL 造成 !D! 点伤害。 NL 本场战斗中所有鬼剑系牌伤害提高2点。"
+    "DESCRIPTION": "*剑术牌。 NL nineswordtechniques:返回 。 NL 造成 !D! 点伤害。 NL 本场战斗中所有鬼剑系牌伤害提高2点。",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL nineswordtechniques:返回 。 NL 造成 !D! 点伤害。 NL 本场战斗中所有鬼剑系牌伤害提高2点。"
   },
   "NineSwordTechniques:HiddenSword": {
     "NAME": "藏剑术",
@@ -41,8 +41,8 @@
   },
   "NineSwordTechniques:TrueSword": {
     "NAME": "莫剑术",
-    "DESCRIPTION": "*剑术牌。 NL 造成 !D! 点真实伤害。 NL （视为生命流失，不受力量、虚弱、易伤等效果影响）",
-    "UPGRADE_DESCRIPTION": "*剑术牌。 NL 造成 !D! 点真实伤害。 NL （视为生命流失，不受力量、虚弱、易伤等效果影响）"
+    "DESCRIPTION": "*剑术牌。 NL 造成 !D! 点 nineswordtechniques:真伤 。",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL 造成 !D! 点 nineswordtechniques:真伤 。"
   },
   "NineSwordTechniques:UnsheathedBlade": {
     "NAME": "出鞘剑",
@@ -66,18 +66,18 @@
   },
   "NineSwordTechniques:MortalBladeAllLivingFaces": {
     "NAME": "红尘剑·众生相",
-    "DESCRIPTION": "*剑术牌。 NL 造成 !D! 点伤害。 NL 若敌人的意图为攻击，施加 !M! 层虚弱并获得 !B! 点格挡；否则再造成 12 点真实伤害并施加 2 层易伤。",
-    "UPGRADE_DESCRIPTION": "*剑术牌。 NL 造成 !D! 点伤害。 NL 若敌人的意图为攻击，施加 !M! 层虚弱并获得 !B! 点格挡；否则再造成 12 点真实伤害并施加 2 层易伤。"
+    "DESCRIPTION": "*剑术牌。 NL 造成 !D! 点伤害。 NL 若敌人的意图为攻击，施加 !M! 层虚弱并获得 !B! 点格挡；否则再造成 12 点 nineswordtechniques:真伤 并施加 2 层易伤。",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL 造成 !D! 点伤害。 NL 若敌人的意图为攻击，施加 !M! 层虚弱并获得 !B! 点格挡；否则再造成 12 点 nineswordtechniques:真伤 并施加 2 层易伤。"
   },
   "NineSwordTechniques:AzureRiverSwordDomain": {
     "NAME": "青河剑界",
-    "DESCRIPTION": "*剑术牌。 NL 对所有敌人造成 !D! 点真实伤害。 NL （视为生命流失，不受力量、虚弱、易伤等效果影响）",
-    "UPGRADE_DESCRIPTION": "*剑术牌。 NL 对所有敌人造成 !D! 点真实伤害。 NL （视为生命流失，不受力量、虚弱、易伤等效果影响）"
+    "DESCRIPTION": "*剑术牌。 NL 对所有敌人造成 !D! 点 nineswordtechniques:真伤 。",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL 对所有敌人造成 !D! 点 nineswordtechniques:真伤 。"
   },
   "NineSwordTechniques:SoulControlTrickery": {
     "NAME": "御魂诡术",
-    "DESCRIPTION": "*剑术牌。 NL *返回。 NL 造成 !D! 点伤害。 NL 本场战斗中所有鬼剑系牌的伤害提高 3 点。 NL 若击杀敌人，获得 [E] 。",
-    "UPGRADE_DESCRIPTION": "*剑术牌。 NL *返回。 NL 造成 !D! 点伤害。 NL 本场战斗中所有鬼剑系牌的伤害提高 3 点。 NL 若击杀敌人，获得 [E] 。"
+    "DESCRIPTION": "*剑术牌。 NL nineswordtechniques:返回 。 NL 造成 !D! 点伤害。 NL 本场战斗中所有鬼剑系牌的伤害提高 3 点。 NL 若击杀敌人，获得 [E] 。",
+    "UPGRADE_DESCRIPTION": "*剑术牌。 NL nineswordtechniques:返回 。 NL 造成 !D! 点伤害。 NL 本场战斗中所有鬼剑系牌的伤害提高 3 点。 NL 若击杀敌人，获得 [E] 。"
   },
   "NineSwordTechniques:UnderOnesGaze": {
     "NAME": "目下神佛",
@@ -214,8 +214,8 @@
   },
   "NineSwordTechniques:TearOfGod": {
     "NAME": "神之泪",
-    "DESCRIPTION": "消耗所有 nineswordtechniques:生机 。 NL 每消耗 1 点，对所有敌人造成 !M! 点真实伤害。 NL nineswordtechniques:泪汐儿人格 ：对每个敌人施加等同于其所受伤害的 虚弱 和 易伤 。 NL nineswordtechniques:木子汐人格 ：获得消耗 nineswordtechniques:生机 的一半（向下取整）。 NL （当前生机 !NSTV! ）",
-    "UPGRADE_DESCRIPTION": "消耗所有 nineswordtechniques:生机 。 NL 每消耗 1 点，对所有敌人造成 !M! 点真实伤害。 NL nineswordtechniques:泪汐儿人格 ：对每个敌人施加等同于其所受伤害的 虚弱 和 易伤 。 NL nineswordtechniques:木子汐人格 ：获得消耗 nineswordtechniques:生机 的一半（向下取整）。 NL （当前生机 !NSTV! ）"
+    "DESCRIPTION": "消耗所有 nineswordtechniques:生机 。 NL 每消耗 1 点，对所有敌人造成 !M! 点 nineswordtechniques:真伤 。 NL nineswordtechniques:泪汐儿人格 ：对每个敌人施加等同于其所受伤害的 虚弱 和 易伤 。 NL nineswordtechniques:木子汐人格 ：获得消耗 nineswordtechniques:生机 的一半（向下取整）。 NL （当前生机 !NSTV! ）",
+    "UPGRADE_DESCRIPTION": "消耗所有 nineswordtechniques:生机 。 NL 每消耗 1 点，对所有敌人造成 !M! 点 nineswordtechniques:真伤 。 NL nineswordtechniques:泪汐儿人格 ：对每个敌人施加等同于其所受伤害的 虚弱 和 易伤 。 NL nineswordtechniques:木子汐人格 ：获得消耗 nineswordtechniques:生机 的一半（向下取整）。 NL （当前生机 !NSTV! ）"
   },
   "NineSwordTechniques:SoulReflection": {
     "NAME": "灵魂倒影",
@@ -265,7 +265,7 @@
   "NineSwordTechniques:VitalCycle": {
     "NAME": "生息回环",
     "DESCRIPTION": "消耗 1 点 nineswordtechniques:生机 。 NL 抽 1 张牌。 NL （当前生机 !NSTV! ）",
-    "UPGRADE_DESCRIPTION": "消耗 1 点 nineswordtechniques:生机 。 NL 抽 1 张牌。 NL 返回。 NL （当前生机 !NSTV! ）",
+    "UPGRADE_DESCRIPTION": "消耗 1 点 nineswordtechniques:生机 。 NL 抽 1 张牌。 NL nineswordtechniques:返回 。 NL （当前生机 !NSTV! ）",
     "EXTENDED_DESCRIPTION": ["至少需要 1 点生机才能打出。"]
   },
   "NineSwordTechniques:WoodSpiritSeed": {
@@ -305,8 +305,8 @@
   },
   "NineSwordTechniques:EchoingNumbness": {
     "NAME": "余麻回响",
-    "DESCRIPTION": "返回。 NL 对目标施加 !M! 层 nineswordtechniques:麻痹 。",
-    "UPGRADE_DESCRIPTION": "返回。 NL 对目标施加 !M! 层 nineswordtechniques:麻痹 。"
+    "DESCRIPTION": "nineswordtechniques:返回 。 NL 对目标施加 !M! 层 nineswordtechniques:麻痹 。",
+    "UPGRADE_DESCRIPTION": "nineswordtechniques:返回 。 NL 对目标施加 !M! 层 nineswordtechniques:麻痹 。"
   },
   "NineSwordTechniques:ParalyzedVenom": {
     "NAME": "麻毒",

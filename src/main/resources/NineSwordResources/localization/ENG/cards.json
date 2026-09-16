@@ -1,13 +1,13 @@
 {
   "NineSwordTechniques:EmotionalSword": {
     "NAME": "Emotional Sword",
-    "DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. NL If the enemy intends to Attack, apply !M! Weak. Otherwise, deal 10 True Damage.",
-    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. NL If the enemy intends to Attack, apply !M! Weak. Otherwise, deal 10 True Damage."
+    "DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. NL If the enemy intends to Attack, apply !M! Weak. Otherwise, deal 10 nineswordtechniques:true_damage.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. NL If the enemy intends to Attack, apply !M! Weak. Otherwise, deal 10 nineswordtechniques:true_damage."
   },
   "NineSwordTechniques:GhostlySword": {
     "NAME": "Ghostly Sword",
-    "DESCRIPTION": "*Sword *Technique *Card. NL *Return. NL Deal !D! damage. NL All Ghostly Sword technique cards deal 2 additional damage this combat.",
-    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL *Return. NL Deal !D! damage. NL All Ghostly Sword technique cards deal 2 additional damage this combat."
+    "DESCRIPTION": "*Sword *Technique *Card. NL nineswordtechniques:return. NL Deal !D! damage. NL All Ghostly Sword technique cards deal 2 additional damage this combat.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL nineswordtechniques:return. NL Deal !D! damage. NL All Ghostly Sword technique cards deal 2 additional damage this combat."
   },
   "NineSwordTechniques:HiddenSword": {
     "NAME": "Hidden Sword",
@@ -41,8 +41,8 @@
   },
   "NineSwordTechniques:TrueSword": {
     "NAME": "True Sword",
-    "DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! True Damage. NL (Counts as HP loss; unaffected by Strength, Weak, Vulnerable, etc.)",
-    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! True Damage. NL (Counts as HP loss; unaffected by Strength, Weak, Vulnerable, etc.)"
+    "DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! nineswordtechniques:true_damage.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! nineswordtechniques:true_damage."
   },
   "NineSwordTechniques:UnsheathedBlade": {
     "NAME": "Unsheathed Blade",
@@ -66,18 +66,18 @@
   },
   "NineSwordTechniques:MortalBladeAllLivingFaces": {
     "NAME": "Mortal Blade: All Living Faces",
-    "DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. NL If the enemy intends to Attack, apply !M! Weak and gain !B! Block. Otherwise, deal 12 additional True Damage and apply 2 Vulnerable.",
-    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. NL If the enemy intends to Attack, apply !M! Weak and gain !B! Block. Otherwise, deal 12 additional True Damage and apply 2 Vulnerable."
+    "DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. NL If the enemy intends to Attack, apply !M! Weak and gain !B! Block. Otherwise, deal 12 additional nineswordtechniques:true_damage and apply 2 Vulnerable.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! damage. NL If the enemy intends to Attack, apply !M! Weak and gain !B! Block. Otherwise, deal 12 additional nineswordtechniques:true_damage and apply 2 Vulnerable."
   },
   "NineSwordTechniques:AzureRiverSwordDomain": {
     "NAME": "Azure River Sword Domain",
-    "DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! True Damage to all enemies. NL (Counts as HP loss; unaffected by Strength, Weak, Vulnerable, etc.)",
-    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! True Damage to all enemies. NL (Counts as HP loss; unaffected by Strength, Weak, Vulnerable, etc.)"
+    "DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! nineswordtechniques:true_damage to all enemies.",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL Deal !D! nineswordtechniques:true_damage to all enemies."
   },
   "NineSwordTechniques:SoulControlTrickery": {
     "NAME": "Soul Control Trickery",
-    "DESCRIPTION": "*Sword *Technique *Card. NL *Return. NL Deal !D! damage. NL All Ghostly Sword cards deal 3 additional damage this combat. NL If this kills the enemy, gain [E] .",
-    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL *Return. NL Deal !D! damage. NL All Ghostly Sword cards deal 3 additional damage this combat. NL If this kills the enemy, gain [E] ."
+    "DESCRIPTION": "*Sword *Technique *Card. NL nineswordtechniques:return. NL Deal !D! damage. NL All Ghostly Sword cards deal 3 additional damage this combat. NL If this kills the enemy, gain [E] .",
+    "UPGRADE_DESCRIPTION": "*Sword *Technique *Card. NL nineswordtechniques:return. NL Deal !D! damage. NL All Ghostly Sword cards deal 3 additional damage this combat. NL If this kills the enemy, gain [E] ."
   },
   "NineSwordTechniques:UnderOnesGaze": {
     "NAME": "Under One's Gaze",
@@ -214,8 +214,8 @@
   },
   "NineSwordTechniques:TearOfGod": {
     "NAME": "Tear of God",
-    "DESCRIPTION": "Spend all nineswordtechniques:vitality. NL Deal !M! HP Loss to ALL enemies per nineswordtechniques:vitality spent. NL In Leixier's nineswordtechniques:persona, apply Weak and Vulnerable equal to damage dealt; in Muzixi's nineswordtechniques:persona, gain half the spent nineswordtechniques:vitality (rounded down). NL (Current Vitality !NSTV!)",
-    "UPGRADE_DESCRIPTION": "Spend all nineswordtechniques:vitality. NL Deal !M! HP Loss to ALL enemies per nineswordtechniques:vitality spent. NL In Leixier's nineswordtechniques:persona, apply Weak and Vulnerable equal to damage dealt; in Muzixi's nineswordtechniques:persona, gain half the spent nineswordtechniques:vitality (rounded down). NL (Current Vitality !NSTV!)"
+    "DESCRIPTION": "Spend all nineswordtechniques:vitality. NL Deal !M! nineswordtechniques:true_damage to ALL enemies per nineswordtechniques:vitality spent. NL In Leixier's nineswordtechniques:persona, apply Weak and Vulnerable equal to damage dealt; in Muzixi's nineswordtechniques:persona, gain half the spent nineswordtechniques:vitality (rounded down). NL (Current Vitality !NSTV!)",
+    "UPGRADE_DESCRIPTION": "Spend all nineswordtechniques:vitality. NL Deal !M! nineswordtechniques:true_damage to ALL enemies per nineswordtechniques:vitality spent. NL In Leixier's nineswordtechniques:persona, apply Weak and Vulnerable equal to damage dealt; in Muzixi's nineswordtechniques:persona, gain half the spent nineswordtechniques:vitality (rounded down). NL (Current Vitality !NSTV!)"
   },
   "NineSwordTechniques:SoulReflection": {
     "NAME": "Soul Reflection",
@@ -265,7 +265,7 @@
   "NineSwordTechniques:VitalCycle": {
     "NAME": "Vital Cycle",
     "DESCRIPTION": "Spend 1 nineswordtechniques:vitality. NL Draw 1 card. NL (Current Vitality !NSTV!)",
-    "UPGRADE_DESCRIPTION": "Spend 1 nineswordtechniques:vitality. NL Draw 1 card. NL Return. NL (Current Vitality !NSTV!)",
+    "UPGRADE_DESCRIPTION": "Spend 1 nineswordtechniques:vitality. NL Draw 1 card. NL nineswordtechniques:return. NL (Current Vitality !NSTV!)",
     "EXTENDED_DESCRIPTION": ["Requires at least 1 Vitality."]
   },
   "NineSwordTechniques:WoodSpiritSeed": {
@@ -305,8 +305,8 @@
   },
   "NineSwordTechniques:EchoingNumbness": {
     "NAME": "Echoing Numbness",
-    "DESCRIPTION": "Return. NL Apply !M! nineswordtechniques:paralysis to the target.",
-    "UPGRADE_DESCRIPTION": "Return. NL Apply !M! nineswordtechniques:paralysis to the target."
+    "DESCRIPTION": "nineswordtechniques:return. NL Apply !M! nineswordtechniques:paralysis to the target.",
+    "UPGRADE_DESCRIPTION": "nineswordtechniques:return. NL Apply !M! nineswordtechniques:paralysis to the target."
   },
   "NineSwordTechniques:ParalyzedVenom": {
     "NAME": "Paralyzed Venom",

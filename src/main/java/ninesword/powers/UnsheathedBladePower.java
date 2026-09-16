@@ -30,7 +30,8 @@ public class UnsheathedBladePower extends AbstractPower {
 
     @Override
     public float atDamageFinalGive(float damage, DamageInfo.DamageType type, AbstractCard card) {
-        if (card != null && card.type == AbstractCard.CardType.ATTACK) {
+        if (type != DamageInfo.DamageType.HP_LOSS
+                && card != null && card.type == AbstractCard.CardType.ATTACK) {
             return damage * (float) Math.pow(2, amount);
         }
         return damage;

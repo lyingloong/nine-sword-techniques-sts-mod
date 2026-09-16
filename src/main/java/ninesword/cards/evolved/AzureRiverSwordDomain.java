@@ -35,10 +35,22 @@ public class AzureRiverSwordDomain extends SwordTechniqueCard {
     }
 
     @Override
+    public void applyPowers() {
+        damage = baseDamage;
+        isDamageModified = false;
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster monster) {
+        damage = baseDamage;
+        isDamageModified = false;
+    }
+
+    @Override
     protected void repeatEffect(AbstractPlayer p, AbstractMonster m) {
         for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
             if (!monster.isDeadOrEscaped()) {
-                addToBot(new DamageAction(monster, new DamageInfo(p, damage, damageTypeForTurn),
+                addToBot(new DamageAction(monster, new DamageInfo(p, baseDamage, DamageInfo.DamageType.HP_LOSS),
                         AbstractGameAction.AttackEffect.SLASH_HEAVY));
             }
         }

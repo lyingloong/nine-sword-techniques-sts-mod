@@ -33,9 +33,21 @@ public class TrueSword extends SwordTechniqueCard {
     }
 
     @Override
+    public void applyPowers() {
+        damage = baseDamage;
+        isDamageModified = false;
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster monster) {
+        damage = baseDamage;
+        isDamageModified = false;
+    }
+
+    @Override
     protected void repeatEffect(AbstractPlayer p, AbstractMonster m) {
         if (m != null && !m.isDeadOrEscaped()) {
-            addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
+            addToBot(new DamageAction(m, new DamageInfo(p, baseDamage, DamageInfo.DamageType.HP_LOSS),
                     AbstractGameAction.AttackEffect.SLASH_HEAVY));
         }
     }

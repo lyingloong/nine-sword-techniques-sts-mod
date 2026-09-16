@@ -298,6 +298,10 @@ public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
                     "临时施加在目标身上的状态。每层使目标本回合力量和敏捷各降低 1，目标回合结束时恢复并清除。");
             BaseMod.addKeyword(KEYWORD_NAMESPACE, "灵魂共鸣", new String[]{"灵魂共鸣"},
                     "进入泪汐儿人格时，最多消耗 9 层；每层抽 1 张牌并获得 1 点能量。");
+            BaseMod.addKeyword(KEYWORD_NAMESPACE, "返回", new String[]{"返回"},
+                    "这张牌打出并结算后返回手牌，而不是进入弃牌堆。");
+            BaseMod.addKeyword(KEYWORD_NAMESPACE, "真伤", new String[]{"真伤"},
+                    "以生命流失结算，无视格挡，且不受任何伤害修正效果影响。");
         } else {
             BaseMod.addKeyword(KEYWORD_NAMESPACE, "Vitality", new String[]{"vitality"},
                     "A combat resource. Each point actually gained increases temporary Max HP by 1. Vitality cannot fall below 0; spending it does not reduce temporary Max HP. It clears after combat.");
@@ -310,6 +314,10 @@ public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
             BaseMod.addKeyword(KEYWORD_NAMESPACE, "Harmonic Soul",
                     new String[]{"harmonic_soul"},
                     "When entering Leixier's persona, spend up to 9. Draw 1 card and gain 1 Energy per stack.");
+            BaseMod.addKeyword(KEYWORD_NAMESPACE, "Return", new String[]{"return"},
+                    "After this card is played and resolved, return it to your hand instead of placing it in the discard pile.");
+            BaseMod.addKeyword(KEYWORD_NAMESPACE, "True Damage", new String[]{"true_damage"},
+                    "Counts as HP loss, ignores Block, and is unaffected by damage modifiers.");
         }
     }
 

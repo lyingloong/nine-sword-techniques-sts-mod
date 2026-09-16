@@ -3,6 +3,7 @@ package ninesword.relics;
 import basemod.abstracts.CustomRelic;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -22,7 +23,8 @@ public class TheYousiSword extends CustomRelic {
 
     @Override
     public float atDamageModify(float damage, AbstractCard card) {
-        if (card != null && card.type == AbstractCard.CardType.ATTACK) {
+        if (card != null && card.type == AbstractCard.CardType.ATTACK
+                && card.damageTypeForTurn != DamageInfo.DamageType.HP_LOSS) {
             return damage * 1.5F;
         }
         return damage;
