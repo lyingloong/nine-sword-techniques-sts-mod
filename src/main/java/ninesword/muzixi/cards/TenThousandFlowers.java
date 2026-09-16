@@ -9,7 +9,7 @@ public class TenThousandFlowers extends MuzixiCard {
     public static final String ID = "NineSwordTechniques:TenThousandFlowers";
 
     public TenThousandFlowers() {
-        super(ID, "TenThousandFlowers", 2, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
+        super(ID, "TenThousandFlowers", 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
         exhaust = true;
     }
 

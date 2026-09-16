@@ -104,7 +104,7 @@
   "NineSwordTechniques:LivingArmor": {
     "NAME": "活体铠甲",
     "DESCRIPTIONS": [
-      "回合结束时，若拥有至少 %d 点生机，获得 %d 点格挡。"
+      "回合结束时，消耗至多 %d 点生机，每消耗 1 点获得 1 层多层护甲。"
     ]
   },
   "NineSwordTechniques:ParalyticField": {

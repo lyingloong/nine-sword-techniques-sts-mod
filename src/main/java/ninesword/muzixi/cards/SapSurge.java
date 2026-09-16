@@ -10,7 +10,7 @@ public class SapSurge extends MuzixiCard {
 
     public SapSurge() {
         super(ID, "SapSurge", 2, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
-        baseDamage = 8;
+        baseDamage = 10;
         magicNumber = 2;
         baseMagicNumber = 2;
         damageTypeForTurn = DamageInfo.DamageType.NORMAL;

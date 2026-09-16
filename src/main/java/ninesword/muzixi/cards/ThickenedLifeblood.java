@@ -11,7 +11,7 @@ public class ThickenedLifeblood extends MuzixiCard {
     private static final int HEAL_PER_VITALITY = 1;
 
     public ThickenedLifeblood() {
-        super(ID, "ThickenedLifeblood", 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, "ThickenedLifeblood", 3, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
     }
 
     @Override

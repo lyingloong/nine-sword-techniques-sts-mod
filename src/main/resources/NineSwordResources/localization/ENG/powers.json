@@ -104,7 +104,7 @@
   "NineSwordTechniques:LivingArmor": {
     "NAME": "Living Armor",
     "DESCRIPTIONS": [
-      "At the end of your turn, if you have at least %d Vitality, gain %d Block."
+      "At the end of your turn, spend up to %d Vitality. Gain 1 Plated Armor for each Vitality spent."
     ]
   },
   "NineSwordTechniques:ParalyticField": {

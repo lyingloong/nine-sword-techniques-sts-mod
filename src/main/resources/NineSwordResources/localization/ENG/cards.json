@@ -209,8 +209,8 @@
   },
   "NineSwordTechniques:TenThousandFlowers": {
     "NAME": "Ten Thousand Flowers",
-    "DESCRIPTION": "Exhaust. NL Remove all Buffs and Debuffs from ALL enemies. Gain nineswordtechniques:vitality equal to the amount removed. NL (Current Vitality !NSTV!)",
-    "UPGRADE_DESCRIPTION": "Remove all Buffs and Debuffs from ALL enemies (using the absolute value of their stacks; unstacked Powers count as 1). Gain nineswordtechniques:vitality equal to the amount removed. NL (Current Vitality !NSTV!)"
+    "DESCRIPTION": "Exhaust. NL Gain 1 nineswordtechniques:vitality for each different Buff or Debuff on each enemy. NL (Current Vitality !NSTV!)",
+    "UPGRADE_DESCRIPTION": "Gain 1 nineswordtechniques:vitality for each different Buff or Debuff on each enemy. NL (Current Vitality !NSTV!)"
   },
   "NineSwordTechniques:TearOfGod": {
     "NAME": "Tear of God",
@@ -259,13 +259,14 @@
   },
   "NineSwordTechniques:Flourish": {
     "NAME": "Flourish",
-    "DESCRIPTION": "If you have at least 6 nineswordtechniques:vitality, draw 2 cards; otherwise, gain 2 nineswordtechniques:vitality. NL (Current Vitality !NSTV!)",
-    "UPGRADE_DESCRIPTION": "If you have at least 5 nineswordtechniques:vitality, draw 3 cards; otherwise, gain 3 nineswordtechniques:vitality. NL (Current Vitality !NSTV!)"
+    "DESCRIPTION": "Draw !M! cards X times. NL Gain X nineswordtechniques:vitality. NL (Current Vitality !NSTV!)",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards X times. NL Gain X nineswordtechniques:vitality. NL (Current Vitality !NSTV!)"
   },
   "NineSwordTechniques:VitalCycle": {
     "NAME": "Vital Cycle",
-    "DESCRIPTION": "Spend up to 1 nineswordtechniques:vitality; draw 1 card per nineswordtechniques:vitality spent. NL (Current Vitality !NSTV!)",
-    "UPGRADE_DESCRIPTION": "Spend up to 1 nineswordtechniques:vitality; draw 1 card per nineswordtechniques:vitality spent. NL Return. NL (Current Vitality !NSTV!)"
+    "DESCRIPTION": "Spend 1 nineswordtechniques:vitality. NL Draw 1 card. NL (Current Vitality !NSTV!)",
+    "UPGRADE_DESCRIPTION": "Spend 1 nineswordtechniques:vitality. NL Draw 1 card. NL Return. NL (Current Vitality !NSTV!)",
+    "EXTENDED_DESCRIPTION": ["Requires at least 1 Vitality."]
   },
   "NineSwordTechniques:NumbingPollen": {
     "NAME": "Numbing Pollen",
@@ -339,13 +340,13 @@
   },
   "NineSwordTechniques:VitalityDistillation": {
     "NAME": "Vitality Distillation",
-    "DESCRIPTION": "If you have at least 8 nineswordtechniques:vitality, spend 1 nineswordtechniques:vitality to gain 2 Energy and draw 2 cards. NL (Current Vitality !NSTV!)",
-    "UPGRADE_DESCRIPTION": "If you have at least 6 nineswordtechniques:vitality, spend 1 nineswordtechniques:vitality to gain 2 Energy and draw 2 cards. NL (Current Vitality !NSTV!)"
+    "DESCRIPTION": "Spend !M! nineswordtechniques:vitality. NL Gain 2 Energy and draw 2 cards. NL (Current Vitality !NSTV!)",
+    "UPGRADE_DESCRIPTION": "Spend !M! nineswordtechniques:vitality. NL Gain 2 Energy and draw 2 cards. NL (Current Vitality !NSTV!)"
   },
   "NineSwordTechniques:LivingArmor": {
     "NAME": "Living Armor",
-    "DESCRIPTION": "At the end of your turn, if you have at least 8 nineswordtechniques:vitality, gain 6 Block. NL (Current Vitality !NSTV!)",
-    "UPGRADE_DESCRIPTION": "At the end of your turn, if you have at least 8 nineswordtechniques:vitality, gain 9 Block. NL (Current Vitality !NSTV!)"
+    "DESCRIPTION": "At the end of your turn, spend up to !M! nineswordtechniques:vitality. NL Gain 1 Plated Armor for each nineswordtechniques:vitality spent. NL (Current Vitality !NSTV!)",
+    "UPGRADE_DESCRIPTION": "At the end of your turn, spend up to !M! nineswordtechniques:vitality. NL Gain 1 Plated Armor for each nineswordtechniques:vitality spent. NL (Current Vitality !NSTV!)"
   },
   "NineSwordTechniques:RootOfRenewal": {
     "NAME": "Root of Renewal",

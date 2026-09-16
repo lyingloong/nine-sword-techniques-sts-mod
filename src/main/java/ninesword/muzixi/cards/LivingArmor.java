@@ -8,23 +8,23 @@ import ninesword.muzixi.powers.LivingArmorPower;
 
 public class LivingArmor extends MuzixiCard {
     public static final String ID = "NineSwordTechniques:LivingArmor";
-    private int blockAmount = 6;
 
     public LivingArmor() {
         super(ID, "LivingArmor", 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
+        magicNumber = baseMagicNumber = 2;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
         addToBot(new ApplyPowerAction(player, player,
-                new LivingArmorPower(player, blockAmount), blockAmount));
+                new LivingArmorPower(player, magicNumber), magicNumber));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            blockAmount = 9;
+            upgradeMagicNumber(2);
             rawDescription = strings(ID).UPGRADE_DESCRIPTION;
             initializeDescription();
         }

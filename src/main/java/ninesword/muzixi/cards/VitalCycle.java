@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import ninesword.muzixi.actions.VitalitySpendAction;
+import ninesword.muzixi.powers.VitalityPower;
 
 public class VitalCycle extends MuzixiCard {
     public static final String ID = "NineSwordTechniques:VitalCycle";
@@ -15,6 +16,18 @@ public class VitalCycle extends MuzixiCard {
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
         addToBot(new VitalitySpendAction(player, 1, 1, VitalitySpendAction.Effect.DRAW));
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer player, AbstractMonster monster) {
+        if (!super.canUse(player, monster)) {
+            return false;
+        }
+        if (VitalityPower.getAmount(player) < 1) {
+            cantUseMessage = strings(ID).EXTENDED_DESCRIPTION[0];
+            return false;
+        }
+        return true;
     }
 
     @Override

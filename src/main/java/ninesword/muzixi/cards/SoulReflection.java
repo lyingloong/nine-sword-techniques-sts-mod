@@ -9,7 +9,7 @@ public class SoulReflection extends MuzixiCard {
     public static final String ID = "NineSwordTechniques:SoulReflection";
 
     public SoulReflection() {
-        super(ID, "SoulReflection", 3, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
+        super(ID, "SoulReflection", 4, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
         exhaust = true;
     }
 

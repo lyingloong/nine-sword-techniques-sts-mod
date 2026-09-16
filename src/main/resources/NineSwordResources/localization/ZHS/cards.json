@@ -209,8 +209,8 @@
   },
   "NineSwordTechniques:TenThousandFlowers": {
     "NAME": "万花",
-    "DESCRIPTION": "消耗 。 NL 移除所有敌人的增益和减益，获得等量 nineswordtechniques:生机 。 NL （当前生机 !NSTV! ）",
-    "UPGRADE_DESCRIPTION": "移除所有敌人的增益和减益（有层数按绝对值，无层数按 1 层），获得等量 nineswordtechniques:生机 。 NL （当前生机 !NSTV! ）"
+    "DESCRIPTION": "消耗 。 NL 所有敌人每有一种 增益 或 减益 ，获得 1 点 nineswordtechniques:生机 。 NL （当前生机 !NSTV! ）",
+    "UPGRADE_DESCRIPTION": "所有敌人每有一种 增益 或 减益 ，获得 1 点 nineswordtechniques:生机 。 NL （当前生机 !NSTV! ）"
   },
   "NineSwordTechniques:TearOfGod": {
     "NAME": "神之泪",
@@ -259,13 +259,14 @@
   },
   "NineSwordTechniques:Flourish": {
     "NAME": "繁茂",
-    "DESCRIPTION": "若至少有 6 点 nineswordtechniques:生机 ，抽 2 张牌；否则获得 2 点 nineswordtechniques:生机 。 NL （当前生机 !NSTV! ）",
-    "UPGRADE_DESCRIPTION": "若至少有 5 点 nineswordtechniques:生机 ，抽 3 张牌；否则获得 3 点 nineswordtechniques:生机 。 NL （当前生机 !NSTV! ）"
+    "DESCRIPTION": "抽 !M! 张牌 X 次。 NL 获得 X 点 nineswordtechniques:生机 。 NL （当前生机 !NSTV! ）",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌 X 次。 NL 获得 X 点 nineswordtechniques:生机 。 NL （当前生机 !NSTV! ）"
   },
   "NineSwordTechniques:VitalCycle": {
     "NAME": "生息回环",
-    "DESCRIPTION": "消耗至多 1 点 nineswordtechniques:生机 ，每消耗 1 点抽 1 张牌。 NL （当前生机 !NSTV! ）",
-    "UPGRADE_DESCRIPTION": "消耗至多 1 点 nineswordtechniques:生机 ，每消耗 1 点抽 1 张牌。 NL 返回。 NL （当前生机 !NSTV! ）"
+    "DESCRIPTION": "消耗 1 点 nineswordtechniques:生机 。 NL 抽 1 张牌。 NL （当前生机 !NSTV! ）",
+    "UPGRADE_DESCRIPTION": "消耗 1 点 nineswordtechniques:生机 。 NL 抽 1 张牌。 NL 返回。 NL （当前生机 !NSTV! ）",
+    "EXTENDED_DESCRIPTION": ["至少需要 1 点生机才能打出。"]
   },
   "NineSwordTechniques:NumbingPollen": {
     "NAME": "麻痹花粉",
@@ -339,13 +340,13 @@
   },
   "NineSwordTechniques:VitalityDistillation": {
     "NAME": "生机淬炼",
-    "DESCRIPTION": "若至少有 8 点 nineswordtechniques:生机 ，消耗 1 点 nineswordtechniques:生机 ，获得 2 点能量并抽 2 张牌。 NL （当前生机 !NSTV! ）",
-    "UPGRADE_DESCRIPTION": "若至少有 6 点 nineswordtechniques:生机 ，消耗 1 点 nineswordtechniques:生机 ，获得 2 点能量并抽 2 张牌。 NL （当前生机 !NSTV! ）"
+    "DESCRIPTION": "消耗 !M! 点 nineswordtechniques:生机 。 NL 获得 2 点能量并抽 2 张牌。 NL （当前生机 !NSTV! ）",
+    "UPGRADE_DESCRIPTION": "消耗 !M! 点 nineswordtechniques:生机 。 NL 获得 2 点能量并抽 2 张牌。 NL （当前生机 !NSTV! ）"
   },
   "NineSwordTechniques:LivingArmor": {
     "NAME": "活体铠甲",
-    "DESCRIPTION": "回合结束时，若至少有 8 点 nineswordtechniques:生机 ，获得 6 点 格挡 。 NL （当前生机 !NSTV! ）",
-    "UPGRADE_DESCRIPTION": "回合结束时，若至少有 8 点 nineswordtechniques:生机 ，获得 9 点 格挡 。 NL （当前生机 !NSTV! ）"
+    "DESCRIPTION": "回合结束时，消耗至多 !M! 点 nineswordtechniques:生机 。 NL 每消耗 1 点，获得 1 层 多层护甲 。 NL （当前生机 !NSTV! ）",
+    "UPGRADE_DESCRIPTION": "回合结束时，消耗至多 !M! 点 nineswordtechniques:生机 。 NL 每消耗 1 点，获得 1 层 多层护甲 。 NL （当前生机 !NSTV! ）"
   },
   "NineSwordTechniques:RootOfRenewal": {
     "NAME": "再生根",
