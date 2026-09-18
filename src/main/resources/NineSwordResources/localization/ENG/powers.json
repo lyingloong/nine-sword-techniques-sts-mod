@@ -50,7 +50,7 @@
   "NineSwordTechniques:TearPersona": {
     "NAME": "Leixier",
     "DESCRIPTIONS": [
-      "When entering this persona, spend up to 9 Harmonic Soul. Draw 1 card and gain 1 Energy per stack. NL Whenever you play a card, lose 2 Max HP and all enemies lose 2 HP."
+      "When entering this persona, spend up to 9 Harmonic Soul. Draw 1 card and gain 1 Energy per stack. NL Whenever you play a card, lose 2 temporary Max HP and all enemies lose 2 HP."
     ]
   },
   "NineSwordTechniques:Evergreen": {

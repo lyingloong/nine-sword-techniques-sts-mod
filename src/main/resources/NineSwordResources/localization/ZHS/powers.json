@@ -50,7 +50,7 @@
   "NineSwordTechniques:TearPersona": {
     "NAME": "泪汐儿",
     "DESCRIPTIONS": [
-      "进入此人格时，消耗至多 9 层灵魂共鸣，每层抽 1 张牌并获得 1 点能量。 NL 每打出一张牌，失去 2 点最大生命，并令所有敌人失去 2 点生命。"
+      "进入此人格时，消耗至多 9 层灵魂共鸣，每层抽 1 张牌并获得 1 点能量。 NL 每打出一张牌，失去 2 点临时最大生命，并令所有敌人失去 2 点生命。"
     ]
   },
   "NineSwordTechniques:Evergreen": {

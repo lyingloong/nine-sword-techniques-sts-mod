@@ -5,12 +5,13 @@ import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import ninesword.muzixi.powers.VitalityMaxHealthPower;
 
 import java.util.Arrays;
 
-/** Resolves Leixier persona's cost and HP loss after a card is played. */
+/** Resolves Leixier persona's temporary Max HP cost and enemy HP loss after a card is played. */
 public class TearPersonaCardAction extends AbstractGameAction {
-    private static final int MAX_HEALTH_LOSS = 2;
+    private static final int TEMPORARY_MAX_HEALTH_LOSS = 2;
     private static final int ENEMY_HP_LOSS = 2;
 
     private final AbstractPlayer player;
@@ -23,7 +24,7 @@ public class TearPersonaCardAction extends AbstractGameAction {
     @Override
     public void update() {
         if (player != null) {
-            player.decreaseMaxHealth(MAX_HEALTH_LOSS);
+            VitalityMaxHealthPower.addNegative(player, TEMPORARY_MAX_HEALTH_LOSS);
             if (AbstractDungeon.getMonsters() != null) {
                 addToTop(new DamageAllEnemiesAction(player,
                         fixedDamageMatrix(ENEMY_HP_LOSS),

@@ -407,5 +407,20 @@
     "NAME": "Vitality Riot",
     "DESCRIPTION": "Spend all nineswordtechniques:vitality. NL Deal damage to ALL enemies equal to !M! times the amount spent. NL Exhaust. NL (Current Vitality !NSTV!)",
     "UPGRADE_DESCRIPTION": "Retain. NL Spend all nineswordtechniques:vitality. NL Deal damage to ALL enemies equal to !M! times the amount spent. NL Exhaust. NL (Current Vitality !NSTV!)"
+  },
+  "NineSwordTechniques:LifeSource": {
+    "NAME": "Life Source",
+    "DESCRIPTION": "Heal 1 HP for every !M! HP you have lost.",
+    "UPGRADE_DESCRIPTION": "Heal 1 HP for every !M! HP you have lost."
+  },
+  "NineSwordTechniques:SeeThroughIllusion": {
+    "NAME": "See Through Illusion",
+    "DESCRIPTION": "If you are in Leixier's nineswordtechniques:persona, apply 1 Vulnerable to the target and gain !M! Strength.",
+    "UPGRADE_DESCRIPTION": "If you are in Leixier's nineswordtechniques:persona, apply 1 Vulnerable to the target and gain !M! Strength."
+  },
+  "NineSwordTechniques:CombatInstinct": {
+    "NAME": "Combat Instinct",
+    "DESCRIPTION": "Deal !D! damage to a random enemy 2 times.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to a random enemy 2 times."
   }
 }

@@ -11,7 +11,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 /**
- * Owns all combat-only maximum-health changes made by the Vitality system.
+ * Owns all combat-only maximum-health changes made by Muzixi mechanics.
  * Positive and negative changes are tracked independently so combat cleanup
  * never depends on whether Vitality or Wither still exists.
  */
@@ -56,7 +56,7 @@ public class VitalityMaxHealthPower extends MuzixiPower {
     }
 
     /**
-     * Applies a combat-only negative maximum-health modifier for Wither.
+     * Applies a combat-only negative maximum-health modifier.
      * Maximum health must remain at least one, so only the amount that can be
      * applied is recorded for later restoration.
      */

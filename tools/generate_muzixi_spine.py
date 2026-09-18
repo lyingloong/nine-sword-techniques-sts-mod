@@ -28,6 +28,14 @@ SKELETON_NAME = "muzixi.json"
 
 
 TEXTURE_SIZE = (400, 600)
+REFERENCE_ALPHA_BBOX = (15, 59, 381, 600)
+
+# The rig was authored against REFERENCE_ALPHA_BBOX. These values are updated
+# from the current source image so resizing the figure inside the unchanged
+# 400x600 canvas does not require manually rewriting every bone and weight.
+art_scale = 1.0
+art_offset_x = 0.0
+art_offset_y = 0.0
 
 
 def load_texture(path: Path) -> Image.Image:
@@ -36,6 +44,43 @@ def load_texture(path: Path) -> Image.Image:
     if image.size != TEXTURE_SIZE:
         image = image.resize(TEXTURE_SIZE, Image.Resampling.LANCZOS)
     return image
+
+
+def configure_art_transform(texture: Image.Image) -> None:
+    """Map the reference pose coordinates onto the current alpha bounds."""
+    global art_scale, art_offset_x, art_offset_y
+
+    current_bbox = texture.getchannel("A").getbbox()
+    if current_bbox is None:
+        raise ValueError(f"Source texture has no visible pixels: {SOURCE}")
+
+    reference_left, reference_top, reference_right, reference_bottom = REFERENCE_ALPHA_BBOX
+    current_left, current_top, current_right, current_bottom = current_bbox
+    width_scale = (current_right - current_left) / (reference_right - reference_left)
+    height_scale = (current_bottom - current_top) / (reference_bottom - reference_top)
+    art_scale = min(width_scale, height_scale)
+
+    reference_center_x = (reference_left + reference_right) / 2.0
+    current_center_x = (current_left + current_right) / 2.0
+    art_offset_x = current_center_x - reference_center_x * art_scale
+    art_offset_y = current_bottom - reference_bottom * art_scale
+
+
+def to_current_point(point: tuple[float, float]) -> tuple[float, float]:
+    x, y = point
+    return x * art_scale + art_offset_x, y * art_scale + art_offset_y
+
+
+def to_reference_point(point: tuple[float, float]) -> tuple[float, float]:
+    x, y = point
+    return (x - art_offset_x) / art_scale, (y - art_offset_y) / art_scale
+
+
+def reference_world_to_current(point: tuple[float, float]) -> tuple[float, float]:
+    """Transform a bottom-centred Spine world point through image space."""
+    world_x, world_y = point
+    pixel_x, pixel_y = to_current_point((world_x + 200.0, 600.0 - world_y))
+    return pixel_x - 200.0, 600.0 - pixel_y
 
 
 def point_segment_distance(
@@ -73,7 +118,7 @@ def ellipse_score(
 
 
 def create_bones() -> tuple[list[dict], dict[str, tuple[float, float]]]:
-    world_positions = {
+    reference_world_positions = {
         "root": (0.0, 0.0),
         # Coordinates below follow the current 400x600 battle pose.  They are
         # kept in world space (origin at the bottom centre of the texture).
@@ -145,6 +190,10 @@ def create_bones() -> tuple[list[dict], dict[str, tuple[float, float]]]:
         "vine_3": 58,
     }
 
+    world_positions = {
+        name: (0.0, 0.0) if name == "root" else reference_world_to_current(position)
+        for name, position in reference_world_positions.items()
+    }
     bones = [{"name": "root"}]
     for name, parent in parents.items():
         world_x, world_y = world_positions[name]
@@ -156,12 +205,13 @@ def create_bones() -> tuple[list[dict], dict[str, tuple[float, float]]]:
             "y": round(world_y - parent_y, 4),
         }
         if name in lengths:
-            bone["length"] = lengths[name]
+            bone["length"] = round(lengths[name] * art_scale, 4)
         bones.append(bone)
     return bones, world_positions
 
 
 def scores_for_vertex(px: float, py: float) -> dict[str, float]:
+    px, py = to_reference_point((px, py))
     point = (px, py)
     scores = {
         "pelvis": 0.24,
@@ -227,8 +277,18 @@ def influences_for_vertex(
 def create_mesh(
     bone_indexes: dict[str, int], world_positions: dict[str, tuple[float, float]]
 ) -> dict:
-    x_coordinates = [0, 30, 60, 90, 120, 145, 165, 185, 205, 225, 250, 275, 300, 330, 365, 400]
-    y_coordinates = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 340, 380, 420, 460, 500, 540, 570, 600]
+    reference_x_coordinates = [0, 30, 60, 90, 120, 145, 165, 185, 205, 225, 250, 275, 300, 330, 365, 400]
+    reference_y_coordinates = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 340, 380, 420, 460, 500, 540, 570, 600]
+    x_coordinates = sorted({
+        0.0,
+        400.0,
+        *(round(to_current_point((x, 0))[0], 4) for x in reference_x_coordinates),
+    })
+    y_coordinates = sorted({
+        0.0,
+        600.0,
+        *(round(to_current_point((0, y))[1], 4) for y in reference_y_coordinates),
+    })
 
     uvs: list[float] = []
     vertices: list[float] = []
@@ -287,73 +347,73 @@ def merge(*timelines: dict) -> dict:
 def create_animations() -> dict:
     idle_end = 3.2
     idle = {
-        "pelvis": translate((0, 0, 0), (1.6, 0, 2.4), (idle_end, 0, 0)),
+        "pelvis": translate((0, 0, 0), (1.6, 0, 3.2), (idle_end, 0, 0)),
         "torso": merge(
-            rotate((0, -0.7), (1.6, 0.8), (idle_end, -0.7)),
-            translate((0, 0, 0), (1.6, 0, 1.4), (idle_end, 0, 0)),
+            rotate((0, -1.0), (1.6, 1.1), (idle_end, -1.0)),
+            translate((0, 0, 0), (1.6, 0, 1.9), (idle_end, 0, 0)),
         ),
-        "head": rotate((0, 0.9), (1.6, -1.2), (idle_end, 0.9)),
-        "back_arm": rotate((0, -1.2), (1.6, 1.5), (idle_end, -1.2)),
-        "back_forearm": rotate((0, 0.6), (1.6, -1.4), (idle_end, 0.6)),
-        "front_arm": rotate((0, 1.0), (1.6, -1.2), (idle_end, 1.0)),
-        "front_forearm": rotate((0, -0.7), (1.6, 1.2), (idle_end, -0.7)),
-        "front_hand": rotate((0, -1.0), (1.6, 1.5), (idle_end, -1.0)),
-        "green_hair_1": rotate((0, -1.6), (1.6, 2.0), (idle_end, -1.6)),
-        "green_hair_2": rotate((0, -2.3), (1.6, 2.8), (idle_end, -2.3)),
-        "purple_hair_1": rotate((0, 1.3), (1.6, -1.8), (idle_end, 1.3)),
-        "purple_hair_2": rotate((0, 2.1), (1.6, -2.6), (idle_end, 2.1)),
-        "green_skirt_1": rotate((0, 0.8), (1.6, -1.0), (idle_end, 0.8)),
-        "green_skirt_2": rotate((0, 1.4), (1.6, -1.8), (idle_end, 1.4)),
-        "purple_skirt_1": rotate((0, -0.7), (1.6, 1.0), (idle_end, -0.7)),
-        "purple_skirt_2": rotate((0, -1.3), (1.6, 1.7), (idle_end, -1.3)),
-        "vine_1": rotate((0, -2.0), (1.6, 2.6), (idle_end, -2.0)),
-        "vine_2": rotate((0, -3.0), (1.6, 3.8), (idle_end, -3.0)),
-        "vine_3": rotate((0, -4.2), (1.6, 5.0), (idle_end, -4.2)),
+        "head": rotate((0, 1.2), (1.6, -1.6), (idle_end, 1.2)),
+        "back_arm": rotate((0, -1.6), (1.6, 2.0), (idle_end, -1.6)),
+        "back_forearm": rotate((0, 0.8), (1.6, -1.9), (idle_end, 0.8)),
+        "front_arm": rotate((0, 1.3), (1.6, -1.6), (idle_end, 1.3)),
+        "front_forearm": rotate((0, -0.9), (1.6, 1.6), (idle_end, -0.9)),
+        "front_hand": rotate((0, -1.3), (1.6, 2.0), (idle_end, -1.3)),
+        "green_hair_1": rotate((0, -2.1), (1.6, 2.7), (idle_end, -2.1)),
+        "green_hair_2": rotate((0, -3.1), (1.6, 3.8), (idle_end, -3.1)),
+        "purple_hair_1": rotate((0, 1.7), (1.6, -2.4), (idle_end, 1.7)),
+        "purple_hair_2": rotate((0, 2.8), (1.6, -3.5), (idle_end, 2.8)),
+        "green_skirt_1": rotate((0, 1.1), (1.6, -1.3), (idle_end, 1.1)),
+        "green_skirt_2": rotate((0, 1.9), (1.6, -2.4), (idle_end, 1.9)),
+        "purple_skirt_1": rotate((0, -0.9), (1.6, 1.3), (idle_end, -0.9)),
+        "purple_skirt_2": rotate((0, -1.7), (1.6, 2.3), (idle_end, -1.7)),
+        "vine_1": rotate((0, -2.7), (1.6, 3.5), (idle_end, -2.7)),
+        "vine_2": rotate((0, -4.0), (1.6, 5.1), (idle_end, -4.0)),
+        "vine_3": rotate((0, -5.6), (1.6, 6.7), (idle_end, -5.6)),
     }
 
     attack_end = 0.42
     attack = {
         "pelvis": merge(
-            translate((0, 0, 0), (0.16, 11, 1), (attack_end, 0, 0)),
-            rotate((0, 0), (0.16, 2.3), (attack_end, 0)),
+            translate((0, 0, 0), (0.16, 14, 2), (attack_end, 0, 0)),
+            rotate((0, 0), (0.16, 3.0), (attack_end, 0)),
         ),
-        "torso": rotate((0, 0), (0.16, -4.5), (attack_end, 0)),
-        "head": rotate((0, 0), (0.16, 3.0), (attack_end, 0)),
-        "back_arm": rotate((0, 0), (0.16, 5.0), (attack_end, 0)),
-        "back_forearm": rotate((0, 0), (0.16, 7.0), (attack_end, 0)),
-        "front_arm": rotate((0, 0), (0.16, -8.5), (attack_end, 0)),
-        "front_forearm": rotate((0, 0), (0.16, -10.0), (attack_end, 0)),
-        "front_hand": rotate((0, 0), (0.16, 8.0), (attack_end, 0)),
-        "green_hair_2": rotate((0, 0), (0.2, 7.0), (attack_end, 0)),
-        "purple_hair_2": rotate((0, 0), (0.2, 8.0), (attack_end, 0)),
-        "green_skirt_2": rotate((0, 0), (0.2, 5.0), (attack_end, 0)),
-        "purple_skirt_2": rotate((0, 0), (0.2, 6.0), (attack_end, 0)),
-        "vine_1": rotate((0, 0), (0.16, -12.0), (attack_end, 0)),
-        "vine_2": rotate((0, 0), (0.18, -18.0), (attack_end, 0)),
-        "vine_3": rotate((0, 0), (0.2, -24.0), (attack_end, 0)),
+        "torso": rotate((0, 0), (0.16, -5.8), (attack_end, 0)),
+        "head": rotate((0, 0), (0.16, 4.0), (attack_end, 0)),
+        "back_arm": rotate((0, 0), (0.16, 6.5), (attack_end, 0)),
+        "back_forearm": rotate((0, 0), (0.16, 9.0), (attack_end, 0)),
+        "front_arm": rotate((0, 0), (0.16, -11.0), (attack_end, 0)),
+        "front_forearm": rotate((0, 0), (0.16, -13.0), (attack_end, 0)),
+        "front_hand": rotate((0, 0), (0.16, 10.0), (attack_end, 0)),
+        "green_hair_2": rotate((0, 0), (0.2, 9.0), (attack_end, 0)),
+        "purple_hair_2": rotate((0, 0), (0.2, 10.0), (attack_end, 0)),
+        "green_skirt_2": rotate((0, 0), (0.2, 6.5), (attack_end, 0)),
+        "purple_skirt_2": rotate((0, 0), (0.2, 7.5), (attack_end, 0)),
+        "vine_1": rotate((0, 0), (0.16, -15.0), (attack_end, 0)),
+        "vine_2": rotate((0, 0), (0.18, -23.0), (attack_end, 0)),
+        "vine_3": rotate((0, 0), (0.2, -30.0), (attack_end, 0)),
     }
 
     hit_end = 0.36
     hit = {
         "pelvis": merge(
-            translate((0, 0, 0), (0.12, -10, -3), (hit_end, 0, 0)),
-            rotate((0, 0), (0.12, -3.5), (hit_end, 0)),
+            translate((0, 0, 0), (0.12, -13, -4), (hit_end, 0, 0)),
+            rotate((0, 0), (0.12, -4.5), (hit_end, 0)),
         ),
-        "torso": rotate((0, 0), (0.12, 6.0), (hit_end, 0)),
-        "head": rotate((0, 0), (0.14, 9.0), (hit_end, 0)),
-        "back_arm": rotate((0, 0), (0.12, -8.0), (hit_end, 0)),
-        "back_forearm": rotate((0, 0), (0.14, -10.0), (hit_end, 0)),
-        "front_arm": rotate((0, 0), (0.12, 7.0), (hit_end, 0)),
-        "front_forearm": rotate((0, 0), (0.14, 10.0), (hit_end, 0)),
-        "green_hair_1": rotate((0, 0), (0.16, -8.0), (hit_end, 0)),
-        "green_hair_2": rotate((0, 0), (0.18, -12.0), (hit_end, 0)),
-        "purple_hair_1": rotate((0, 0), (0.16, -9.0), (hit_end, 0)),
-        "purple_hair_2": rotate((0, 0), (0.18, -13.0), (hit_end, 0)),
-        "green_skirt_2": rotate((0, 0), (0.18, -8.0), (hit_end, 0)),
-        "purple_skirt_2": rotate((0, 0), (0.18, -9.0), (hit_end, 0)),
-        "vine_1": rotate((0, 0), (0.15, 10.0), (hit_end, 0)),
-        "vine_2": rotate((0, 0), (0.17, 14.0), (hit_end, 0)),
-        "vine_3": rotate((0, 0), (0.19, 19.0), (hit_end, 0)),
+        "torso": rotate((0, 0), (0.12, 7.5), (hit_end, 0)),
+        "head": rotate((0, 0), (0.14, 11.5), (hit_end, 0)),
+        "back_arm": rotate((0, 0), (0.12, -10.0), (hit_end, 0)),
+        "back_forearm": rotate((0, 0), (0.14, -12.5), (hit_end, 0)),
+        "front_arm": rotate((0, 0), (0.12, 9.0), (hit_end, 0)),
+        "front_forearm": rotate((0, 0), (0.14, 12.5), (hit_end, 0)),
+        "green_hair_1": rotate((0, 0), (0.16, -10.0), (hit_end, 0)),
+        "green_hair_2": rotate((0, 0), (0.18, -15.0), (hit_end, 0)),
+        "purple_hair_1": rotate((0, 0), (0.16, -11.0), (hit_end, 0)),
+        "purple_hair_2": rotate((0, 0), (0.18, -16.0), (hit_end, 0)),
+        "green_skirt_2": rotate((0, 0), (0.18, -10.0), (hit_end, 0)),
+        "purple_skirt_2": rotate((0, 0), (0.18, -11.5), (hit_end, 0)),
+        "vine_1": rotate((0, 0), (0.15, 13.0), (hit_end, 0)),
+        "vine_2": rotate((0, 0), (0.17, 18.0), (hit_end, 0)),
+        "vine_3": rotate((0, 0), (0.19, 24.0), (hit_end, 0)),
     }
     return {"idle": {"bones": idle}, "attack": {"bones": attack}, "hit": {"bones": hit}}
 
@@ -377,6 +437,7 @@ muzixi
 
 def main() -> None:
     texture = load_texture(SOURCE)
+    configure_art_transform(texture)
     width, height = TEXTURE_SIZE
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -410,7 +471,10 @@ def main() -> None:
         encoding="utf-8",
         newline="\n",
     )
-    print(f"Generated {destination.relative_to(ROOT)} ({len(bones)} bones)")
+    print(
+        f"Generated {destination.relative_to(ROOT)} ({len(bones)} bones, "
+        f"art scale {art_scale:.4f})"
+    )
 
 
 if __name__ == "__main__":
