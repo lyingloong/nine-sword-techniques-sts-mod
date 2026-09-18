@@ -184,13 +184,13 @@
   },
   "NineSwordTechniques:NaturalCycle": {
     "NAME": "自然循环",
-    "DESCRIPTION": "每回合开始时，消耗 1 点 nineswordtechniques:生机 ，抽等量张牌并回复等量能量。 NL （当前生机 !NSTV! ）",
-    "UPGRADE_DESCRIPTION": "每回合开始时，消耗 1 点 nineswordtechniques:生机 ，抽等量张牌并回复等量能量。 NL （当前生机 !NSTV! ）"
+    "DESCRIPTION": "每回合开始时，消耗 1 点 nineswordtechniques:生机 ，抽 1 张牌并获得 [E] 。 NL （当前生机 !NSTV! ）",
+    "UPGRADE_DESCRIPTION": "每回合开始时，消耗 1 点 nineswordtechniques:生机 ，抽 1 张牌并获得 [E] 。 NL （当前生机 !NSTV! ）"
   },
   "NineSwordTechniques:MindGarden": {
     "NAME": "心灵花园",
-    "DESCRIPTION": "抽 !M! 张牌。 NL 若至少有 1 点 nineswordtechniques:生机 ，消耗 1 点并获得 1 点能量。 NL （当前生机 !NSTV! ）",
-    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 若至少有 1 点 nineswordtechniques:生机 ，消耗 1 点并获得 1 点能量。 NL （当前生机 !NSTV! ）"
+    "DESCRIPTION": "抽 !M! 张牌。 NL 若至少有 1 点 nineswordtechniques:生机 ，消耗 1 点并获得 [E] 。 NL （当前生机 !NSTV! ）",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 若至少有 1 点 nineswordtechniques:生机 ，消耗 1 点并获得 [E] 。 NL （当前生机 !NSTV! ）"
   },
   "NineSwordTechniques:VerdantRebirth": {
     "NAME": "青木回生",
@@ -254,8 +254,8 @@
   },
   "NineSwordTechniques:RenewalSeed": {
     "NAME": "回生种",
-    "DESCRIPTION": "回复 !M! 点生命。 NL 获得 1 点能量。",
-    "UPGRADE_DESCRIPTION": "回复 !M! 点生命。 NL 获得 2 点能量。"
+    "DESCRIPTION": "回复 !M! 点生命。 NL 获得 [E] 。",
+    "UPGRADE_DESCRIPTION": "回复 !M! 点生命。 NL 获得 [E] [E] 。"
   },
   "NineSwordTechniques:Flourish": {
     "NAME": "繁茂",
@@ -341,12 +341,12 @@
   "NineSwordTechniques:RootedFortification": {
     "NAME": "根界壁垒",
     "DESCRIPTION": "获得 !B! 点 格挡 。 NL 消耗至多 6 点 nineswordtechniques:生机 ，每点额外获得 4 点 格挡 。 NL （当前生机 !NSTV! ）",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 消耗至多 6 点 nineswordtechniques:生机 ，每点额外获得 4 点 格挡 。 NL （当前生机 !NSTV! ）"
+    "UPGRADE_DESCRIPTION": "保留 。 NL 获得 !B! 点 格挡 。 NL 消耗至多 6 点 nineswordtechniques:生机 ，每点额外获得 4 点 格挡 。 NL （当前生机 !NSTV! ）"
   },
   "NineSwordTechniques:VitalityDistillation": {
     "NAME": "生机淬炼",
-    "DESCRIPTION": "消耗 !M! 点 nineswordtechniques:生机 。 NL 获得 2 点能量并抽 2 张牌。 NL （当前生机 !NSTV! ）",
-    "UPGRADE_DESCRIPTION": "消耗 !M! 点 nineswordtechniques:生机 。 NL 获得 2 点能量并抽 2 张牌。 NL （当前生机 !NSTV! ）"
+    "DESCRIPTION": "消耗 !M! 点 nineswordtechniques:生机 。 NL 获得 [E] [E] 并抽 2 张牌。 NL （当前生机 !NSTV! ）",
+    "UPGRADE_DESCRIPTION": "消耗 !M! 点 nineswordtechniques:生机 。 NL 获得 [E] [E] 并抽 2 张牌。 NL （当前生机 !NSTV! ）"
   },
   "NineSwordTechniques:LivingArmor": {
     "NAME": "活体铠甲",
@@ -422,5 +422,15 @@
     "NAME": "战斗本能",
     "DESCRIPTION": "随机造成 !D! 点伤害 2 次。",
     "UPGRADE_DESCRIPTION": "随机造成 !D! 点伤害 2 次。"
+  },
+  "NineSwordTechniques:VineStrike": {
+    "NAME": "藤蔓刺击",
+    "DESCRIPTION": "目标每有一种负面效果，造成 !D! 点伤害 1 次。",
+    "UPGRADE_DESCRIPTION": "目标每有一种负面效果，造成 !D! 点伤害 1 次。"
+  },
+  "NineSwordTechniques:Roll": {
+    "NAME": "翻滚",
+    "DESCRIPTION": "获得 !B! 点格挡 2 次。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡 2 次。"
   }
 }

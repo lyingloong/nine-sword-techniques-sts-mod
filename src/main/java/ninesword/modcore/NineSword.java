@@ -67,6 +67,7 @@ import ninesword.muzixi.cards.ParalysisFlower;
 import ninesword.muzixi.cards.ParasiticSeed;
 import ninesword.muzixi.cards.PersonaShift;
 import ninesword.muzixi.cards.RootGuard;
+import ninesword.muzixi.cards.Roll;
 import ninesword.muzixi.cards.SapSurge;
 import ninesword.muzixi.cards.SeeThroughIllusion;
 import ninesword.muzixi.cards.SoulReflection;
@@ -75,6 +76,7 @@ import ninesword.muzixi.cards.TenThousandFlowers;
 import ninesword.muzixi.cards.ThornWhip;
 import ninesword.muzixi.cards.VerdantRebirth;
 import ninesword.muzixi.cards.VineLash;
+import ninesword.muzixi.cards.VineStrike;
 import ninesword.muzixi.cards.Vinesnare;
 import ninesword.muzixi.cards.WorldTree;
 import ninesword.muzixi.cards.WoodSpiritSeed;
@@ -197,6 +199,8 @@ public class NineSword implements EditCardsSubscriber, EditRelicsSubscriber,
         BaseMod.addCard(new LifeDevouringWoodBody());
         // Muzixi common cards.
         BaseMod.addCard(new CombatInstinct());
+        BaseMod.addCard(new VineStrike());
+        BaseMod.addCard(new Roll());
         BaseMod.addCard(new Sprout());
         BaseMod.addCard(new WoodSpiritSeed());
         BaseMod.addCard(new VitalExchange());

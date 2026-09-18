@@ -184,13 +184,13 @@
   },
   "NineSwordTechniques:NaturalCycle": {
     "NAME": "Natural Cycle",
-    "DESCRIPTION": "At the start of each turn, spend 1 nineswordtechniques:vitality. Draw that many cards and gain that much Energy. NL (Current Vitality !NSTV!)",
-    "UPGRADE_DESCRIPTION": "At the start of each turn, spend 1 nineswordtechniques:vitality. Draw that many cards and gain that much Energy. NL (Current Vitality !NSTV!)"
+    "DESCRIPTION": "At the start of each turn, spend 1 nineswordtechniques:vitality, draw 1 card, and gain [E]. NL (Current Vitality !NSTV!)",
+    "UPGRADE_DESCRIPTION": "At the start of each turn, spend 1 nineswordtechniques:vitality, draw 1 card, and gain [E]. NL (Current Vitality !NSTV!)"
   },
   "NineSwordTechniques:MindGarden": {
     "NAME": "Mind Garden",
-    "DESCRIPTION": "Draw !M! cards. NL If you have at least 1 nineswordtechniques:vitality, spend 1 and gain 1 Energy. NL (Current Vitality !NSTV!)",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL If you have at least 1 nineswordtechniques:vitality, spend 1 and gain 1 Energy. NL (Current Vitality !NSTV!)"
+    "DESCRIPTION": "Draw !M! cards. NL If you have at least 1 nineswordtechniques:vitality, spend 1 and gain [E]. NL (Current Vitality !NSTV!)",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL If you have at least 1 nineswordtechniques:vitality, spend 1 and gain [E]. NL (Current Vitality !NSTV!)"
   },
   "NineSwordTechniques:VerdantRebirth": {
     "NAME": "Verdant Rebirth",
@@ -254,8 +254,8 @@
   },
   "NineSwordTechniques:RenewalSeed": {
     "NAME": "Renewal Seed",
-    "DESCRIPTION": "Heal !M! HP. NL Gain 1 Energy.",
-    "UPGRADE_DESCRIPTION": "Heal !M! HP. NL Gain 2 Energy."
+    "DESCRIPTION": "Heal !M! HP. NL Gain [E].",
+    "UPGRADE_DESCRIPTION": "Heal !M! HP. NL Gain [E] [E]."
   },
   "NineSwordTechniques:Flourish": {
     "NAME": "Flourish",
@@ -341,12 +341,12 @@
   "NineSwordTechniques:RootedFortification": {
     "NAME": "Rooted Fortification",
     "DESCRIPTION": "Gain !B! Block. NL Spend up to 6 nineswordtechniques:vitality; gain 4 additional Block per nineswordtechniques:vitality spent. NL (Current Vitality !NSTV!)",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Spend up to 6 nineswordtechniques:vitality; gain 4 additional Block per nineswordtechniques:vitality spent. NL (Current Vitality !NSTV!)"
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain !B! Block. NL Spend up to 6 nineswordtechniques:vitality; gain 4 additional Block per nineswordtechniques:vitality spent. NL (Current Vitality !NSTV!)"
   },
   "NineSwordTechniques:VitalityDistillation": {
     "NAME": "Vitality Distillation",
-    "DESCRIPTION": "Spend !M! nineswordtechniques:vitality. NL Gain 2 Energy and draw 2 cards. NL (Current Vitality !NSTV!)",
-    "UPGRADE_DESCRIPTION": "Spend !M! nineswordtechniques:vitality. NL Gain 2 Energy and draw 2 cards. NL (Current Vitality !NSTV!)"
+    "DESCRIPTION": "Spend !M! nineswordtechniques:vitality. NL Gain [E] [E] and draw 2 cards. NL (Current Vitality !NSTV!)",
+    "UPGRADE_DESCRIPTION": "Spend !M! nineswordtechniques:vitality. NL Gain [E] [E] and draw 2 cards. NL (Current Vitality !NSTV!)"
   },
   "NineSwordTechniques:LivingArmor": {
     "NAME": "Living Armor",
@@ -422,5 +422,15 @@
     "NAME": "Combat Instinct",
     "DESCRIPTION": "Deal !D! damage to a random enemy 2 times.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage to a random enemy 2 times."
+  },
+  "NineSwordTechniques:VineStrike": {
+    "NAME": "Vine Strike",
+    "DESCRIPTION": "For each type of debuff on the target, deal !D! damage once.",
+    "UPGRADE_DESCRIPTION": "For each type of debuff on the target, deal !D! damage once."
+  },
+  "NineSwordTechniques:Roll": {
+    "NAME": "Roll",
+    "DESCRIPTION": "Gain !B! Block 2 times.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block 2 times."
   }
 }
