@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#131b20" />
+    <meta name="description" content="九大剑术：杀戮尖塔主题模组图鉴" />
+    <title>九大剑术 · 模组图鉴</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#home" data-route="home">
+          <span class="brand-mark">九</span>
+          <span><strong>九大剑术</strong><small>模组图鉴</small></span>
+        </a>
+        <nav class="nav" aria-label="主要导航">
+          <a href="#home" data-route="home">首页 <span>⌂</span></a>
+          <a href="#swords" data-route="swords">九大剑术 <span>18</span></a>
+          <a href="#muzixi" data-route="muzixi">木子汐 <span>67</span></a>
+          <a href="#events" data-route="events">事件 <span>3</span></a>
+          <a href="#mechanics" data-route="mechanics">机制 <span>6</span></a>
+        </nav>
+        <div class="sidebar-foot">
+          <span class="status-dot"></span>
+          <span>中文资料库 · 持续更新</span>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button class="menu-button" id="menu-button" type="button" aria-label="打开导航">菜单</button>
+          <div class="breadcrumbs" id="breadcrumbs">模组图鉴 / 首页</div>
+          <a class="source-link" href="https://github.com/lyingloong/nine-sword-techniques-sts-mod" target="_blank" rel="noreferrer">查看源码 ↗</a>
+        </header>
+        <div id="app" class="page-content"></div>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="modal" hidden>
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" id="modal-close" type="button" aria-label="关闭">×</button>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
