@@ -1,0 +1,43 @@
+name: 问题反馈
+description: 报告游戏、Wiki 或文档中的问题
+title: "[Bug] "
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: 问题范围
+      options:
+        - 游戏模组
+        - Wiki 页面
+        - 文档与开发环境
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 版本与环境
+      description: 游戏问题请提供模组、游戏、ModTheSpire、BaseMod 版本及其他启用的模组；网页问题请提供页面链接、浏览器和窗口宽度。
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 请写清触发条件；涉及卡牌交互时，说明升级状态、遗物、Power 和结算顺序。
+      placeholder: |
+        1. 使用……角色，进入……
+        2. 获得……遗物或 Power
+        3. 打出……卡牌后出现……
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期表现与实际表现
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 日志、截图或其他线索
+      description: 如有崩溃日志、游戏种子或存档信息，请补充；分享前移除个人信息。

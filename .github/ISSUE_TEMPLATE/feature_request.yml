@@ -1,0 +1,23 @@
+name: 功能与玩法建议
+description: 讨论卡牌、机制、Wiki 或文档的改进
+title: "[Feature] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 想解决的问题
+      description: 描述遇到的场景，以及现有行为为什么不方便或不符合预期。
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议方案
+      description: 玩法建议可写出具体费用、效果、升级变化或结算规则；界面建议可附示意图。
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 其他考虑
+      description: 可补充替代方案、平衡性、兼容性或关联条目。
