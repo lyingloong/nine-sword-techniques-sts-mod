@@ -31,7 +31,7 @@ export function readCardValues(source, name) {
     upgraded[token] = value + (change ? Number(change[1]) : 0);
   }
   const newCost = upgrade.match(/upgradeBaseCost\(\s*(-?\d+)\s*\)/);
-  return { values, upgraded, cost, upgradeCost: newCost ? cost + Number(newCost[1]) : cost };
+  return { values, upgraded, cost, upgradeCost: newCost ? Number(newCost[1]) : cost };
 }
 
 export function cleanGameText(text = "") {

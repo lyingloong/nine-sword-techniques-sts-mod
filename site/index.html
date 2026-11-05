@@ -3,48 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#131b20" />
-    <meta name="description" content="九大剑术：杀戮尖塔主题模组图鉴" />
+    <meta name="theme-color" content="#f7f8f5" />
+    <meta name="description" content="九大剑术模组 Wiki：查阅《杀戮尖塔》模组中的剑术、木子汐卡牌、遗物、事件与专属机制。" />
     <title>九大剑术 · 模组图鉴</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <div class="site-shell">
       <aside class="sidebar" id="sidebar">
-        <a class="brand" href="#home" data-route="home">
-          <span class="brand-mark">九</span>
+        <a class="brand" href="#home" data-route="home" aria-label="九大剑术图鉴首页">
+          <span class="brand-mark" aria-hidden="true">九</span>
           <span><strong>九大剑术</strong><small>模组图鉴</small></span>
         </a>
+        <div class="nav-label">查阅图鉴</div>
         <nav class="nav" aria-label="主要导航">
-          <a href="#home" data-route="home">首页 <span>⌂</span></a>
-          <a href="#swords" data-route="swords">九大剑术 <span>18</span></a>
-          <a href="#muzixi" data-route="muzixi">木子汐 <span>67</span></a>
-          <a href="#events" data-route="events">事件 <span>3</span></a>
-          <a href="#mechanics" data-route="mechanics">机制 <span>6</span></a>
+          <a href="#home" data-route="home">概览 <span aria-hidden="true">⌂</span></a>
+          <a href="#swords" data-route="swords">九大剑术 <span data-count="swords"></span></a>
+          <a href="#muzixi" data-route="muzixi">木子汐 <span data-count="muzixi"></span></a>
+          <a href="#relics" data-route="relics">遗物 <span data-count="relics"></span></a>
+          <a href="#events" data-route="events">事件 <span data-count="events"></span></a>
+          <a href="#mechanics" data-route="mechanics">机制与关键词 <span data-count="mechanics"></span></a>
         </nav>
         <div class="sidebar-foot">
-          <span class="status-dot"></span>
-          <span>中文资料库 · 持续更新</span>
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3554467601" target="_blank" rel="noreferrer">Steam 创意工坊 <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/lyingloong/nine-sword-techniques-sts-mod" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          <a href="https://lyingloong.github.io/" target="_blank" rel="noreferrer">作者主页 <span aria-hidden="true">↗</span></a>
+          <small>《杀戮尖塔》社区模组</small>
         </div>
       </aside>
-
-      <main class="main-content">
+      <button class="menu-shade" id="menu-shade" type="button" aria-label="关闭导航" hidden></button>
+      <main class="main-content" id="main-content" tabindex="-1">
         <header class="topbar">
-          <button class="menu-button" id="menu-button" type="button" aria-label="打开导航">菜单</button>
-          <div class="breadcrumbs" id="breadcrumbs">模组图鉴 / 首页</div>
-          <a class="source-link" href="https://github.com/lyingloong/nine-sword-techniques-sts-mod" target="_blank" rel="noreferrer">查看源码 ↗</a>
+          <button class="menu-button" id="menu-button" type="button" aria-label="打开导航" aria-controls="sidebar" aria-expanded="false">目录</button>
+          <div class="breadcrumbs" id="breadcrumbs">模组图鉴 / 概览</div>
+          <form class="global-search" id="global-search" role="search" aria-label="全站搜索">
+            <label class="sr-only" for="global-query">搜索图鉴</label>
+            <input id="global-query" name="q" type="search" placeholder="搜索卡牌、遗物、机制…" autocomplete="off" />
+            <button type="submit" aria-label="搜索">↵</button>
+          </form>
         </header>
         <div id="app" class="page-content"></div>
+        <footer class="page-footer"><span>九大剑术 · 模组图鉴</span><span>灵感来自《我有一身被动技》</span></footer>
       </main>
     </div>
-
     <div class="modal-backdrop" id="modal" hidden>
-      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <button class="modal-close" id="modal-close" type="button" aria-label="关闭">×</button>
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+        <button class="modal-close" id="modal-close" type="button" aria-label="关闭卡牌详情">×</button>
         <div id="modal-body"></div>
       </div>
     </div>
-
     <script src="data.js"></script>
     <script src="app.js"></script>
   </body>
